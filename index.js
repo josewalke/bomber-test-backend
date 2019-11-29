@@ -8,9 +8,8 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 // CONFIG AND ENVIRONMENT LOADING FROM .env FILE
-let config = require("./.env");
-const environment = process.env.NODE_ENV;
-config = config[environment];
+let config = require('./config')
+
 if (!config) {
   throw new Error(`❌ Invalid ${environment} environment`);
 }
@@ -34,9 +33,8 @@ const authenticate = (req, res, next) => {
   });
 };
 
-// NONGOOSE
 mongoose.connect(
-  config.mongoURL + config.mongoDBName,
+  config.mongoURL,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   err => {
     if (err) {
@@ -64,3 +62,4 @@ app.listen(config.port, err => {
   console.info(` 📡  PORT: http://localhost:${config.port}`);
   console.info(">".repeat(40) + "\n\n");
 });
+Contraer
