@@ -62,4 +62,3 @@ app.listen(config.port, err => {
   console.info(` 📡  PORT: http://localhost:${config.port}`);
   console.info(">".repeat(40) + "\n\n");
 });
-Contraer
