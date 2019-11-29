@@ -50,7 +50,7 @@ app.get("/api/whoami", authenticate, (req, res) => {
 });
 
 // Init server
-app.listen(config.port, err => {
+app.listen( process.env.PORT ||  config.port, err => {
   if (err) {
     throw new Error(err);
   }
