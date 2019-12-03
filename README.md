@@ -1,65 +1,37 @@
-# Reboot BackendEnd Sample
+![Banner](banner2.png)
 
-## Introduction
+## Database Structure
+![Database](OposicionBomberDB.png)
 
-## Directory Structure
 
-## Setup
-
-### Install & Update Dependencies
-The first time you start the server you may want to make sure you have the dependencies installed, in the right versions. To do so, just go to the terminal and type:
-
-```
-$ npm install
-```
-### Install StandardJS Linter
-[StandardJS](https://standardjs.com/) is a JavaScript style guide, linter, and formatter.
-
-#### VSCode Extension
-You may want to install [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
-
-> VSCODE `SETTINGS.JSON`:
-```
-  "javascript.validate.enable": false,
-  "standard.enable": true,
-  "standard.run": "onType",
-  "standard.autoFixOnSave": false,
-  "standard.usePackageJson": true
+## General Endpoints
+```bash
+Home —> ./
+Login —> ./login
+Signup —> ./signup
 ```
 
-*Make sure you don't have duplicate rules!*
-
-### Environment Variables
-
-The next setup step is to create an `Environment Variable` file `.env` in this folder. We have provided a `.env.example` for you with a sample configuration for both **development** and **production** environments.
-
-Make your own copy_
-```
-$ cp .env.example .env
-```
-
-And customize the sample params to your needs
-
-- mongoURL: "mongodb://localhost/",
-- mongoDBName: 'reboot',
-- apiKeys : "fakeapikey",
-- port : 5000
-
-## Start local Server
-
-You can start your server anytime with:
-
-```
-$ npm run dev
+## User endpoints
+```bash
+u. profile         —> ./user/:id
+u. new test        —> ./user/:id/newtest
+u. test list       —>  ./user/:id/testlist
+u. test show       —> ./user/:id/test/:test_id
+u. question        —> ./user/:id/test/:test_id/question/:question_id
+u. messages        —> ./user/:id/messagelist
+u. message         —> ./user/:id/message/:message_id
 ```
 
-You should see something like:
+## Admin endpoints
+```bash
+a. profile        —> ./admin/:id
+a. new test       —> ./admin/:id/newtest
+a. test list      —> ./admin/:id/tests
+a. test show      —> ./admin/:id/test/:test_id
+a. questions list —>./admin/:id/questions
+a. new question   —> ./admin/:id/newquestion
+a. messages       —> ./admin/:id/messages
+a. message        —> ./admin/:id/message/:message_id
+a. payments list  —> ./admin/:id/payments
+a. payment        —> ./admin/:id/payment/:id
 ```
-Starting up http-server, serving ./
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.43.142:8080
-Hit CTRL-C to stop the server
-```
-
-Happy coding!
