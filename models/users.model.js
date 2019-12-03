@@ -3,17 +3,24 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Name is required']
+    required: [true, 'Campo obligatorio']
+  },
+  lastName: {
+    type: String,
+    required:[true, 'Campo obligatorio']
   },
   email: {
     type: String,
-    required: [true, 'Email is required'],
+    required: [true, 'Campo obligatorio'],
     validate: {
       validator (value) {
         return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
       }
     },
-    unique: [true, 'This is email is registered']
+    unique: [true, 'Este email ya existe']
+  },
+  img_url: {
+    type: String,
   },
   password: {
     type: String,
@@ -21,17 +28,29 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['host', 'regular'],
+    enum: ['admin', 'cliente'],
     required: false,
-    default: 'regular'
+    default: 'cliente'
   },
-  birthDate: {
-    type: Number,
-    required: false
+  phone: {
+    type: String,
+    required: [true, 'Campo obligatorio']
   },
   createdAt: {
     type: Number,
     default: Date.now() // Get a timestamp :)
+  },
+  suscription_type:{
+    type: String
+  },
+  suscription_start: {
+    type: Date
+  },
+  suscription_end: {
+    type: Date
+  },
+  active: {
+    type: Boolean
   }
 })
 
