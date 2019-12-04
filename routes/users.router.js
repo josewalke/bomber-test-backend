@@ -27,9 +27,9 @@ const {
 router.get('/', getAllUsers);
 router.delete('/:id', authenticated, me,  getAllUsers);
 router.get('/',  getAllUsers);
+router.dete('/', getAllUsers);
 
 module.exports = router;
 
 
-
-router.get('tests/:id', authentificated, createdByMe, getUserById);  // GET : 'LOCALHOST:2222/api/users/fico'
+// router.get('tests/:id', authentificated, createdByMe, getUserById);  // GET : 'LOCALHOST:2222/api/users/fico'
