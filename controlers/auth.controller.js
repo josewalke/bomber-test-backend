@@ -1,4 +1,4 @@
-const UserModel = require("../models/users.model");
+const UserModel = require("@/models/users.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -11,8 +11,10 @@ function signup(req, res) {
   const hashedPwd = bcrypt.hashSync(req.body.user_password, 10);
   const userBody = {
     name: req.body.user_name,
+    lastName: req.body.last_name,
     email: req.body.user_email,
-    password: hashedPwd
+    password: hashedPwd,
+    phone: req.body.phone
   };
 
   UserModel.create(userBody)

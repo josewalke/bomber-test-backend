@@ -6,13 +6,14 @@ const {
   getUserById,
   deleteUserById,
   updateUser
-} = require("../controlers/users.controller");
+} = require("@/controlers/users.controller");
 
 // POST : 'LOCALHOST:2222/api/users'
-
+router.get('/:id')
 // GET : 'LOCALHOST:2222/api/users'
-
+router.put('/:id')
 // GET : 'LOCALHOST:2222/api/users/id'
+
 // PUT : 'LOCALHOST:2222/api/users/id'
 // DELETE : 'LOCALHOST:2222/api/users/id'
 
