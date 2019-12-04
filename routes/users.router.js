@@ -27,6 +27,7 @@ const {
 router.get('/', getAllUsers);
 router.delete('/:id', authenticated, me,  getAllUsers);
 router.get('/',  getAllUsers);
+router.dete('/', getAllUsers);
 
 module.exports = router;
 
