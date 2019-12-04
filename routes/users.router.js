@@ -32,4 +32,4 @@ module.exports = router;
 
 
 
-router.get('tests/:id', authentificated, createdByMe, getUserById);  // GET : 'LOCALHOST:2222/api/users/fico'
+// router.get('tests/:id', authentificated, createdByMe, getUserById);  // GET : 'LOCALHOST:2222/api/users/fico'
