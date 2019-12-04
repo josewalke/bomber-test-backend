@@ -1,7 +1,4 @@
 const mongoose = require('mongoose')
-const {userSchema} = require('users.model.js')
-const {questionSchema} = require('question.model.js')
-
 
 const testSchema = new mongoose.Schema({
   user_id: {
