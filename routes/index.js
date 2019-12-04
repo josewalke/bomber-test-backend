@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const authRouter = require("./auth.router");
 const usersRouter = require("./users.router");
-const testRouter = require("./tests.router");
+const testsRouter = require("./tests.router");
 const questionsRouter = require("./questions.router");
 const messagesRouter = require("./messages.router");
 

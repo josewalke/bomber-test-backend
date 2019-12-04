@@ -6,7 +6,7 @@ const {
   getUserById,
   deleteUserById,
   updateUser
-} = require("@/controlers/questions.controller");
+} = require("../controlers/questions.controller");
 
 
 router.post('/')

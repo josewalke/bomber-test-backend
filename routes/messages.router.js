@@ -6,7 +6,7 @@ const {
   getUserById,
   deleteUserById,
   updateUser
-} = require("@/controlers/messages.controller");
+} = require("../controlers/messages.controller");
 
 
 router.post('/')

@@ -6,7 +6,7 @@ const {
   getUserById,
   deleteUserById,
   updateUser
-} = require("@/controlers/users.controller");
+} = require("../controlers/users.controller");
 
 // POST : 'LOCALHOST:2222/api/users'
 router.get('/:id')
