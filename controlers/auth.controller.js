@@ -7,6 +7,7 @@ module.exports = {
   login
 };
 
+
 function signup(req, res) {
   const hashedPwd = bcrypt.hashSync(req.body.user_password, 10);
   const userBody = {
