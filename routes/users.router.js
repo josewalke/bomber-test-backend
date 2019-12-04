@@ -8,11 +8,28 @@ const {
   updateUser
 } = require("../controlers/users.controller");
 
-router.get("/newTest", authenticated, me);
-router.get("/testList", authenticated, me);
-router.get("/message", authenticated, me);
-router.get("/exam", authenticated, me);
-router.get("/test", authenticated, me);
-router.put("/profile", authenticated, me);
+// POST : 'LOCALHOST:2222/api/users'
+
+// GET : 'LOCALHOST:2222/api/users'
+
+// GET : 'LOCALHOST:2222/api/users/id'
+// PUT : 'LOCALHOST:2222/api/users/id'
+// DELETE : 'LOCALHOST:2222/api/users/id'
+
+// POST : 'LOCALHOST:2222/api/users'  Esta esta ok  "indica que quieres crear un user "
+// POST : 'LOCALHOST:2222/api/users/id/tweets' Esta esta mala porque tu no sabes el id del usuario que se va crear
+// POST : 'LOCALHOST:2222/api/tweets'
+
+
+// GET : 'LOCALHOST:2222/api/users/id/tweets' Esta esta mala porque tu no sabes el id del usuario que se va crear
+// GET : 'LOCALHOST:2222/api/tweets?userID=asiuodhjaiodasd'
+
+router.get('/', getAllUsers);
+router.delete('/:id', authenticated, me,  getAllUsers);
+router.get('/',  getAllUsers);
 
 module.exports = router;
+
+
+
+router.get('tests/:id', authentificated, createdByMe, getUserById);  // GET : 'LOCALHOST:2222/api/users/fico'

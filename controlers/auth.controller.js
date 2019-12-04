@@ -24,7 +24,7 @@ function signup(req, res) {
 
       const token = jwt.sign(
         userData,
-        "secret", // TODO SECRET MORE SECRET PLEASE
+        "secret",
         { expiresIn: "1w" }
       );
 
@@ -53,7 +53,7 @@ function login(req, res) {
 
         const token = jwt.sign(
           userData,
-          "secret", // TODO SECRET MORE SECRET PLEASE
+          "secret",
           { expiresIn: "1h" }
         );
 
