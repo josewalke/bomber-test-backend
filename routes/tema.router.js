@@ -15,7 +15,7 @@ router.put('/:id')
 
 router.get('/:id')
 
-router.get('/')
+router.get('/', getAllTemas)
 
 router.delete('/:id')
 

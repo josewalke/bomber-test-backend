@@ -19,7 +19,7 @@ function createTema(req, res) {
 
 function getAllTemas(req, res) {
   console.log('todos los Temas')
-  questionsModel
+  temaModel
     .find()
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
