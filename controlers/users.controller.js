@@ -33,7 +33,7 @@ function deleteUserById (req, res) {
 function updateUser (req, res) {
   UserModel
     .findByIdAndUpdate(req.params.id, req.body)
-    .then(response => res.json('Usuario Actualizado'))
+    .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
 

@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 
 const questionSchema = new mongoose.Schema({
-  user_id: {
-    type: mongoose.Schema.Types.ObjectId
-  },
   enunciado: {
     type: String
   },
@@ -20,6 +17,9 @@ const questionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId
   },
   category: {
+    type: String
+  },
+  difficulty:{
     type: String
   }
 })

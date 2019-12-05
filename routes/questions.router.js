@@ -2,20 +2,20 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-  getAllUsers,
-  getUserById,
-  deleteUserById,
-  updateUser
+  createQuestion,
+  getAllQuestions,
+  getQuestionById,
+  updateQuestion
 } = require("../controlers/questions.controller");
 
 
-router.post('/')
+router.post('/', createQuestion)
 
-router.get('/')
+router.get('/', getAllQuestions)
 
-router.put('/:id')
+router.put('/:id', updateQuestion)
 
-router.get('/:id')
+router.get('/:id', getQuestionById)
 
 router.delete('/:id')
 
