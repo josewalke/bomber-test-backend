@@ -2,14 +2,11 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-  getAllUsers,
-  getUserById,
-  deleteUserById,
-  updateUser
+  createTest,
 } = require("../controlers/tests.controller");
 
 
-router.post('/')
+router.post('/', createTest)
 
 router.put('/:id')
 

@@ -1,35 +1,22 @@
-const UserModel = require('../models/users.model')
+const testModel = require('../models/test.model')
 
 module.exports = {
-  // createTest
+  createTest
 }
 
-// function createTest(req, res) {
+function createTest(req, res) {
 
-//   const testBody = {
-//     : req.body.pregunta,
-//     lastName: req.body.,
-//     email: req.body.email,
-//     password: hashedPwd,
-//     phone: req.body.phone
-//   };
+  const testBody = {
+    user_id: req.body.me,
+    aciertos: req.body.aciertos,
+    fallos: req.body.fallos,
+    no_contestada: req.body.blanco,
+    mostrar_solucion: req.body.mostrar
+  };
 
-//   UserModel.create(userBody)
-//     .then(() => {
-//       const userData = {
-//         username: req.body.user_name,
-//         email: req.body.user_email
-//       };
-
-//       const token = jwt.sign(
-//         userData,
-//         "secret",
-//         { expiresIn: "1w" }
-//       );
-
-//       return res.json({ token: token, ...userData });
-//     })
-//     .catch(err => {
-//       res.status(403).json({ error: err });
-//     });
-// }
+  testModel.create(testBody)
+    .then(response => res.json(response))
+    .catch(err => {
+      res.status(403).json({ error: err });
+    });
+}
