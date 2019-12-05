@@ -7,27 +7,15 @@ module.exports = {
   updateUser
 }
 
-
-//  ?age=20
 function getAllUsers(req, res) {
-  const age = req.query.age;
   console.log('todos los usuarios')
   UserModel
     .find()
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
-function getSerachUsers(req, res) {
-  const age = req.query.age;
-  console.log('todos los usuarios')
-  UserModel
-    .find({ age: { $gte: edad } })
-    .then(response => res.json(response))
-    .catch((err) => handdleError(err, res))
-}
 
 function getUserById (req, res) {
-  console.log(req.body)
   console.log("un solo usuario")
   UserModel
     .findById(req.params.id)
@@ -44,11 +32,8 @@ function deleteUserById (req, res) {
 
 function updateUser (req, res) {
   UserModel
-    .findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
-    })
-    .then(response => res.json(response))
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(response => res.json('Usuario Actualizado'))
     .catch((err) => handdleError(err, res))
 }
 
