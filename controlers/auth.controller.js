@@ -9,11 +9,11 @@ module.exports = {
 
 
 function signup(req, res) {
-  const hashedPwd = bcrypt.hashSync(req.body.user_password, 10);
+  const hashedPwd = bcrypt.hashSync(req.body.password, 10);
   const userBody = {
-    name: req.body.user_name,
-    lastName: req.body.last_name,
-    email: req.body.user_email,
+    name: req.body.name,
+    lastName: req.body.lastName,
+    email: req.body.email,
     password: hashedPwd,
     phone: req.body.phone
   };
@@ -39,13 +39,13 @@ function signup(req, res) {
 }
 
 function login(req, res) {
-  UserModel.findOne({ email: req.body.user_email })
+  UserModel.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {
         return res.json({ error: "wrong email" });
       }
 
-      bcrypt.compare(req.body.user_password, user.password, (err, result) => {
+      bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (!result) {
           return res.json({
             error: `wrong password for ${req.body.user_email}`
