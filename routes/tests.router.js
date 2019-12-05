@@ -3,6 +3,8 @@ const { authenticated, me } = require("../services/auth.service");
 
 const {
   createTest,
+  getAllTests,
+  getTestById
 } = require("../controlers/tests.controller");
 
 
@@ -10,9 +12,9 @@ router.post('/', createTest)
 
 router.put('/:id')
 
-router.get('/:id')
+router.get('/:id', getTestById)
 
-router.get('/')
+router.get('/', getAllTests)
 
 router.delete('/:id')
 
