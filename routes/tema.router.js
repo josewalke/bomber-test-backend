@@ -4,7 +4,8 @@ const { authenticated, me } = require("../services/auth.service");
 const {
   createTema,
   getAllTemas,
-  updateTema
+  updateTema,
+  deleteTemaById
 } = require("../controlers/tema.controller");
 
 
@@ -14,6 +15,6 @@ router.put('/:id',updateTema)
 
 router.get('/', getAllTemas)
 
-router.delete('/:id')
+router.delete('/:id', deleteTemaById)
 
 module.exports = router;

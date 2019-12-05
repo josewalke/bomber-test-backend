@@ -3,7 +3,8 @@ const temaModel = require('../models/tema.model')
 module.exports = {
   createTema,
   getAllTemas,
-  updateTema
+  updateTema,
+  deleteTemaById
 }
 
 function createTema(req, res) {
@@ -29,4 +30,11 @@ function updateTema(req, res) {
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
+}
+
+function deleteTemaById(req, res) {
+  temaModel
+    .remove({ _id: req.params.id })
+    .then(response => res.json(response))
+    .catch(err => handdleError(err, res))
 }

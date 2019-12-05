@@ -2,21 +2,21 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-  getAllUsers,
-  getUserById,
-  deleteUserById,
-  updateUser
+  createMessage,
+  getAllMessages,
+  updateMessages,
+  getMessageById
+
 } = require("../controlers/messages.controller");
 
 
-router.post('/')
+router.post('/', createMessage)
 
-router.put('/:id')
+router.put('/:id', updateMessages)
 
-router.get('/:id')
+router.get('/:id', getMessageById)
 
-router.get('/')
+router.get('/', getAllMessages)
 
-router.delete('/:id')
 
 module.exports = router;

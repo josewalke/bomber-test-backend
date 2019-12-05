@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const dudaSchema = new mongoose.Schema({
+const messageSchema = new mongoose.Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId
   },
@@ -14,9 +14,10 @@ const dudaSchema = new mongoose.Schema({
     type: String
   },
   respuesta_leida: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 })
-const temaModel = mongoose.model('tema', temaSchema)
+const messageModel = mongoose.model('message', messageSchema)
 
-module.exports = temaModel
+module.exports = messageModel
