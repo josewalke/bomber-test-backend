@@ -4,16 +4,13 @@ const { authenticated, me } = require("../services/auth.service");
 const {
   createTema,
   getAllTemas,
-  getTemaById,
   updateTema
 } = require("../controlers/tema.controller");
 
 
 router.post('/', createTema)
 
-router.put('/:id')
-
-router.get('/:id')
+router.put('/:id',updateTema)
 
 router.get('/', getAllTemas)
 
