@@ -7,14 +7,28 @@ module.exports = {
   updateUser
 }
 
-function getAllUsers (req, res) {
+
+//  ?age=20
+function getAllUsers(req, res) {
+  const age = req.query.age;
+  console.log('todos los usuarios')
   UserModel
     .find()
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
+function getSerachUsers(req, res) {
+  const age = req.query.age;
+  console.log('todos los usuarios')
+  UserModel
+    .find({ age: { $gte: edad } })
+    .then(response => res.json(response))
+    .catch((err) => handdleError(err, res))
+}
 
 function getUserById (req, res) {
+  console.log(req.body)
+  console.log("un solo usuario")
   UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
