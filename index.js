@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 // CONFIG AND ENVIRONMENT LOADING FROM .env FILE
-let config = require('./config')
+let config = require("./config");
 
 // MIDDLEWARES
 app.use(cors());
@@ -49,7 +49,7 @@ app.get("/api/whoami", authenticate, (req, res) => {
 });
 
 // Init server
-app.listen( process.env.PORT ||  config.port, err => {
+app.listen(process.env.PORT || config.port, err => {
   if (err) {
     throw new Error(err);
   }

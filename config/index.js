@@ -9,4 +9,4 @@ if (heroku) {
 } else {
   config = require("../.env");
 }
-module.exports = config
+module.exports = config;

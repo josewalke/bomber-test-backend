@@ -205,17 +205,17 @@ do {
 
   users.push({
     name: name[0],
-    lastName: lastName[0],
-    email: name[0] + '.' + lastNames[0] + '@me.com'
-    img_url = "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg"
-    password: password
-    role = role
-    phone = phone
-    createdAt = createdAt
-    suscription_type = suscription_type
-    suscription_start = createdAt
-    suscription_end = createdAt
-    actuve = active
+    lastName: lastNames[0],
+    email: name[0] + '.' + lastNames[0] + '@gmail.com',
+    img_url: "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg",
+    password: password,
+    role: role,
+    phone: phone,
+    createdAt: createdAt,
+    suscription_type: suscription_type,
+    suscription_start: createdAt,
+    suscription_end: createdAt,
+    active: active[0]
   })
 } while (t < 1000)
 console.log(users[0])
