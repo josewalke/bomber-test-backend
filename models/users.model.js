@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     default: 'cliente'
   },
   phone: {
-    type: String,
+    type: Number,
     required: [true, 'Campo obligatorio']
   },
   createdAt: {

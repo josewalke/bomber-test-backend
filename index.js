@@ -10,7 +10,6 @@ const app = express();
 // CONFIG AND ENVIRONMENT LOADING FROM .env FILE
 let config = require('./config')
 
-
 // MIDDLEWARES
 app.use(cors());
 app.use(morgan("combined"));
