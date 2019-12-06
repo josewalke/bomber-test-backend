@@ -223,4 +223,4 @@ console.log(users.length)
 
 const data2 = JSON.stringify(users)
 fs.writeFileSync('users.json', data2)
-// mongoimport --db grocerme --collection users --file users.json --jsonArray
+// mongoimport --db reboot-last-backend-dev --collection users --file users.json --jsonArray
