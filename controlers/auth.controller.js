@@ -9,11 +9,11 @@ module.exports = {
 
 
 function signup(req, res) {
-  const hashedPwd = bcrypt.hashSync(req.body.user_password, 10);
+  const hashedPwd = bcrypt.hashSync(req.body.password, 10);
   const userBody = {
-    name: req.body.user_name,
-    lastName: req.body.last_name,
-    email: req.body.user_email,
+    name: req.body.name,
+    lastName: req.body.lastName,
+    email: req.body.email,
     password: hashedPwd,
     phone: req.body.phone
   };
@@ -24,8 +24,8 @@ function signup(req, res) {
         name: userBody.name,
         lastName: userBody.lastName,
         email: userBody.email,
-        password: userBody.password
-
+        password: userBody.password,
+        phone: userBody.phone
       };
 
       const token = jwt.sign(
