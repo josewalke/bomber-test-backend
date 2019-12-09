@@ -42,16 +42,16 @@ function signup(req, res) {
 }
 
 function login(req, res) {
-  UserModel.findOne({ email: req.body.user_email })
+  UserModel.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {
         return res.json({ error: "wrong email" });
       }
 
-      bcrypt.compare(req.body.user_password, user.password, (err, result) => {
+      bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (!result) {
           return res.json({
-            error: `wrong password for ${req.body.user_email}`
+            error: `wrong password for ${req.body.email}`
           });
         }
 
