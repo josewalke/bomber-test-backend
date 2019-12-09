@@ -21,8 +21,11 @@ function signup(req, res) {
   UserModel.create(userBody)
     .then(() => {
       const userData = {
-        username: req.body.user_name,
-        email: req.body.user_email
+        name: userBody.name,
+        lastName: userBody.lastName,
+        email: userBody.email,
+        password: userBody.password
+
       };
 
       const token = jwt.sign(
