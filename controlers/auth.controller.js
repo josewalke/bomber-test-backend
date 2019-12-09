@@ -21,8 +21,11 @@ function signup(req, res) {
   UserModel.create(userBody)
     .then(() => {
       const userData = {
-        username: req.body.user_name,
-        email: req.body.user_email
+        name: userBody.name,
+        lastName: userBody.lastName,
+        email: userBody.email,
+        password: userBody.password,
+        phone: userBody.phone
       };
 
       const token = jwt.sign(
@@ -48,7 +51,7 @@ function login(req, res) {
       bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (!result) {
           return res.json({
-            error: `wrong password for ${req.body.user_email}`
+            error: `wrong password for ${req.body.email}`
           });
         }
 
