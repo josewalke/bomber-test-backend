@@ -4,7 +4,8 @@ module.exports = {
   getAllUsers,
   getUserById,
   deleteUserById,
-  updateUser
+  updateUser,
+  getMe
 }
 
 function getAllUsers(req, res) {
@@ -21,6 +22,12 @@ function getUserById (req, res) {
     .findById(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
+}
+
+function getMe (req, res) {
+  console.log('req.locals.reboot_user')
+  console.log(res.locals.reboot_user)
+  return res.json(res.locals.reboot_user)
 }
 
 function deleteUserById (req, res) {
