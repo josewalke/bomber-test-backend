@@ -55,7 +55,7 @@ function login(req, res) {
           });
         }
 
-        const userData = { username: user.name, email: user.email };
+        const userData = { username: user.name, email: user.email, role: user.role, objectId: user._id};
 
         const token = jwt.sign(
           userData,

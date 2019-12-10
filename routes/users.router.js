@@ -5,14 +5,16 @@ const {
   getAllUsers,
   getUserById,
   deleteUserById,
-  updateUser
+  updateUser,
+  getMe
 } = require("../controlers/users.controller");
 
+router.get('/me',  authenticated, getMe);
 router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
-// router.get('/search', getSearchUsers);
 router.delete('/:id', getAllUsers);
+// router.get('/search', getSearchUsers);
 // router.delete('/', getAllUsers);
 
 module.exports = router;
