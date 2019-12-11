@@ -5,7 +5,7 @@ const testSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user"
   },
-    title: {
+  title: {
     type: String
   },
   aciertos: {
@@ -17,7 +17,8 @@ const testSchema = new mongoose.Schema({
     ref: "question"
   },
   no_contestadas: {
-    type: [mongoose.Schema.Types.ObjectId],
+    // type: [mongoose.Schema.Types.ObjectId],
+    type: [String],
     ref: "question"
   },
   mostrar_solucion:{
