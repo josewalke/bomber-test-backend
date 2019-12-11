@@ -1,5 +1,5 @@
 const testModel = require('../models/test.model')
-const questionModel = require('../models/question.model')
+const questionsModel = require('../models/questions.model')
 
 
 module.exports = {
@@ -51,31 +51,31 @@ function updateTest(req, res) {
 
 async function createRandomTest(req, res) {
   let num = 2
+  var list = []
   let no_contestadas = []
-  var list = await questionModel.find()
+  list = await questionsModel.find()
   var testQuestions = list.sort(function () { return 0.5 - Math.random() }).splice(0,num)
-  // console.log(testQuestions[0]._id)
-  // console.log(req.body)
 
-  no_constestadas = testQuestions.map(
-    (i)=>{
-      return i._id
-    }
-  )
-  // for(var i=0; i<2; i++){
+  no_contestadas = testQuestions.map((i) => {
+    return i._id
+  })
+
+  // for(let i=0; i<testQuestions.length; i++){
   //   no_contestadas.push(testQuestions[i]._id)
   // }
-  console.log(no_constestadas)
+  res.json(testQuestions)
+  // console.log(no_contestadas)
+  // res.json(no_contestadas)
 
   const testBody = {
     user_id: req.body.objectId,
+    title: 'test prueba',
     aciertos: [],
     fallos: [],
-    no_contestada: no_constestadas,
+    no_contestada: no_contestadas,
     mostrar_solucion: false
-  };
-  // res.json(testQuestions._id)
-   res.json(testBody)
+  }
+  //  console.log(testBody)
 
   testModel.create(testBody)
     .then(response => res.json(response))

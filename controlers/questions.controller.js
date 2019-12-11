@@ -1,4 +1,4 @@
-const questionsModel = require('../models/question.model')
+const questionsModel = require('../models/questions.model')
 
 module.exports = {
   createQuestion,
