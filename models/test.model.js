@@ -5,6 +5,9 @@ const testSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user"
   },
+    title: {
+    type: String
+  },
   aciertos: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "question"
