@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const questionSchema = new mongoose.Schema({
+const questionsSchema = new mongoose.Schema({
   enunciado: {
     type: String
   },
@@ -23,6 +23,6 @@ const questionSchema = new mongoose.Schema({
     type: String
   }
 })
-const questionModel = mongoose.model('question', questionSchema)
+const questionsModel = mongoose.model('questions', questionsSchema)
 
-module.exports = questionModel
+module.exports = questionsModel

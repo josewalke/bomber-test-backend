@@ -2,13 +2,15 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-  createTest,
+  // createTest,
   getAllTests,
-  getTestById
+  getTestById,
+  createRandomTest
 } = require("../controlers/tests.controller");
 
 
-router.post('/', createTest)
+// router.post('/', createTest)
+router.post('/', createRandomTest)
 
 router.put('/:id')
 
