@@ -9,7 +9,6 @@ module.exports = {
 }
 
 function getAllUsers(req, res) {
-  console.log('todos los usuarios')
   UserModel
     .find()
     .then(response => res.json(response))
@@ -25,7 +24,6 @@ function getUserById (req, res) {
 }
 
 function getMe (req, res) {
-  console.log('req.locals.reboot_user')
   console.log(res.locals.reboot_user)
   return res.json(res.locals.reboot_user)
 }
