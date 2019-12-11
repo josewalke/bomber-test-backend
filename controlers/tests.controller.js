@@ -50,29 +50,23 @@ function updateTest(req, res) {
 }
 
 async function createRandomTest(req, res) {
+
   let num = 2
   var list = []
   let no_contestadas = []
   list = await questionsModel.find()
-  var testQuestions = list.sort(function () { return 0.5 - Math.random() }).splice(0,num)
+  var testQuestions = list.sort(function () { return 0.5 - Math.random() }).splice(0, num)
 
-  no_contestadas = testQuestions.map((i) => {
-    return i._id
-  })
-
-  // for(let i=0; i<testQuestions.length; i++){
-  //   no_contestadas.push(testQuestions[i]._id)
-  // }
-  res.json(testQuestions)
-  // console.log(no_contestadas)
-  // res.json(no_contestadas)
+  // no_contestadas = testQuestions.map((i) => {
+  //   return i._id
+  // })
 
   const testBody = {
-    user_id: req.body.objectId,
+    user_id: res.locals.reboot_user._id,
     title: 'test prueba',
     aciertos: [],
     fallos: [],
-    no_contestada: no_contestadas,
+    no_contestada: testQuestions,
     mostrar_solucion: false
   }
   //  console.log(testBody)

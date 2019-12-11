@@ -10,17 +10,16 @@ const testSchema = new mongoose.Schema({
   },
   aciertos: {
     type: [mongoose.Schema.Types.ObjectId],
-    ref: "question"
+    ref: "questions"
   },
   fallos: {
     type: [Object],
-    ref: "question"
+    ref: "questions"
   },
-  no_contestadas: {
-    // type: [mongoose.Schema.Types.ObjectId],
-    type: [String],
-    ref: "question"
-  },
+  no_contestadas: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "questions"
+  }],
   mostrar_solucion:{
     type: Boolean
   },

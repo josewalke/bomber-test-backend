@@ -10,14 +10,10 @@ const {
 
 
 // router.post('/', createTest)
-router.post('/', createRandomTest)
-
+router.post('/', authenticated, createRandomTest)
 router.put('/:id')
-
 router.get('/:id', getTestById)
-
 router.get('/', getAllTests)
-
 router.delete('/:id')
 
 module.exports = router;
