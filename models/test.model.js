@@ -26,9 +26,6 @@ const testSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "questions"
   }],
-  // no_contestadas: {
-  //   type: String
-  // },
   mostrar_solucion:{
     type: Boolean
   },

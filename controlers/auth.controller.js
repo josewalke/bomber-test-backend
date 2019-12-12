@@ -7,7 +7,6 @@ module.exports = {
   login
 };
 
-
 function signup(req, res) {
   const hashedPwd = bcrypt.hashSync(req.body.password, 10);
   const userBody = {
@@ -19,20 +18,18 @@ function signup(req, res) {
   };
 
   UserModel.create(userBody)
-    .then(() => {
+    .then(newUser => {
       const userData = {
-        name: userBody.name,
+        firstName: userBody.name,
         lastName: userBody.lastName,
         email: userBody.email,
-        password: userBody.password,
-        phone: userBody.phone
+        role: newUser.role,
+        userId: newUser._id,
+        phone: userBody.phone,
+        img_url: newUser.img_url
       };
 
-      const token = jwt.sign(
-        userData,
-        "secret",
-        { expiresIn: "1w" }
-      );
+      const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
       return res.json({ token: token, ...userData });
     })
@@ -55,13 +52,17 @@ function login(req, res) {
           });
         }
 
-        const userData = { username: user.name, email: user.email, role: user.role, userId: user._id, phone: user.phone};
+        const userData = {
+          firstName: user.name,
+          lastName: user.lastName,
+          email: user.email,
+          role: user.role,
+          userId: user._id,
+          phone: user.phone,
+          img_url: user.img_url
+        };
 
-        const token = jwt.sign(
-          userData,
-          "secret",
-          { expiresIn: "1h" }
-        );
+        const token = jwt.sign(userData, "secret", { expiresIn: "1h" });
 
         return res.json({ token: token, ...userData });
       });
