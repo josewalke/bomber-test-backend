@@ -53,23 +53,23 @@ async function createRandomTest(req, res) {
 
   let num = 2
   var list = []
-  let no_contestadas = []
+  let blanco = []
   list = await questionsModel.find()
   var testQuestions = list.sort(function () { return 0.5 - Math.random() }).splice(0, num)
 
-  // no_contestadas = testQuestions.map((i) => {
-  //   return i._id
-  // })
+  blanco = testQuestions.map((i) => {
+    return i._id
+  })
 
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: 'test prueba',
     aciertos: [],
     fallos: [],
-    no_contestada: testQuestions,
+    no_contestadas: blanco,
     mostrar_solucion: false
   }
-  //  console.log(testBody)
+  console.log(testBody)
 
   testModel.create(testBody)
     .then(response => res.json(response))
