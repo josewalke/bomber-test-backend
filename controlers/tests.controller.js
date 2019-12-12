@@ -6,7 +6,8 @@ module.exports = {
   createTest,
   getAllTests,
   getTestById,
-  createRandomTest
+  createRandomTest,
+  getMyTests
 }
 
 function createTest(req, res) {
@@ -65,15 +66,25 @@ async function createRandomTest(req, res) {
     user_id: res.locals.reboot_user._id,
     title: 'test prueba',
     aciertos: [],
+    aciertos_num: 0,
     fallos: [],
+    fallos_num: 0,
+    nota: 0,
     no_contestadas: blanco,
     mostrar_solucion: false
   }
-  console.log(testBody)
 
   testModel.create(testBody)
     .then(response => res.json(response))
     .catch(err => {
       res.status(403).json({ error: err });
     });
+}
+
+
+function getMyTests(req, res) {
+  testModel
+    .find({user_id: req.params.id})
+    .then(response => res.json(response))
+    .catch((err) => handdleError(err, res))
 }

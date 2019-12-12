@@ -12,9 +12,15 @@ const testSchema = new mongoose.Schema({
     type: [mongoose.Schema.Types.ObjectId],
     ref: "questions"
   },
+  aciertos_num:{
+    type: Number
+  },
   fallos: {
     type: [Object],
     ref: "questions"
+  },
+  fallos_num: {
+    type: Number
   },
   no_contestadas: [{
     type: mongoose.Schema.Types.ObjectId,
