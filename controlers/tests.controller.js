@@ -16,11 +16,14 @@ function getAllTests(req, res) {
     .catch(err => handdleError(err, res));
 }
 
-function getTestById(req, res) {
+async function getTestById(req, res) {
   console.log("un solo test");
   testModel
     .findById(req.params.id)
-    .then(response => res.json(response))
+    .then(async response => {
+      const populado = await response.populate("no_contestadas").execPopulate();
+      res.json(populado);
+    })
     .catch(err => handdleError(err, res));
 }
 
