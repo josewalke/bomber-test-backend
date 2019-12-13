@@ -62,7 +62,7 @@ function login(req, res) {
           img_url: user.img_url
         };
 
-        const token = jwt.sign(userData, "secret", { expiresIn: "1h" });
+        const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
         return res.json({ token: token, ...userData });
       });
