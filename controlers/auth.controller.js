@@ -75,7 +75,7 @@ function login(req, res) {
         };
         console.log(userData)
 
-        const token = jwt.sign(userData, "secret", { expiresIn: "1h" });
+        const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
         return res.json({ token: token, ...userData });
       });
