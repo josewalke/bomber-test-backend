@@ -48,7 +48,7 @@ async function createRandomTest(req, res) {
 
   const testBody = {
     user_id: res.locals.reboot_user._id,
-    title: "test prueba",
+    title: "Test sin titulo",
     aciertos: [],
     aciertos_num: 0,
     fallos: [],

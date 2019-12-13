@@ -187,7 +187,7 @@ var name = [
 
 var password = '$2b$10$XdUkntu2p.QqZm1M1ZJZm.SkAE0.zDfz4wtIikg378wTQzpHgIwIm'
 
-var suscriptions = ["freemium", "mensual", "trimestral", "life"]
+var suscriptions = ["Basic", "Pro", "Premium"]
 var users = []
 
 
@@ -207,7 +207,7 @@ do {
     name: name[0],
     lastName: lastNames[0],
     email: name[0] + '.' + lastNames[0] + '@gmail.com',
-    img_url: "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg",
+    img_url: "https://www.coachcarson.com/wp-content/uploads/2018/09/Chad-Profile-pic-circle.png",
     password: password,
     role: role,
     phone: phone,
@@ -215,7 +215,12 @@ do {
     suscription_type: suscription_type,
     suscription_start: createdAt,
     suscription_end: createdAt,
-    active: active[0]
+    active: active[0],
+    mensajes: "10",
+    MensajesTotales: "132",
+    aprobados: "34",
+    suspendidos: "12",
+    total: "46"
   })
 } while (t < 1000)
 console.log(users[0])

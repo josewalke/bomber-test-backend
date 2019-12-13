@@ -26,7 +26,13 @@ function signup(req, res) {
         role: newUser.role,
         userId: newUser._id,
         phone: userBody.phone,
-        img_url: newUser.img_url
+        img_url: newUser.img_url,
+        mensajes: newUser.mensajes,
+        MensajesTotales: newUser.MensajesTotales,
+        aprobados: newUser.aprobados,
+        suspendidos: newUser.suspendidos,
+        total: newUser.total,
+        suscription_type: newUser.suscription_type
       };
 
       const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
@@ -59,8 +65,15 @@ function login(req, res) {
           role: user.role,
           userId: user._id,
           phone: user.phone,
-          img_url: user.img_url
+          img_url: user.img_url,
+          mensajes: user.mensajes,
+          MensajesTotales: user.MensajesTotales,
+          aprobados: user.aprobados,
+          suspendidos: user.suspendidos,
+          total: user.total,
+          suscription_type: user.suscription_type
         };
+        console.log(userData)
 
         const token = jwt.sign(userData, "secret", { expiresIn: "1h" });
 

@@ -45,7 +45,8 @@ const userSchema = new mongoose.Schema({
     default: Date.now() // Get a timestamp :)
   },
   suscription_type: {
-    type: String
+    type: String,
+    default: 'basic'
   },
   suscription_start: {
     type: Date
@@ -55,6 +56,26 @@ const userSchema = new mongoose.Schema({
   },
   active: {
     type: Boolean
+  },
+  mensajes: {
+    type: String,
+    default: '0'
+  },
+  MensajesTotales: {
+    type: String,
+    default: '0'
+  },
+  aprobados: {
+    type: String,
+    default: '0'
+  },
+  suspendidos: {
+    type: String,
+    default: '0'
+  },
+  total: {
+    type: String,
+    default: '0'
   }
 });
 
