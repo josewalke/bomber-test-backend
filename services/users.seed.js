@@ -222,7 +222,7 @@ do {
     suspendidos: "12",
     total: "46"
   })
-} while (t < 1000)
+} while (t < 20)
 console.log(users[0])
 console.log(users.length)
 

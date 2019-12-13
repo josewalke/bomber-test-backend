@@ -30,7 +30,7 @@ const testSchema = new mongoose.Schema({
     type: Boolean
   },
   nota:{
-    type: Number
+    type: String
   },
   time_start:{
     type: Date
