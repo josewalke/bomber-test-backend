@@ -35,7 +35,7 @@ function updateTest(req, res) {
 }
 
 async function createRandomTest(req, res) {
-  let num = 2;
+  let num = 20;
   var list = [];
   let blanco = [];
   list = await questionsModel.find();
