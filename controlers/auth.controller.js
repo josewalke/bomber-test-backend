@@ -11,6 +11,7 @@ function signup(req, res) {
   const hashedPwd = bcrypt.hashSync(req.body.password, 10);
   const userBody = {
     name: req.body.name,
+    nickName: req.body.nickName,
     lastName: req.body.lastName,
     email: req.body.email,
     password: hashedPwd,
@@ -20,6 +21,7 @@ function signup(req, res) {
   UserModel.create(userBody)
     .then(newUser => {
       const userData = {
+        nickName:userBody.nickName,
         firstName: userBody.name,
         lastName: userBody.lastName,
         email: userBody.email,
@@ -59,6 +61,7 @@ function login(req, res) {
         }
 
         const userData = {
+          nickName: user.nickName,
           firstName: user.name,
           lastName: user.lastName,
           email: user.email,
