@@ -34,7 +34,7 @@ function updateMessages(req, res) {
 
 function getMessageById(req, res) {
   console.log("una sola duda");
-  messageModel.findById(req.params.id)
+  messageModel.find({user_id: req.params.id})
     .then(response => res.json(response))
     .catch(err => handdleError(err, res));
 }

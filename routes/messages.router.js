@@ -10,7 +10,7 @@ const {
 } = require("../controlers/messages.controller");
 
 
-router.post('/', createMessage)
+router.post('/:id', createMessage)
 
 router.put('/:id', updateMessages)
 
