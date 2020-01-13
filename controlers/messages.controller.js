@@ -4,7 +4,8 @@ module.exports = {
   createMessage,
   getAllMessages,
   updateMessages,
-  getMessageById
+  getMessageById,
+  getAllMessagesAdmin
 }
 
 function createMessage(req, res) {
@@ -18,7 +19,6 @@ function createMessage(req, res) {
 }
 
 function getAllMessages(req, res) {
-  console.log('todos las dudas')
   messageModel
     .find()
     .then(response => res.json(response))
