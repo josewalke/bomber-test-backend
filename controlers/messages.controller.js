@@ -4,8 +4,7 @@ module.exports = {
   createMessage,
   getAllMessages,
   updateMessages,
-  getMessageById,
-  getAllMessagesAdmin
+  getMessageById
 }
 
 function createMessage(req, res) {

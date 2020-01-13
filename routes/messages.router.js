@@ -5,8 +5,7 @@ const {
   createMessage,
   getAllMessages,
   updateMessages,
-  getMessageById,
-
+  getMessageById
 } = require("../controlers/messages.controller");
 
 
