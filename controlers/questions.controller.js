@@ -8,15 +8,16 @@ module.exports = {
 }
 
 function createQuestion(req, res) {
-  console.log('crear pregunta')
+  // console.log('crear pregunta')
+  // console.log(req.body.answer_wrong)
   const questionBody = {
     enunciado: req.body.enunciado,
     imagen_url: "url de una imagen",
-    answers_wrong: req.body.array,
-    answers_correct: req.body.correct,
+    answers_wrong: req.body.answers_wrong,
+    answers_correct: req.body.answers_correct,
     tema_id: req.body.tema_id,
     category: req.body.category,
-    difficult: req.body.difficult
+    difficulty: req.body.difficulty
   };
 
   questionsModel.create(questionBody)
