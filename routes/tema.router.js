@@ -6,7 +6,7 @@ const {
   getAllTemas,
   updateTema,
   deleteTemaById
-} = require("../controlers/tema.controller");
+} = require("../controlers/temas.controller");
 
 
 router.post('/', createTema)

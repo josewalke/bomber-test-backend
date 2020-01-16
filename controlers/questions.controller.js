@@ -27,7 +27,6 @@ function createQuestion(req, res) {
 }
 
 function getAllQuestions(req, res) {
-  // console.log('todos las preguntas')
   questionsModel
     .find()
     .then(response => res.json(response))
