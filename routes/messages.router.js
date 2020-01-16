@@ -6,7 +6,6 @@ const {
   getAllMessages,
   updateMessages,
   getMessageById
-
 } = require("../controlers/messages.controller");
 
 
@@ -17,6 +16,5 @@ router.put('/:id', updateMessages)
 router.get('/:id', getMessageById)
 
 router.get('/', getAllMessages)
-
 
 module.exports = router;

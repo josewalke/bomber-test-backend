@@ -10,7 +10,7 @@ module.exports = {
 
 function getAllUsers(req, res) {
   UserModel
-    .find()
+    .find({role: 'cliente'})
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
