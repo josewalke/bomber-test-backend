@@ -8,6 +8,9 @@ const testSchema = new mongoose.Schema({
   title: {
     type: String
   },
+  selectedTemas: {
+    type: Array
+  },
   aciertos: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "questions"

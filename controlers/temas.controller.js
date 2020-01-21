@@ -19,7 +19,6 @@ function createTema(req, res) {
 }
 
 function getAllTemas(req, res) {
-  console.log('todos los Temas')
   temaModel
     .find()
     .then(response => res.json(response))
