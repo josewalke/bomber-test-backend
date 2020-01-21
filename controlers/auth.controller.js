@@ -34,7 +34,8 @@ function signup(req, res) {
         aprobados: newUser.aprobados,
         suspendidos: newUser.suspendidos,
         total: newUser.total,
-        suscription_type: newUser.suscription_type
+        suscription_type: newUser.suscription_type,
+        active: false
       };
 
       const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
@@ -74,7 +75,8 @@ function login(req, res) {
           aprobados: user.aprobados,
           suspendidos: user.suspendidos,
           total: user.total,
-          suscription_type: user.suscription_type
+          suscription_type: user.suscription_type,
+          active: user.active
         };
         console.log(userData)
 

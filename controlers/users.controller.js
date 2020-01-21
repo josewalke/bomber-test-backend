@@ -16,7 +16,7 @@ function getAllUsers(req, res) {
 }
 
 function getUserById (req, res) {
-  console.log("un solo usuario")
+
   UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
