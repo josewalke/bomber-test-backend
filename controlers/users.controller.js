@@ -40,6 +40,7 @@ function updateUser (req, res) {
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
+  console.log('funciona el update')
 }
 
 function handdleError (err, res) {
