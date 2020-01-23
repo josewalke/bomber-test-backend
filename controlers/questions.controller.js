@@ -30,6 +30,7 @@ function createQuestion(req, res) {
 function getAllQuestions(req, res) {
   questionsModel
     .find()
+    .sort({tema_id: 1})
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
