@@ -2,6 +2,7 @@ const fs = require('fs')
 const difficulty = ["Fácil", "Media", "Dificil"]
 const questions = []
 const preguntas =  require('./all.questions')
+const temas = ["5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18b011f0e6026f3ea4c386", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e18bd1ef0e6026f3ea4c387", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400", "5e1c83e5a0e3ed2874b6b400"]
 
 
 
@@ -18,7 +19,7 @@ do {
     imagen_url: "",
     answer_wrong: wrong,
     answers_correct: right,
-    tema_id: "sf3r3r23fwf2",
+    tema_id: temas[t],
     category: preguntas[t].category,
     difficulty: diff[0]
   })

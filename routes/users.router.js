@@ -16,5 +16,4 @@ router.get('/', getAllUsers);
 router.delete('/:id', getAllUsers);
 // router.get('/search', getSearchUsers);
 // router.delete('/', getAllUsers);
-
 module.exports = router;

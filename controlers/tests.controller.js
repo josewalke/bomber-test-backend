@@ -10,7 +10,6 @@ module.exports = {
 };
 
 function getAllTests(req, res) {
-  console.log("todos los tests");
   testModel
     .find()
     .then(response => res.json(response))
@@ -18,7 +17,6 @@ function getAllTests(req, res) {
 }
 
 async function getTestById(req, res) {
-  console.log("un solo test");
   testModel
     .findById(req.params.id)
     .then(async response => {
@@ -38,8 +36,6 @@ function updateTest(req, res) {
 async function createRandomTest(req, res) {
   const now =  new Date()
   let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(9)
-  console.log('random back 🧨 ')
-  console.log(res.params)
   let num = 20;
   var list = [];
   let blanco = [];
@@ -53,7 +49,6 @@ async function createRandomTest(req, res) {
   blanco = testQuestions.map(i => {
     return i._id;
   });
-
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: "Test creado el " + date,
@@ -79,38 +74,66 @@ async function createRandomTest(req, res) {
 }
 
 async function createConfigTest(req, res) {
-  console.log('🔥config back')
-  console.log(req.body)
-  const testBody = {
-    testName: req.body.testName,
-    numSelected: req.body.numSelected,
-    selected: req.body.selected,
-    correctorSwitch : req.body.correctorSwitch
+  let blanco = []
+  var list = []
+  let numSelected = req.body.number
+  let selected = req.body.temas
+  list = await questionsModel.find()
+  var allQuestions = list.sort(function() {
+    return 0.5 - Math.random();
+  })
+  var testQuestions = []
+  if (selected.length === numSelected){
+    selected.forEach(element => {
+      let temaQuestions = allQuestions.filter(tq => tq.tema_id == element)
+      let q = temaQuestions.splice(0, 1)
+      testQuestions.push(q[0])
+    });
   }
-  var list = [];
-  list = await questionsModel.find();
-  var testQuestions = list
-    .sort(function() {
-      return 0.5 - Math.random();
-    })
-    .splice(0, numSelected);
+  if (selected.length > numSelected){
+    selected = selected.sort(function() {
+      return 0.5 - Math.random()
+    }).splice(0, numSelected)
+    selected.forEach(element => {
+      let temaQuestions = allQuestions.filter(tq => tq.tema_id == element)
+      let q = temaQuestions.splice(0, 1)
+      testQuestions.push(q[0])
+    });
+  }
+  if (selected.length < numSelected){
+    let div = numSelected / selected.length
+    let dif = numSelected % selected.length
+    let newSelected = []
+    while(div-1 > 0){
+      newSelected = selected.concat(newSelected)
+      div -= 1
+    }
+    newSelected = newSelected.concat(selected = selected.sort(function() {
+      return 0.5 - Math.random()
+    }).splice(0, dif))
+    newSelected.forEach(element => {
+      let temaQuestions = allQuestions.filter(tq => tq.tema_id == element)
+      let q = temaQuestions.splice(0, 1)
+      let i = allQuestions.findIndex(x => x._id === q[0]._id)
+      testQuestions.push(q[0])
+      allQuestions.splice(i, 1)
 
+    });
+  }
   blanco = testQuestions.map(i => {
     return i._id;
   });
-
   const testBody = {
     user_id: res.locals.reboot_user._id,
-    title: testName,
+    title: req.body.name,
     aciertos: [],
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
     nota: 0,
     no_contestadas: blanco,
-    mostrar_solucion: false,
-    selectedTemas: selected,
-    mostrar_solucion: correctorSwitch
+    mostrar_solucion: req.body.correctorSwitch,
+    selectedTemas: req.body.selected,
   };
 
   testModel

@@ -36,7 +36,7 @@ mongoose.connect(
     if (err) {
       throw new Error(err);
     }
-    console.info("💾  Mongoose is connected");
+    console.info("💿  Mongoose is connected");
   }
 );
 
@@ -54,7 +54,8 @@ app.listen(process.env.PORT || config.port, err => {
     throw new Error(err);
   }
   console.info("\n\n" + ">".repeat(40));
-  console.info(" 💻  Reboot Server Live");
-  console.info(` 📡  PORT: http://localhost:${config.port}`);
+  console.info(" 🚒  Bomber Server Live");
+  console.info("-".repeat(40));
+  console.info(` 🔗  PORT: http://localhost:${config.port}`);
   console.info(">".repeat(40) + "\n\n");
 });
