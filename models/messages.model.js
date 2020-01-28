@@ -16,6 +16,10 @@ const messageSchema = new mongoose.Schema({
   respuesta_leida: {
     type: Boolean,
     default: false
+  },
+  verificada: {
+    type: Boolean,
+    default: false
   }
 })
 const messageModel = mongoose.model('message', messageSchema)
