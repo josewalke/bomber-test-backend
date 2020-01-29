@@ -6,7 +6,8 @@ module.exports = {
   getTestById,
   createRandomTest,
   getMyTests,
-  createConfigTest
+  createConfigTest,
+  postExam
 };
 
 function getAllTests(req, res) {
@@ -17,6 +18,14 @@ function getAllTests(req, res) {
     .catch(err => handdleError(err, res));
 }
 
+function postExam(req,res){
+  testModel
+    .create(req.body)
+    .then(response => res.json(response))
+    .catch(err => {
+      res.status(403).json({ error: err });
+    });
+}
 async function getTestById(req, res) {
   console.log("un solo test");
   testModel
@@ -68,7 +77,6 @@ async function createRandomTest(req, res) {
 
   testModel
     .create(testBody)
-
     .then(async response => {
       const populado = await response.populate("no_contestadas").execPopulate();
       res.json(populado);

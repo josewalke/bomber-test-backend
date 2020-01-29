@@ -6,11 +6,13 @@ const {
   getTestById,
   createRandomTest,
   createConfigTest,
-  getMyTests
+  getMyTests,
+  postExam
 } = require("../controlers/tests.controller");
 
 router.get("/user/:id", getMyTests);
 router.get("/:id", getTestById);
+router.post("/exam",postExam)
 router.post("/config", authenticated, createConfigTest);
 router.post("/", authenticated, createRandomTest);
 router.put("/:id");
