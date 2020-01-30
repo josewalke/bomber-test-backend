@@ -6,7 +6,8 @@ module.exports = {
   getTestById,
   createRandomTest,
   getMyTests,
-  createConfigTest
+  createConfigTest,
+  updateTest
 };
 
 function getAllTests(req, res) {
@@ -18,7 +19,6 @@ function getAllTests(req, res) {
 }
 
 async function getTestById(req, res) {
-  console.log("un solo test");
   testModel
     .findById(req.params.id)
     .then(async response => {
@@ -29,6 +29,11 @@ async function getTestById(req, res) {
 }
 
 function updateTest(req, res) {
+  console.log('🔴🔴🔴🔴🔴🔴🔴')
+  console.log('🔴🔴🔴🔴🔴🔴🔴')
+  console.log('🔴🔴🔴🔴🔴🔴🔴')
+  console.log('🔴🔴🔴🔴🔴🔴🔴')
+  console.log('🔴🔴🔴🔴🔴🔴🔴')
   testModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json("actualizado correctamente"))
@@ -37,9 +42,7 @@ function updateTest(req, res) {
 
 async function createRandomTest(req, res) {
   const now =  new Date()
-  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(9)
-  console.log('random back 🧨 ')
-  console.log(res.params)
+  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes()
   let num = 20;
   var list = [];
   let blanco = [];
@@ -78,22 +81,27 @@ async function createRandomTest(req, res) {
     });
 }
 
-async function createConfigTest(req, res) {
-  console.log('🔥config back')
+function updateTest(req, res){
+  console.log("router")
   console.log(req.body)
-  const testBody = {
-    testName: req.body.testName,
-    numSelected: req.body.numSelected,
-    selected: req.body.selected,
-    correctorSwitch : req.body.correctorSwitch
-  }
-  var list = [];
+  testModel
+  .findByIdAndUpdate(req.params.id)
+  .then(response => res.json(response))
+  .catch((err) => handdleError(err, res))
+}
+async function createConfigTest(req, res) {
+  const testName = req.body.name
+  const numSelected = req.body.number
+  const selected = req.body.temas
+  const correctorSwitch  = req.body.correction
+  let list = []
+  console.log('🔥config back🔴🔴🔴🔴🔴🔴🔴🔴')
   list = await questionsModel.find();
   var testQuestions = list
     .sort(function() {
       return 0.5 - Math.random();
     })
-    .splice(0, numSelected);
+    .splice(0, 10);
 
   blanco = testQuestions.map(i => {
     return i._id;

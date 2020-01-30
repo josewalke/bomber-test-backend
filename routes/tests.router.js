@@ -6,14 +6,15 @@ const {
   getTestById,
   createRandomTest,
   createConfigTest,
-  getMyTests
+  getMyTests,
+  updateTest
 } = require("../controlers/tests.controller");
 
 router.get("/user/:id", getMyTests);
 router.get("/:id", getTestById);
 router.post("/config", authenticated, createConfigTest);
 router.post("/", authenticated, createRandomTest);
-router.put("/:id");
+router.put("/:id", authenticated, updateTest);
 router.delete("/:id");
 
 module.exports = router;
