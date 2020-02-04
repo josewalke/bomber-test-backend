@@ -7,7 +7,8 @@ module.exports = {
   createRandomTest,
   getMyTests,
   createConfigTest,
-  postExam
+  postExam,
+  deleteDesafio
 };
 
 function getAllTests(req, res) {
@@ -138,6 +139,13 @@ function getMyTests(req, res) {
     .find({ user_id: req.params.id })
     .then(response => res.json(response))
     .catch(err => handdleError(err, res));
+}
+
+function deleteDesafio(req, res){
+  testModel
+  .remove({ desafio: true })
+  .then(response => res.json(response))
+  .catch(err => handdleError(err, res))
 }
 
 function handdleError(err, res) {

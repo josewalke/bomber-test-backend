@@ -35,6 +35,9 @@ const testSchema = new mongoose.Schema({
   nota:{
     type: String
   },
+  desafio:{
+    type:Boolean
+  },
   time_start:{
     type: Date
   },
