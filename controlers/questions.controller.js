@@ -14,7 +14,7 @@ function createQuestion(req, res) {
     enunciado: req.body.enunciado,
     imagen_url: "url de una imagen",
     answers_wrong: req.body.answers_wrong,
-    answers_correct: req.body.answers_correct,
+    answers: req.body.answers,
     tema_id: req.body.tema_id,
     category: req.body.category,
     difficulty: req.body.difficulty
