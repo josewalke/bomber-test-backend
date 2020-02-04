@@ -25,6 +25,10 @@ const testSchema = new mongoose.Schema({
   fallos_num: {
     type: Number
   },
+  respuestas: {
+    type: [Object],
+    ref: "questions"
+  },
   no_contestadas: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "questions"
