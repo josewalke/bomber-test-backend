@@ -29,16 +29,24 @@ async function getTestById(req, res) {
 }
 
 function updateTest(req, res) {
+  console.log(req.params.id)
   console.log('🔴🔴🔴🔴🔴🔴🔴')
-  console.log('🔴🔴🔴🔴🔴🔴🔴')
-  console.log('🔴🔴🔴🔴🔴🔴🔴')
-  console.log('🔴🔴🔴🔴🔴🔴🔴')
-  console.log('🔴🔴🔴🔴🔴🔴🔴')
+  console.log(req.body)
+
   testModel
-    .findByIdAndUpdate(req.params.id, req.body)
-    .then(response => res.json("actualizado correctamente"))
-    .catch(err => handdleError(err, res));
+  .findByIdAndUpdate(req.params.id, req.body)
+  .then(response => res.json("actualizado correctamente"))
+  .catch(err => handdleError(err, res));
 }
+
+// function updateTest(req, res){
+//   console.log("router")
+//   console.log(req.body)
+//   testModel
+//   .findByIdAndUpdate(req.params.id)
+//   .then(response => res.json(response))
+//   .catch((err) => handdleError(err, res))
+// }
 
 async function createRandomTest(req, res) {
   const now =  new Date()
@@ -57,6 +65,11 @@ async function createRandomTest(req, res) {
     return i._id;
   });
 
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
+
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: "Test creado el " + date,
@@ -64,6 +77,7 @@ async function createRandomTest(req, res) {
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
+    respuestas: respuestas,
     nota: 0,
     no_contestadas: blanco,
     mostrar_solucion: false
@@ -81,31 +95,28 @@ async function createRandomTest(req, res) {
     });
 }
 
-function updateTest(req, res){
-  console.log("router")
-  console.log(req.body)
-  testModel
-  .findByIdAndUpdate(req.params.id)
-  .then(response => res.json(response))
-  .catch((err) => handdleError(err, res))
-}
+
 async function createConfigTest(req, res) {
   const testName = req.body.name
   const numSelected = req.body.number
   const selected = req.body.temas
   const correctorSwitch  = req.body.correction
   let list = []
-  console.log('🔥config back🔴🔴🔴🔴🔴🔴🔴🔴')
   list = await questionsModel.find();
   var testQuestions = list
     .sort(function() {
       return 0.5 - Math.random();
     })
-    .splice(0, 10);
+    .splice(0, numSelected);
 
   blanco = testQuestions.map(i => {
     return i._id;
   });
+
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
 
   const testBody = {
     user_id: res.locals.reboot_user._id,
@@ -114,6 +125,7 @@ async function createConfigTest(req, res) {
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
+    respuestas: respuestas,
     nota: 0,
     no_contestadas: blanco,
     mostrar_solucion: false,
