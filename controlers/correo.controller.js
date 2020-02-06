@@ -10,7 +10,7 @@ let config = require('../.env')
   function alternarColor(req, res) {
     var fecha = new Date()
     var hora = fecha.getHours()
-    if(hora === 19){
+    if(hora === 20){
       UserModel
       .find({role: 'cliente'})
       .then(usuario => {
