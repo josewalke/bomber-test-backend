@@ -8,8 +8,6 @@ module.exports = {
 }
 
 function createQuestion(req, res) {
-  // console.log('crear pregunta')
-  // console.log(req.body.answer_wrong)
   const questionBody = {
     enunciado: req.body.enunciado,
     imagen_url: "url de una imagen",
@@ -36,7 +34,6 @@ function getAllQuestions(req, res) {
 }
 
 function getQuestionById(req, res) {
-  console.log("una solo pregunta")
   questionsModel
     .findById(req.params.id)
     .then(response => res.json(response))

@@ -7,6 +7,7 @@ const {
   createRandomTest,
   createConfigTest,
   getMyTests,
+  updateTest,
   postExam,
   deleteDesafio
 } = require("../controlers/tests.controller");
@@ -17,8 +18,8 @@ router.get("/", getAllTests);
 router.post("/exam",postExam);
 router.post("/config", authenticated, createConfigTest);
 router.post("/", authenticated, createRandomTest);
+router.put("/:id", authenticated, updateTest);
 router.put("/:id");
 router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
-
 module.exports = router;
