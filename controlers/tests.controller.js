@@ -7,12 +7,9 @@ module.exports = {
   createRandomTest,
   getMyTests,
   createConfigTest,
-<<<<<<< HEAD
-  updateTest
-=======
+  updateTest,
   postExam,
   deleteDesafio
->>>>>>> 6cf3c4824e912c22eee81a5beaddbca368aae98d
 };
 
 function getAllTests(req, res) {
