@@ -29,10 +29,6 @@ async function getTestById(req, res) {
 }
 
 function updateTest(req, res) {
-  console.log(req.params.id)
-  console.log('🔴🔴🔴🔴🔴🔴🔴')
-  console.log(req.body)
-
   testModel
   .findByIdAndUpdate(req.params.id, req.body)
   .then(response => res.json("actualizado correctamente"))
