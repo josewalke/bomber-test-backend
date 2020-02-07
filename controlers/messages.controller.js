@@ -8,7 +8,6 @@ module.exports = {
 }
 
 function createMessage(req, res) {
-  console.log('crear Duda')
 
   messageModel.create(req.body)
     .then(response => res.json(response))
