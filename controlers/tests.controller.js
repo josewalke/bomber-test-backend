@@ -7,7 +7,12 @@ module.exports = {
   createRandomTest,
   getMyTests,
   createConfigTest,
+<<<<<<< HEAD
   updateTest
+=======
+  postExam,
+  deleteDesafio
+>>>>>>> 6cf3c4824e912c22eee81a5beaddbca368aae98d
 };
 
 function getAllTests(req, res) {
@@ -18,6 +23,14 @@ function getAllTests(req, res) {
     .catch(err => handdleError(err, res));
 }
 
+function postExam(req,res){
+  testModel
+    .create(req.body)
+    .then(response => res.json(response))
+    .catch(err => {
+      res.status(403).json({ error: err });
+    });
+}
 async function getTestById(req, res) {
   testModel
     .findById(req.params.id)
@@ -81,7 +94,6 @@ async function createRandomTest(req, res) {
 
   testModel
     .create(testBody)
-
     .then(async response => {
       const populado = await response.populate("no_contestadas").execPopulate();
       res.json(populado);
@@ -146,6 +158,13 @@ function getMyTests(req, res) {
     .find({ user_id: req.params.id })
     .then(response => res.json(response))
     .catch(err => handdleError(err, res));
+}
+
+function deleteDesafio(req, res){
+  testModel
+  .remove({ desafio: true })
+  .then(response => res.json(response))
+  .catch(err => handdleError(err, res))
 }
 
 function handdleError(err, res) {
