@@ -13,8 +13,8 @@ const questionsSchema = new mongoose.Schema({
   answers_correct: {
     type: String
   },
-  answers:{
-    type:[]
+  answers: {
+    type: []
   },
   tema_id: {
     type: mongoose.Schema.Types.ObjectId

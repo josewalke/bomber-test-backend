@@ -8,7 +8,8 @@ const {
   createConfigTest,
   getMyTests,
   postExam,
-  deleteDesafio
+  deleteDesafio,
+  updateTest
 } = require("../controlers/tests.controller");
 
 router.get("/user/:id", getMyTests);
@@ -22,3 +23,5 @@ router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
 
 module.exports = router;
+
+

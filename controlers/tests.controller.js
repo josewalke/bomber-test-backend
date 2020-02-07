@@ -7,6 +7,7 @@ module.exports = {
   createRandomTest,
   getMyTests,
   createConfigTest,
+  updateTest,
   postExam,
   deleteDesafio
 };
@@ -28,7 +29,6 @@ function postExam(req,res){
     });
 }
 async function getTestById(req, res) {
-  console.log("un solo test");
   testModel
     .findById(req.params.id)
     .then(async response => {
@@ -40,16 +40,23 @@ async function getTestById(req, res) {
 
 function updateTest(req, res) {
   testModel
-    .findByIdAndUpdate(req.params.id, req.body)
-    .then(response => res.json("actualizado correctamente"))
-    .catch(err => handdleError(err, res));
+  .findByIdAndUpdate(req.params.id, req.body)
+  .then(response => res.json("actualizado correctamente"))
+  .catch(err => handdleError(err, res));
 }
+
+// function updateTest(req, res){
+//   console.log("router")
+//   console.log(req.body)
+//   testModel
+//   .findByIdAndUpdate(req.params.id)
+//   .then(response => res.json(response))
+//   .catch((err) => handdleError(err, res))
+// }
 
 async function createRandomTest(req, res) {
   const now =  new Date()
-  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(9)
-  console.log('random back 🧨 ')
-  console.log(res.params)
+  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes()
   let num = 20;
   var list = [];
   let blanco = [];
@@ -64,6 +71,11 @@ async function createRandomTest(req, res) {
     return i._id;
   });
 
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
+
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: "Test creado el " + date,
@@ -71,6 +83,7 @@ async function createRandomTest(req, res) {
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
+    respuestas: respuestas,
     nota: 0,
     no_contestadas: blanco,
     mostrar_solucion: false
@@ -87,16 +100,13 @@ async function createRandomTest(req, res) {
     });
 }
 
+
 async function createConfigTest(req, res) {
-  console.log('🔥config back')
-  console.log(req.body)
-  const testBody = {
-    testName: req.body.testName,
-    numSelected: req.body.numSelected,
-    selected: req.body.selected,
-    correctorSwitch : req.body.correctorSwitch
-  }
-  var list = [];
+  const testName = req.body.name
+  const numSelected = req.body.number
+  const selected = req.body.temas
+  const correctorSwitch  = req.body.correction
+  let list = []
   list = await questionsModel.find();
   var testQuestions = list
     .sort(function() {
@@ -108,6 +118,11 @@ async function createConfigTest(req, res) {
     return i._id;
   });
 
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
+
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: testName,
@@ -115,6 +130,7 @@ async function createConfigTest(req, res) {
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
+    respuestas: respuestas,
     nota: 0,
     no_contestadas: blanco,
     mostrar_solucion: false,
