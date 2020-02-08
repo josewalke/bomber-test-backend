@@ -18,7 +18,7 @@ router.get("/", getAllTests);
 router.post("/exam",postExam);
 router.post("/config", authenticated, createConfigTest);
 router.post("/", authenticated, createRandomTest);
-router.put("/:id");
+router.put("/:id", updateTest);
 router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
 

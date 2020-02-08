@@ -11,19 +11,25 @@ const testSchema = new mongoose.Schema({
   selectedTemas: {
     type: Array
   },
-  aciertos: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: "questions"
+  // aciertos: {
+  //   type: [mongoose.Schema.Types.ObjectId],
+  //   ref: "questions"
+  // },
+  // aciertos_num:{
+  //   type: Number
+  // },
+  // fallos: {
+  //   type: [Object],
+  //   ref: "questions"
+  // },
+  // fallos_num: {
+  //   type: Number
+  // },
+  check: {
+    type: {}
   },
-  aciertos_num:{
-    type: Number
-  },
-  fallos: {
-    type: [Object],
-    ref: "questions"
-  },
-  fallos_num: {
-    type: Number
+  testCheck:{
+    type:{}
   },
   respuestas: {
     type: [Object],
@@ -39,6 +45,7 @@ const testSchema = new mongoose.Schema({
   nota:{
     type: String
   },
+
   desafio:{
     type:Boolean
   },
