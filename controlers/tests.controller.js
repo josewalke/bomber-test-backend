@@ -39,20 +39,12 @@ async function getTestById(req, res) {
 }
 
 function updateTest(req, res) {
+  console.log('ESTOY AQUI')
   testModel
   .findByIdAndUpdate(req.params.id, req.body)
   .then(response => res.json("actualizado correctamente"))
   .catch(err => handdleError(err, res));
 }
-
-// function updateTest(req, res){
-//   console.log("router")
-//   console.log(req.body)
-//   testModel
-//   .findByIdAndUpdate(req.params.id)
-//   .then(response => res.json(response))
-//   .catch((err) => handdleError(err, res))
-// }
 
 async function createRandomTest(req, res) {
   const now =  new Date()
@@ -76,9 +68,12 @@ async function createRandomTest(req, res) {
     respuestas.push({ id: q, answered:false})
   })
 
+  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: "Test creado el " + date,
+    testCheck: testCheck,
     aciertos: [],
     aciertos_num: 0,
     fallos: [],
@@ -123,9 +118,13 @@ async function createConfigTest(req, res) {
     respuestas.push({ id: q, answered:false})
   })
 
+  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+
+
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: testName,
+    testCheck: testCheck,
     aciertos: [],
     aciertos_num: 0,
     fallos: [],
