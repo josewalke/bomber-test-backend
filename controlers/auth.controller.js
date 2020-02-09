@@ -43,7 +43,7 @@ function signup(req, res) {
       return res.json({ token: token, ...userData });
     })
     .catch(err => {
-      res.status(403).json({ error: err });
+      res.json({ error: err });
     });
 }
 
@@ -78,7 +78,6 @@ function login(req, res) {
           suscription_type: user.suscription_type,
           active: user.active
         };
-        console.log(userData)
 
         const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
