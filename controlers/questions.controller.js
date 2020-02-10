@@ -15,7 +15,8 @@ function createQuestion(req, res) {
     answers: req.body.answers,
     tema_id: req.body.tema_id,
     category: req.body.category,
-    difficulty: req.body.difficulty
+    difficulty: req.body.difficulty,
+    explicacion: req.body.explicacion
   };
 
   questionsModel.create(questionBody)

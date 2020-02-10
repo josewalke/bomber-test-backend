@@ -24,6 +24,9 @@ const questionsSchema = new mongoose.Schema({
   },
   difficulty:{
     type: String
+  },
+  explicacion:{
+    type: String
   }
 })
 const questionsModel = mongoose.model('questions', questionsSchema)
