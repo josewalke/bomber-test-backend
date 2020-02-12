@@ -27,6 +27,9 @@ const questionsSchema = new mongoose.Schema({
   },
   multiple: {
     type: Boolean
+  },
+  explicacion:{
+    type: String
   }
 })
 const questionsModel = mongoose.model('questions', questionsSchema)
