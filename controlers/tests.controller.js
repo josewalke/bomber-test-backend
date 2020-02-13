@@ -114,78 +114,28 @@ async function createConfigTest(req, res) {
     });
   }
 
-  // if(selected.length > 0){
-  //  let counter = blanco.length
-  //   while(counter < numSelected && list.length > 0 && selected.length > 0){
-  //     let random = selected.sort(function() {
-  //       return 0.5 - Math.random();
-  //     })
-  //     for( i = 0; i < selected.length; i++ ){
-  //       const found = list.find(q => q.tema_id == random[i])
-
-  //       if(!found){
-  //         const temaIdx = selected.findIndex(elem => elem === random[i])
-  //         selected.splice(temaIdx,1)
-  //         counter++
-  //       }else{
-  //         blanco.push(found)
-  //         const idx = list.findIndex(q => q._id == found._id)
-  //         list.splice(idx,1)
-  //         counter++
-  //       }
-  //     }
-  //   }
-  // }
-  if(list.length > 0 && selected.length > 0){
-    while(blanco.length < numSelected){
+  if(selected.length > 0){
+   let counter = blanco.length
+    while(counter < numSelected && list.length > 0 && selected.length > 0){
       let random = selected.sort(function() {
         return 0.5 - Math.random();
       })
-      for(let i = numSelected; i > 0; i--){
-          const found = list.find(q => q.tema_id == random[i])
-          if(found){
+      for( i = 0; i < selected.length; i++ ){
+        const found = list.find(q => q.tema_id == random[i])
+
+        if(!found){
+          const temaIdx = selected.findIndex(elem => elem === random[i])
+          selected.splice(temaIdx,1)
+        }else{
+          if(blanco.length < numSelected){
             blanco.push(found)
             const idx = list.findIndex(q => q._id == found._id)
             list.splice(idx,1)
-          }else{
-            const temaIdx = selected.findIndex(elem => elem === random[i])
-            list.splice(idx,1)
+            counter++
           }
         }
       }
-
-
-  // if(selected.length > 0){
-  //   let random = selected.sort(function() {
-  //     return 0.5 - Math.random();
-  //   })
-
-  //   if(selected.length > numSelected){
-  //     while(blanco.length < numSelected){
-  //       for(let i = numSelected; i > 0; i--){
-  //         const found = list.find(q => q.tema_id == random[i])
-  //         blanco.push(found)
-  //       }
-  //     }
-  //   }
-    // if(selected.length = numSelected){
-    //   while(blanco.length < numSelected){
-    //     random.forEach(tema => {
-    //       const found = list.find(q => q.tema_id == tema)
-    //       blanco.push(found)
-    //     })
-    //   }
-    // }
-    // if(selected.length < numSelected){
-    //   console.log('mas preguntas')
-    //   while(blanc.length < numSelected){
-
-    //   }
-    // }
-
-
-
-    console.log(blanco)
+    }
   }
 
   let respuestas = []
