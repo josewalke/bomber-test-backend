@@ -14,6 +14,7 @@ const {
 
 router.get("/user/:id", getMyTests);
 router.get("/:id", getTestById);
+// router.get("/:id", getTestById);
 router.get("/", getAllTests);
 router.post("/exam",postExam);
 router.post("/config", authenticated, createConfigTest);
