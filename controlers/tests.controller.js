@@ -9,7 +9,8 @@ module.exports = {
   createConfigTest,
   updateTest,
   postExam,
-  deleteDesafio
+  deleteDesafio,
+  testPremium
 };
 
 function getAllTests(req, res) {
@@ -79,7 +80,8 @@ async function createRandomTest(req, res) {
     respuestas: respuestas,
     nota: 0,
     no_contestadas: blanco,
-    mostrar_solucion: false
+    mostrar_solucion: false,
+    desafio: false
   };
 
   testModel
@@ -188,6 +190,46 @@ function deleteDesafio(req, res){
   .catch(err => handdleError(err, res))
 }
 
+async function testPremium(req, res){
+  const now =  new Date()
+  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(00)
+  let num = 20;
+  var list = [];
+  let blanco = [];
+  list = await questionsModel.find();
+  var testQuestions = list
+    .sort(function() {
+      return 0.5 - Math.random();
+    })
+    .splice(0, num);
+
+  blanco = testQuestions.map(i => {
+    return i._id;
+  });
+
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
+
+  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+
+  const testBody = {
+    user_id: '',
+    title: "Test creado el " + date,
+    testCheck: testCheck,
+    aciertos: [],
+    aciertos_num: 0,
+    fallos: [],
+    fallos_num: 0,
+    respuestas: respuestas,
+    nota: 0,
+    no_contestadas: blanco,
+    mostrar_solucion: false,
+    desafio: false
+  };
+   res.json(testBody)
+}
 function handdleError(err, res) {
   return res.status(400).json(err);
 }
