@@ -13,7 +13,7 @@ do {
   const num = preguntas[t].respuestas.length - 1
   const right = preguntas[t].respuestas[num]
   // let temas = ["5e18b011f0e6026f3ea4c386", "5e18bd1ef0e6026f3ea4c387", "5e1c83e5a0e3ed2874b6b400"].sort(function () { return 0.5 - Math.random() })
-  let temas = [{"$oid": "5e408b06ae3ed714c3f77934"}, {"$oid": "5e408b1dae3ed714c3f77935"}, {"$oid": "5e408b37ae3ed714c3f77936"}].sort(function () { return 0.5 - Math.random() })
+  let temas = [{"$oid": "5e18b011f0e6026f3ea4c386"}, {"$oid": "5e1c83e5a0e3ed2874b6b400"}, {"$oid": "5e4975fa9e1d1c348edaf153"},{"$oid": "5e4976099e1d1c348edaf154"},{"$oid": "5e49765f9e1d1c348edaf155"},{"$oid": "5e4976829e1d1c348edaf156"}].sort(function () { return 0.5 - Math.random() })
 
   const wrong = preguntas[t].respuestas
   const correct = [true, false, false, false].sort(function () { return 0.5 - Math.random() })
