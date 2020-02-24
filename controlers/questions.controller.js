@@ -29,7 +29,6 @@ function createQuestion(req, res) {
 function getAllQuestions(req, res) {
   questionsModel
     .find()
-    .sort({tema_id: 1})
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
@@ -42,8 +41,7 @@ function getQuestionById(req, res) {
 }
 
 function updateQuestion(req, res) {
-  // console.log(req.params.id)
-  // console.log(req.body)
+
   questionsModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))

@@ -9,9 +9,13 @@ const {
   getMyTests,
   postExam,
   deleteDesafio,
-  testAnswer
+  testAnswer,
+  updateTest,
+  testPremium
+
 } = require("../controlers/tests.controller");
 
+router.get("/premium", testPremium)
 router.get("/user/:id", getMyTests);
 router.get("/:id", getTestById);
 // router.get("/:id", getTestById);
@@ -24,5 +28,3 @@ router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
 
 module.exports = router;
-
-
