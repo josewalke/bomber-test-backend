@@ -80,6 +80,13 @@ const userSchema = new mongoose.Schema({
   total: {
     type: String,
     default: '0'
+  },
+  inactividad:{
+    type: Number
+  },
+  negativos:{
+    type:Number,
+    default: '0'
   }
 });
 

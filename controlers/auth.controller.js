@@ -76,7 +76,8 @@ function login(req, res) {
           suspendidos: user.suspendidos,
           total: user.total,
           suscription_type: user.suscription_type,
-          active: user.active
+          active: user.active,
+          negativos: user.negativos
         };
 
         const token = jwt.sign(userData, "secret", { expiresIn: "1w" });

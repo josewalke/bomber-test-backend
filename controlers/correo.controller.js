@@ -2,12 +2,12 @@ const nodemailer = require('nodemailer')
 const messageModel = require('../models/messages.model')
 const UserModel = require('../models/users.model')
 module.exports = {
-  prueba
+  enviar
 };
 let config = require('../.env')
 
-  var intervalo = setInterval(alternarColor, 3600000)
-  function alternarColor(req, res) {
+  var intervalo = setInterval(email, 3600000)
+  function email(req, res) {
     var fecha = new Date()
     var hora = fecha.getHours()
     if(hora === 20){
@@ -21,13 +21,13 @@ let config = require('../.env')
             let contador = 0
             for(let x=0;x<mensaje.length;x++){
               if(mensaje[x].respuesta_leida){
-                if(!mensaje[x].verificado){
+                if(mensaje[x].verificado === false){
                   contador++
                 }
               }
             }
             if(contador > 0){
-              prueba(contador,usuario[i].email)
+              enviar(contador,usuario[i].email)
             }
           })
           .catch(err => handdleError(err, res));
@@ -38,7 +38,7 @@ let config = require('../.env')
   }
    intervalo
 
-function prueba(contador,email){
+function enviar(contador,email){
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',

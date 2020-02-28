@@ -2,9 +2,9 @@ const router = require('express').Router()
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-  prueba
+  enviar
 } = require('../controlers/correo.controller')
 
-router.get("/", prueba);
+router.get("/", enviar);
 
 module.exports = router
