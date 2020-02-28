@@ -7,7 +7,7 @@ module.exports = {
   createRandomTest,
   getMyTests,
   createConfigTest,
-  updateTest,
+  testAnswer,
   postExam,
   deleteDesafio,
   testPremium
@@ -38,11 +38,32 @@ async function getTestById(req, res) {
     .catch(err => handdleError(err, res));
 }
 
-function updateTest(req, res) {
-  testModel
-  .findByIdAndUpdate(req.params.id, req.body)
-  .then(response => res.json("actualizado correctamente"))
-  .catch(err => handdleError(err, res));
+// function updateTest(req, res) {
+//   console.log('❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤')
+//   console.log(req.body)
+//   testModel
+//   .findByIdAndUpdate(req.params.id, req.body)
+//   .then(response => res.json("actualizado correctamente"))
+//   .catch(err => handdleError(err, res));
+// }
+
+function testAnswer(req, res){
+    let num = req.body.numero
+    let resp = req.body.respuesta
+    let guess = resp.guess
+
+    testModel
+      .findById(req.params.id).then(test =>{
+        let check = test.testCheck
+        let newCheck = {right: check.right, wrong: check.wrong, blank: check.blank}
+        guess === true ? newCheck.right++ : newCheck.wrong++
+        newCheck.blank--
+        test.testCheck = newCheck
+        test.respuestas.set(num, resp)
+
+        test.save().then(response => res.json())
+      })
+    .catch(err => console.log(err))
 }
 
 async function createRandomTest(req, res) {
@@ -71,14 +92,15 @@ async function createRandomTest(req, res) {
 
   const testBody = {
     user_id: res.locals.reboot_user._id,
-    title: "Test creado el " + date,
+    title: "Test -" + date,
     testCheck: testCheck,
     aciertos: [],
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
     respuestas: respuestas,
-    nota: 0,
+    nota: false,
+    end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
     desafio: false
@@ -157,7 +179,8 @@ async function createConfigTest(req, res) {
     fallos: [],
     fallos_num: 0,
     respuestas: respuestas,
-    nota: 0,
+    nota: false,
+    end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
     selectedTemas: selected,
