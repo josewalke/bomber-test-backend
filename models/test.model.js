@@ -50,10 +50,11 @@ const testSchema = new mongoose.Schema({
     type:Boolean
   },
   time_start:{
-    type: Date
+    type: Number,
+    default: new Date().getTime()
   },
   time_end: {
-    type: Date
+    type: Number
   }
 })
 const testModel = mongoose.model('test', testSchema)
