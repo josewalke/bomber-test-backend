@@ -54,7 +54,7 @@ const testSchema = new mongoose.Schema({
     default: new Date().getTime()
   },
   time_end: {
-    type: Number
+    type: String
   }
 })
 const testModel = mongoose.model('test', testSchema)
