@@ -20,6 +20,9 @@ const messageSchema = new mongoose.Schema({
   verificada: {
     type: Boolean,
     default: false
+  },
+  type: {
+    type: String
   }
 })
 const messageModel = mongoose.model('message', messageSchema)
