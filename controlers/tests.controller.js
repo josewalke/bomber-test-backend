@@ -48,27 +48,44 @@ async function getTestById(req, res) {
 // }
 
 function testAnswer(req, res){
+  console.log(req.body.time_end)
+  console.log("😱😱")
+  if(req.body.time_end){
+    testModel
+      .findByIdAndUpdate(req.params.id, req.body)
+      .then(response => res.json("actualizado correctamente"))
+      .catch(err => handdleError(err, res));
+
+  }else{
+
     let num = req.body.numero
     let resp = req.body.respuesta
     let guess = resp.guess
 
     testModel
-      .findById(req.params.id).then(test =>{
-        let check = test.testCheck
-        let newCheck = {right: check.right, wrong: check.wrong, blank: check.blank}
-        guess === true ? newCheck.right++ : newCheck.wrong++
-        newCheck.blank--
-        test.testCheck = newCheck
-        test.respuestas.set(num, resp)
+    .findById(req.params.id).then(test =>{
+      let check = test.testCheck
+      let newCheck = {right: check.right, wrong: check.wrong, blank: check.blank}
+      guess === true ? newCheck.right++ : newCheck.wrong++
+      newCheck.blank--
+      test.testCheck = newCheck
+      test.respuestas.set(num, resp)
 
-        test.save().then(response => res.json())
-      })
+      test.save().then(response => res.json())
+    })
     .catch(err => console.log(err))
+  }
 }
+
+
 
 async function createRandomTest(req, res) {
   const now =  new Date()
-  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(00)
+  const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
+  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + now.getMonth()
+  const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
+  // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+  let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
   let num = 20;
   var list = [];
   let blanco = [];
@@ -92,7 +109,7 @@ async function createRandomTest(req, res) {
 
   const testBody = {
     user_id: res.locals.reboot_user._id,
-    title: "Test -" + date,
+    title: "A - " + date,
     testCheck: testCheck,
     aciertos: [],
     aciertos_num: 0,
@@ -103,7 +120,8 @@ async function createRandomTest(req, res) {
     end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
-    desafio: false
+    desafio: false,
+    time_end: ''
   };
 
   testModel
@@ -184,7 +202,8 @@ async function createConfigTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: false,
     selectedTemas: selected,
-    mostrar_solucion: correctorSwitch
+    mostrar_solucion: correctorSwitch,
+    time_end: null
   };
 
   testModel

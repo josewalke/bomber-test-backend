@@ -8,9 +8,10 @@ module.exports = {
 }
 
 function createQuestion(req, res) {
+  console.log(req.body)
   const questionBody = {
     enunciado: req.body.enunciado,
-    imagen_url: "url de una imagen",
+    imagen_url: req.body.photo,
     answers_wrong: req.body.answers_wrong,
     answers: req.body.answers,
     tema_id: req.body.tema_id,
