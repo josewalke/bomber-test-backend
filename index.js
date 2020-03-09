@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const jwt = require("jsonwebtoken");
 const app = express();
 
+
 // CONFIG AND ENVIRONMENT LOADING FROM .env FILE
 let config = require("./config");
 
