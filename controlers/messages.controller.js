@@ -9,13 +9,14 @@ module.exports = {
 
 function createMessage(req, res) {
   const body ={
-    user_id: req.params.id,
+    user_id: req.body.userId,
     respuesta_leida: req.body.respuesta_leida,
-    pregunta_id: req.body.pregunta_id,
-    pregunta: req.body.pregunta,
+    pregunta_id: req.body.questionId,
+    pregunta: req.body.message,
     respuesta: req.body.respuesta,
     explicacion: req.body.explicacion,
-    verificada: req.body.verificada
+    verificada: req.body.verificada,
+    type: req.body.type,
   }
   console.log(body)
   messageModel.create(body)
