@@ -201,8 +201,7 @@ async function createConfigTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: false,
     selectedTemas: selected,
-    mostrar_solucion: correctorSwitch,
-    time_end: null
+    mostrar_solucion: correctorSwitch
   };
 
   testModel
