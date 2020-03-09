@@ -120,8 +120,7 @@ async function createRandomTest(req, res) {
     end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
-    desafio: false,
-    time_end: ''
+    desafio: false
   };
 
   testModel
