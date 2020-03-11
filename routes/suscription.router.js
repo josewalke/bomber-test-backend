@@ -3,15 +3,16 @@ const { authenticated, me } = require("../services/auth.service");
 
 const {
   crearSuscription,
-  getAllSuscription
+  getAllSuscription,
+  updateSuscription
 } = require("../controlers/suscription.controller");
 
+
+router.put('/:id',updateSuscription)
 
 router.post('/',crearSuscription)
 
 router.get('/',getAllSuscription)
-
-router.put('/:id')
 
 router.get('/:id')
 

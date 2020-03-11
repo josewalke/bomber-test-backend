@@ -2,7 +2,8 @@ const suscriptionModel = require('../models/suscription.model')
 
 module.exports = {
 crearSuscription,
-getAllSuscription
+getAllSuscription,
+updateSuscription
 }
 
 function crearSuscription(req, res) {
@@ -25,5 +26,12 @@ function getAllSuscription(req,res){
   suscriptionModel
     .find()
     .then(response => res.json(response))
+    .catch((err) => handdleError(err, res))
+}
+
+function updateSuscription(req,res){
+  suscriptionModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
