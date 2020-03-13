@@ -78,7 +78,6 @@ function testAnswer(req, res){
 }
 
 
-
 async function createRandomTest(req, res) {
   const now =  new Date()
   const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
@@ -121,7 +120,7 @@ async function createRandomTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: false,
     desafio: false,
-    time_end: ''
+    time_end: null
   };
 
   testModel
