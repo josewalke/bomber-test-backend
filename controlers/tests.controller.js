@@ -48,8 +48,6 @@ async function getTestById(req, res) {
 // }
 
 function testAnswer(req, res){
-  console.log(req.body.time_end)
-  console.log("😱😱")
   if(req.body.time_end){
     testModel
       .findByIdAndUpdate(req.params.id, req.body)
