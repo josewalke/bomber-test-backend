@@ -2,11 +2,17 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
-pago
+basic,
+pro,
+premium
+
 } = require("../controlers/paymentStripe.controller");
 
-// import Stripe from '@stripe/stripe-js'
 
-router.get('/', pago)
+router.get('/basic',basic )
+router.get('/pro',pro )
+router.get('/premium',premium )
+
+
 
 module.exports = router;
