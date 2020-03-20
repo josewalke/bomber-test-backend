@@ -29,6 +29,7 @@ function getAllSuscription(req,res){
     .catch((err) => handdleError(err, res))
 }
 
+
 function updateSuscription(req,res){
   suscriptionModel
     .findByIdAndUpdate(req.params.id, req.body)

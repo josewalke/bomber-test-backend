@@ -87,6 +87,10 @@ const userSchema = new mongoose.Schema({
   negativos:{
     type:Number,
     default: '0'
+  },
+  suscription_end_active:{
+    type: String,
+    default: '0'
   }
 });
 

@@ -43,6 +43,7 @@ function updateUser (req, res) {
 
 }
 
+//Poner negativos 1 vez al dia
 var intervalo2 = setInterval(negativos, 86400000)
 // var intervalo2 = setInterval(negativos, 1000)
 
@@ -60,6 +61,29 @@ function negativos(req, res){
           .findByIdAndUpdate(usuarios[i]._id, body)
           .then(response => console.log(true))
           .catch((err) => handdleError(err, res))
+        }
+      }
+    })
+    .catch((err) => handdleError(err, res))
+}
+intervalo2
+
+// desactivar usuarios 1 vez al dia
+var intervalo3 = setInterval(desactivar, 86400000)
+
+
+function desactivar(req, res){
+  UserModel
+    .find({role: 'cliente', active: true})
+    .then(usuarios => {
+      for(let i=0;i<usuarios.length; i++){
+
+        let suscription_end_active = parseInt(usuarios[i].suscription_end_active)
+
+        if(suscription_end_active > new Date().getTime()){
+          UserModel
+          .findByIdAndUpdate({_id: usuarios[0]._id},{active: false})
+          .then(response => console.log(response))
         }
       }
     })

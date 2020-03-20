@@ -77,7 +77,8 @@ function login(req, res) {
           total: user.total,
           suscription_type: user.suscription_type,
           active: user.active,
-          negativos: user.negativos
+          negativos: user.negativos,
+          suscription_end_active: user.suscription_end_active
         };
 
         const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
