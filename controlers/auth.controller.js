@@ -47,6 +47,7 @@ function signup(req, res) {
     });
 }
 
+
 function login(req, res) {
   UserModel.findOne({ email: req.body.email })
     .then(user => {
