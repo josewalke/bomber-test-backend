@@ -36,9 +36,9 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["admin", "cliente"],
+    enum: ["admin", "cliente","prueba"],
     required: false,
-    default: "cliente"
+    default: "prueba"
   },
   phone: {
     type: Number,
@@ -86,6 +86,10 @@ const userSchema = new mongoose.Schema({
   },
   negativos:{
     type:Number,
+    default: '0'
+  },
+  suscription_end_active:{
+    type: String,
     default: '0'
   }
 });
