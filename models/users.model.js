@@ -91,6 +91,9 @@ const userSchema = new mongoose.Schema({
   suscription_end_active:{
     type: String,
     default: '0'
+  },
+  provincias:{
+    type: String
   }
 });
 
