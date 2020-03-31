@@ -45,7 +45,6 @@ const testSchema = new mongoose.Schema({
   nota:{
     type: String
   },
-
   desafio:{
     type:Boolean
   },
@@ -58,7 +57,7 @@ const testSchema = new mongoose.Schema({
     default: 'ilimitado'
   },
   time_end2: {
-    type: String,
+    type: Boolean,
     default: null
   }
 })

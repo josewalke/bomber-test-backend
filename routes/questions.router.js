@@ -13,9 +13,9 @@ router.post('/', createQuestion)
 
 router.get('/', getAllQuestions)
 
-router.put('/:id', updateQuestion)
-
 router.get('/:id', getQuestionById)
+
+router.put('/:id', updateQuestion)
 
 router.delete('/:id')
 
