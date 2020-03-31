@@ -56,6 +56,10 @@ const testSchema = new mongoose.Schema({
   time_end: {
     type: String,
     default: 'ilimitado'
+  },
+  time_end2: {
+    type: String,
+    default: null
   }
 })
 const testModel = mongoose.model('test', testSchema)
