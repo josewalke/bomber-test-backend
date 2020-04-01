@@ -35,7 +35,8 @@ function signup(req, res) {
         suspendidos: newUser.suspendidos,
         total: newUser.total,
         suscription_type: newUser.suscription_type,
-        active: false
+        active: false,
+        provincia: newUser.provincia
       };
 
       const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
@@ -79,7 +80,9 @@ function login(req, res) {
           suscription_type: user.suscription_type,
           active: user.active,
           negativos: user.negativos,
-          suscription_end_active: user.suscription_end_active
+          suscription_end_active: user.suscription_end_active,
+          active: false,
+          provincia: user.provincia
         };
 
         const token = jwt.sign(userData, "secret", { expiresIn: "1w" });

@@ -92,7 +92,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: '0'
   },
-  provincias:{
+  provincia:{
     type: String
   }
 });
