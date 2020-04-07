@@ -43,16 +43,16 @@ function enviar(contador,email){
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: config.nodemailer.email,
-      pass: config.nodemailer.password
+      user: config.email,
+      pass: config.password
     }
   })
   const mailOptions = {
-    from: 'worktrabajo47@gmail.com', // sender address
+    from: config.email, // sender address
     to: email, // list of receivers
     subject: 'bomberos', // Subject line
     html: `<p>Holaa</p>
-          <h1>Tienes ${contador} mensajes nuevos</h1>
+    <h1>Tienes ${contador} mensajes nuevos</h1>
                         ` // plain text body
   }
   transporter.sendMail(mailOptions, function (err, info) {
@@ -61,6 +61,8 @@ function enviar(contador,email){
   })
   // res.json('enviado')
 }
+
+
 
 function handdleError(err, res) {
   return res.status(400).json(err)
