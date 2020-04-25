@@ -9,7 +9,7 @@ module.exports = {
 
 function createTema(req, res) {
   console.log('crear Tema')
-  console.log(req.body)
+  // console.log(req.body)
 
   temaModel.create(req.body)
     .then(response => res.json(response))

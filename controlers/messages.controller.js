@@ -18,7 +18,7 @@ function createMessage(req, res) {
     verificada: req.body.verificada,
     type: req.body.type,
   }
-  console.log(body)
+  // console.log(body)
   messageModel.create(body)
     .then(response => res.json(response))
     .catch(err => {

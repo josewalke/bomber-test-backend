@@ -11,14 +11,18 @@ const {
   deleteDesafio,
   testAnswer,
   updateTest,
-  testPremium
+  testPremium,
+  updateDeberes,
+  updateNota
 
 } = require("../controlers/tests.controller");
 
 router.get("/premium", testPremium)
 router.get("/user/:id", getMyTests);
-router.get("/:id", getTestById);
+router.put("/deberes/:id",updateDeberes);
+router.put("/nota/:id",updateNota);
 // router.get("/:id", getTestById);
+router.get("/:id", getTestById);
 router.get("/", getAllTests);
 router.post("/exam",postExam);
 router.post("/config", authenticated, createConfigTest);

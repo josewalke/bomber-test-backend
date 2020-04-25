@@ -6,6 +6,10 @@ const temaSchema = new mongoose.Schema({
   },
   category:{
     type: String
+  },
+  // borrar lo de abajo
+  id_tema:{
+    type: Number
   }
 })
 const temaModel = mongoose.model('tema', temaSchema)

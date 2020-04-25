@@ -30,6 +30,13 @@ const questionsSchema = new mongoose.Schema({
   },
   explicacion:{
     type: String
+  },
+  // eliminar todo lo que este debajo
+  pregunta:{
+    type: String
+  },
+  id_pregunta:{
+    type: String
   }
 })
 const questionsModel = mongoose.model('questions', questionsSchema)

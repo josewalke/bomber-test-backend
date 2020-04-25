@@ -1,429 +1,2136 @@
 [
   {
-    "name":"teoria del fuego bueno",
-    "category":"Específico bomberos"
+    "id_tema": 1,
+    "name": "TEMARIO ANTIGUO",
+    "descripcion_tema": "TEMARIO ANTIGUO",
+    "category": ""
   },
   {
-    "name":"primeros aux bueno",
-    "category":"Específico bomberos"
-  },{
-    "name":"hidraulica V y F.",
-    "category":"Específico bomberos"
-  },{
-    "name":"incendios",
-    "category":"Específico bomberos"
-  },{
-    "name":"UNIDADES Y MEDIDAS.",
-    "category":"Específico bomberos"
-  },{
-    "name":"magnitudes fisicas",
-    "category":"Específico bomberos"
-  },{
-    "name":"HIDRÁULICA Y BOMBAS.",
-    "category":"Específico bomberos"
-  },{
-    "name":"M.M.P.P",
-    "category":"Específico bomberos"
-  },{
-    "name":"EPIs",
-    "category":"Específico bomberos"
-  },{
-    "name":"E.P.I.s.",
-    "category":"Específico bomberos"
-  },{
-    "name":"p. auxilios y socorrismo",
-    "category":"Específico bomberos"
-  },{
-    "name":"incendios especiales",
-    "category":"Específico bomberos"
-  },{
-    "name":"herramientas y materiales",
-    "category":"Específico bomberos"
-  },{
-    "name":"EXTINTORES PORTÁTILES",
-    "category":"Específico bomberos"
-  },{
-    "name":"INSTALACIONES DE PROTECCION CONTRAINCENDIOS",
-    "category":"Específico bomberos"
-  },{
-    "name":"VEHÍCULOS.",
-    "category":"Específico bomberos"
-  },{
-    "name":"agentes extintores",
-    "category":"Específico bomberos"
-  },{
-    "name":"incendios",
-    "category":"Específico bomberos"
-  },{
-    "name":"incendios",
-    "category":"Específico bomberos"
-  },{
-    "name":"MM.PP",
-    "category":"Específico bomberos"
-  },{
-    "name":"incendios",
-    "category":"Específico bomberos"
-  },{
-    "name":"E.P.R.",
-    "category":"Específico bomberos"
-  },{
-    "name":"EQUIPOS DE PROTECCION RESPIRATORIA.",
-    "category":"Específico bomberos"
-  },{
-    "name":"calor y temperatura.",
-    "category":"Específico bomberos"
-  },{
-    "name":"tipos de fuego",
-    "category":"Específico bomberos"
-  },{
-    "name":"TEORIA DEL FUEGO",
-    "category":"Específico bomberos"
-  },{
-    "name":"TEMA1- TEORIA DEL FUEGO",
-    "category":"Específico bomberos"
-  },{
-    "name":"mmpp bueno",
-    "category":"Específico bomberos"
-  },{
-    "name":"agentes extintores bueno",
-    "category":"Específico bomberos"
-  },{
-    "name":"materiales bueno",
-    "category":"Específico bomberos"
-  },{
-    "name":"instalaciones fijas buena",
-    "category":"Específico bomberos"
-  },{
-    "name":"extintores prt buena",
-    "category":"Específico bomberos"
-  },{
-    "name":"bombero dificil",
-    "category":"Específico bomberos"
-  },{
-    "name":"policia nacional mixtos",
-    "category":"Específico bomberos"
-  },{
-    "name":"MMPP",
-    "category":"Específico bomberos"
-  },{
-    "name":"agentes extintores",
-    "category":"Específico bomberos"
-  },{
-    "name":"Protección Civil",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 1",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 2",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 3",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 4",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 5",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 6",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 7",
-    "category":"Específico bomberos"
-  },{
-    "name":"MANUAL VASCO",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 8",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 9",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 10",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 11",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 12",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 13",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 14",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 15",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 16",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 17",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 18",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 19",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 20",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 21",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 22",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 23",
-    "category":"Específico bomberos"
+    "id_tema": 115,
+    "name": "teoria del fuego bue",
+    "descripcion_tema": "teoria del fuego bueno",
+    "category": "Especifico de bombero"
   },
   {
-    "name":"Examen 24",
-    "category":"Específico bomberos"
+    "id_tema": 114,
+    "name": "primeros uax bueno",
+    "descripcion_tema": "primeros uax bueno",
+    "category": "Especifico de bombero"
   },
   {
-    "name":"test consorcio 2004",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 25",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen 26",
-    "category":"Específico bomberos"
-  },{
-    "name":"21-ELECTRICIDAD Y ELECTROMAGNETISMO",
-    "category":"Específico bomberos"
-  },{
-    "name":"22-TRANSMISIONES",
-    "category":"Específico bomberos"
-  },{
-    "name":"23-AUTOMOVILISMO",
-    "category":"Específico bomberos"
-  },{
-    "name":"25- TOPOGRAFIA",
-    "category":"Específico bomberos"
-  },{
-    "name":"EPIs",
-    "category":"Específico bomberos"
-  },{
-    "name":"Mercancías peligrosas",
-    "category":"Específico bomberos"
-  },{
-    "name":"Asturias 2005",
-    "category":"Específico bomberos"
-  },{
-    "name":"Construcción básica",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen Vitoria 2006",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen Albacete 2006",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen Diputación Valladolid 2006",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen Mijas 2004",
-    "category":"Específico bomberos"
-  },{
-    "name":"Test Oposición Bomberos",
-    "category":"Específico bomberos"
-  },{
-    "name":"Examen Ronda",
-    "category":"Específico bomberos"
-  },{
-    "name":"variadas",
-    "category":"Específico bomberos"
-  },{
-    "name":"Redes de distribución",
-    "category":"Específico bomberos"
-  },{
-    "name":"Extintores portátiles",
-    "category":"Específico bomberos"
-  },{
-    "name":"Vehículos",
-    "category":"Específico bomberos"
-  },{
-    "name":"Tráfico",
-    "category":"Específico bomberos"
-  },{
-    "name":"salvamento y recuperación de víctimas.",
-    "category":"Específico bomberos"
-  },{
-    "name":"Salvamento y recuperación de víctimas",
-    "category":"Específico bomberos"
-  },{
-    "name":"Vehículos",
-    "category":"Específico bomberos"
-  },{
-    "name":"CTE",
-    "category":"Específico bomberos"
-  },{
-    "name":"Construción y Apuntalamientos",
-    "category":"Específico bomberos"
-  },{
-    "name":"Reacción y Resistencia al fuego",
-    "category":"Específico bomberos"
-  },{
-    "name":"Agentes extintores",
-    "category":"Específico bomberos"
-  },{
-    "name":"prevención y Protección",
-    "category":"Específico bomberos"
-  },{
-    "name":" Calor y Temperatura",
-    "category":"Específico bomberos"
-  },{
-    "id":"387",
-    "name":"Teoría del fuego",
-    "category":"Específico bomberos"
-  },{
-    "id":"390",
-    "name":"Métodos y mecanismos de extinción",
-    "category":"Específico bomberos"
-  },{
-    "id":"391",
-    "name":"Ventilación",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
-  },{
-    "id":"",
-    "name":"",
-    "category":"Específico bomberos"
+    "id_tema": 109,
+
+    "name": "hidraulica V y F.",
+    "descripcion_tema": "hidraulica V y F.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 108,
+    "name": "incendios",
+    "descripcion_tema": "incendios",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 106,
+
+    "name": "UNIDADES Y MEDIDAS.",
+    "descripcion_tema": "UNIDADES Y MEDIDAS.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 104,
+
+    "name": "magnitudes fisicas",
+    "descripcion_tema": "magnitudes fisicas",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 101,
+
+    "name": "HIDRÁULICA Y BOMBAS.",
+    "descripcion_tema": "HIDRÁULICA Y BOMBAS.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 98,
+
+    "name": "M.M.P.P.",
+    "descripcion_tema": "M.M.P.P.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 99,
+
+    "name": "EPIs",
+    "descripcion_tema": "EPIs",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 96,
+
+    "name": "E.P.I.s.",
+    "descripcion_tema": "E.P.I.s.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 95,
+
+    "name": "p. auxilios y socorr",
+    "descripcion_tema": "p. auxilios y socorrismo",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 94,
+
+    "name": "incendios especiales",
+    "descripcion_tema": "incendios especiales",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 93,
+
+    "name": "herramientas y mater",
+    "descripcion_tema": "herramientas y materiales",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 91,
+
+    "name": "EXTINTORES PORTÁTILE",
+    "descripcion_tema": "EXTINTORES PORTÁTILES",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 90,
+
+    "name": "INSTALACIONES DE PRO",
+    "descripcion_tema": "INSTALACIONES DE PROTECCION CONTRAINCENDIOS",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 89,
+
+    "name": "VEHÍCULOS.",
+    "descripcion_tema": "VEHÍCULOS.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 88,
+
+    "name": "agentes extintores",
+    "descripcion_tema": "agentes extintores",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 84,
+
+    "name": "incendios",
+    "descripcion_tema": "incendios",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 83,
+
+    "name": "incendios",
+    "descripcion_tema": "incendios",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 80,
+
+    "name": "MM.PP",
+    "descripcion_tema": "MM.PP",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 82,
+
+    "name": "incendios",
+    "descripcion_tema": "incendios",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 79,
+
+    "name": "E.P.R.",
+    "descripcion_tema": "E.P.R.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 78,
+
+    "name": "EQUIPOS DE PROTECCIO",
+    "descripcion_tema": "EQUIPOS DE PROTECCION RESPIRATORIA.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 76,
+
+    "name": "calor y temperatura.",
+    "descripcion_tema": "calor y temperatura.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 75,
+
+    "name": "calor y temperatura.",
+    "descripcion_tema": "calor y temperatura.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 72,
+
+    "name": "tipos de fuego",
+    "descripcion_tema": "tipos de fuego",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 67,
+
+    "name": "TEORIA DEL FUEGO",
+    "descripcion_tema": "TEORIA DEL FUEGO",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 66,
+
+    "name": "TEMA1- TEORIA DEL FU",
+    "descripcion_tema": "TEMA1- TEORIA DEL FUEGO",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 62,
+
+    "name": "25-ORIGEN DE LAS ARM",
+    "descripcion_tema": "25-ORIGEN DE LAS ARMAS DE FUEGO",
+    "category": ""
+  },
+  {
+    "id_tema": 61,
+
+    "name": "24-INTRODUCCION A LA",
+    "descripcion_tema": "24-INTRODUCCION A LAS REDES INFORMATICAS Y TIPOS",
+    "category": ""
+  },
+  {
+    "id_tema": 60,
+
+    "name": "23-PROCESADOR DE TEX",
+    "descripcion_tema": "23-PROCESADOR DE TEXTOS MICROSOFT WORD",
+    "category": ""
+  },
+  {
+    "id_tema": 59,
+
+    "name": "22-PARTES Y FUNCIONE",
+    "descripcion_tema": "22-PARTES Y FUNCIONES BASICAS DE UN ORDENADOR",
+    "category": ""
+  },
+  {
+    "id_tema": 58,
+
+    "name": "21-LA ELECTRONICA",
+    "descripcion_tema": "21-LA ELECTRONICA",
+    "category": ""
+  },
+  {
+    "id_tema": 57,
+
+    "name": "20-DROGODEPENDENCIAS",
+    "descripcion_tema": "20-DROGODEPENDENCIAS",
+    "category": ""
+  },
+  {
+    "id_tema": 56,
+
+    "name": "19-LA SEGURIDAD",
+    "descripcion_tema": "19-LA SEGURIDAD",
+    "category": ""
+  },
+  {
+    "id_tema": 55,
+
+    "name": "18-LA CIUDAD COMO FU",
+    "descripcion_tema": "18-LA CIUDAD COMO FUNDAMENTO DEL CAMBIO SOCIAL",
+    "category": ""
+  },
+  {
+    "id_tema": 54,
+
+    "name": "17-INMIGRACION. MOVI",
+    "descripcion_tema": "17-INMIGRACION. MOVIMIENTOS MIGRATORIOS",
+    "category": ""
+  },
+  {
+    "id_tema": 53,
+
+    "name": "16-ACTITUDES Y VALOR",
+    "descripcion_tema": "16-ACTITUDES Y VALORES SOCIALES",
+    "category": ""
+  },
+  {
+    "id_tema": 52,
+
+    "name": "15-SOCIALIZACION",
+    "descripcion_tema": "15-SOCIALIZACION",
+    "category": ""
+  },
+  {
+    "id_tema": 51,
+
+    "name": "14-GLOBALIZACION Y A",
+    "descripcion_tema": "14-GLOBALIZACION Y ANTIGLOBALIZACION",
+    "category": ""
+  },
+  {
+    "id_tema": 50,
+
+    "name": "13-DERECHOS HUMANOS",
+    "descripcion_tema": "13-DERECHOS HUMANOS",
+    "category": ""
+  },
+  {
+    "id_tema": 49,
+
+    "name": "CIENCIAS SOCIALES",
+    "descripcion_tema": "CIENCIAS SOCIALES",
+    "category": ""
+  },
+  {
+    "id_tema": 48,
+
+    "name": "12-LA UNION EUROPEA",
+    "descripcion_tema": "12-LA UNION EUROPEA",
+    "category": ""
+  },
+  {
+    "id_tema": 47,
+
+    "name": "11-MEDIDAS PROTECCIO",
+    "descripcion_tema": "11-MEDIDAS PROTECCION CONTRA VIOLENCIA DOMESTICA",
+    "category": ""
+  },
+  {
+    "id_tema": 46,
+
+    "name": "10-LA DIRECCION GENE",
+    "descripcion_tema": "10-LA DIRECCION GENERAL DE LA POLICIA",
+    "category": ""
+  },
+  {
+    "id_tema": 45,
+
+    "name": "09-EL MINISTERIO DEL",
+    "descripcion_tema": "09-EL MINISTERIO DEL INTERIOR",
+    "category": ""
+  },
+  {
+    "id_tema": 44,
+
+    "name": "08-LA LEY ORGANICA 2",
+    "descripcion_tema": "08-LA LEY ORGANICA 2-1986",
+    "category": ""
+  },
+  {
+    "id_tema": 43,
+
+    "name": "07-LOS FUNCIONARIOS ",
+    "descripcion_tema": "07-LOS FUNCIONARIOS PUBLICOS",
+    "category": ""
+  },
+  {
+    "id_tema": 42,
+
+    "name": "06-ORGANIZACION Y FU",
+    "descripcion_tema": "06-ORGANIZACION Y FUNCIONAMIENTO DE LA ADMON GRAL",
+    "category": ""
+  },
+  {
+    "id_tema": 41,
+
+    "name": "05-CONSTITUCION ESPA",
+    "descripcion_tema": "05-CONSTITUCION ESPAÑOLA II",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 40,
+
+    "name": "04-CONSTITUCION ESPA",
+    "descripcion_tema": "04-CONSTITUCION ESPAÑOLA I",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 39,
+
+    "name": "03-NOCION DE DERECHO",
+    "descripcion_tema": "03-NOCION DE DERECHO PROCESAL PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 38,
+
+    "name": "02-DERECHO PENAL",
+    "descripcion_tema": "02-DERECHO PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 37,
+
+    "name": "01-EL DERECHO: CONCE",
+    "descripcion_tema": "01-EL DERECHO: CONCEPTO Y ACEPCIONES",
+    "category": ""
+  },
+  {
+    "id_tema": 36,
+
+    "name": "CIENCIAS JURIDICAS",
+    "descripcion_tema": "CIENCIAS JURIDICAS",
+    "category": ""
+  },
+  {
+    "id_tema": 34,
+
+    "name": "25-ORIGEN DE LAS ARM",
+    "descripcion_tema": "25-ORIGEN DE LAS ARMAS DE FUEGO",
+    "category": ""
+  },
+  {
+    "id_tema": 33,
+
+    "name": "24-INTRODUCCION A LA",
+    "descripcion_tema": "24-INTRODUCCION A LAS REDES INFORMATICAS Y TIPOS",
+    "category": ""
+  },
+  {
+    "id_tema": 32,
+
+    "name": "23-PROCESADOR DE TEX",
+    "descripcion_tema": "23-PROCESADOR DE TEXTOS MICROSOFT WORD",
+    "category": ""
+  },
+  {
+    "id_tema": 31,
+
+    "name": "22-PARTES Y FUNCIONE",
+    "descripcion_tema": "22-PARTES Y FUNCIONES BASICAS DE UN ORDENADOR",
+    "category": ""
+  },
+  {
+    "id_tema": 30,
+
+    "name": "21-LA ELECTRONICA Y COMUNICACIONES",
+    "descripcion_tema": "21-LA ELECTRONICA Y COMUNICACIONES",
+    "category": ""
+  },
+  {
+    "id_tema": 29,
+
+    "name": "20-DROGODEPENDENCIAS",
+    "descripcion_tema": "20-DROGODEPENDENCIAS",
+    "category": ""
+  },
+  {
+    "id_tema": 28,
+
+    "name": "19-LA SEGURIDAD",
+    "descripcion_tema": "19-LA SEGURIDAD",
+    "category": ""
+  },
+  {
+    "id_tema": 27,
+
+    "name": "18-LA CIUDAD COMO FU",
+    "descripcion_tema": "18-LA CIUDAD COMO FUNDAMENTO DEL CAMBIO SOCIAL",
+    "category": ""
+  },
+  {
+    "id_tema": 26,
+
+    "name": "17-INMIGRACION. MOVI",
+    "descripcion_tema": "17-INMIGRACION. MOVIMIENTOS MIGRATORIOS",
+    "category": ""
+  },
+  {
+    "id_tema": 25,
+
+    "name": "16-ACTITUDES Y VALOR",
+    "descripcion_tema": "16-ACTITUDES Y VALORES SOCIALES",
+    "category": ""
+  },
+  {
+    "id_tema": 24,
+
+    "name": "15-SOCIALIZACION",
+    "descripcion_tema": "15-SOCIALIZACION",
+    "category": ""
+  },
+  {
+    "id_tema": 23,
+
+    "name": "14-GLOBALIZACION Y A",
+    "descripcion_tema": "14-GLOBALIZACION Y ANTIGLOBALIZACION",
+    "category": ""
+  },
+  {
+    "id_tema": 317,
+
+    "name": "Derecho: Concepto y acepciones",
+    "descripcion_tema": "Derecho: Concepto y acepciones",
+    "category": ""
+  },
+  {
+    "id_tema": 21,
+       "name": "CIENCIAS SOCIALES",
+    "descripcion_tema": "CIENCIAS SOCIALES",
+    "category": ""
+  },
+  {
+    "id_tema": 322,
+
+    "name": "Drogodependencias",
+    "descripcion_tema": "Drogodependencias",
+    "category": ""
+  },
+  {
+    "id_tema": 321,
+
+    "name": "La Unión Europea",
+    "descripcion_tema": "La Unión Europea",
+    "category": ""
+  },
+  {
+    "id_tema": 18,
+       "name": "10-LA DIRECCION GENE",
+    "descripcion_tema": "10-LA DIRECCION GENERAL DE LA POLICIA",
+    "category": ""
+  },
+  {
+    "id_tema": 320,
+
+    "name": "Medidas de protección contra violencia doméstica",
+    "descripcion_tema": "Medidas de protección contra violencia doméstica",
+    "category": ""
+  },
+  {
+    "id_tema": 313,
+
+    "name": "Derecho Penal",
+    "descripcion_tema": "Derecho Penal",
+    "category": ""
+  },
+  {
+    "id_tema": 312,
+
+    "name": "Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad.",
+    "descripcion_tema": "Ley Orgánica 2/1986",
+    "category": ""
+  },
+  {
+    "id_tema": 315,
+
+    "name": "Derechos Humanos",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 311,
+
+    "name": "Estatuto básico del empleado público. Ley 7/2007",
+    "descripcion_tema": "Personal al servicio de las administraciones públicas",
+    "category": ""
+  },
+  {
+    "id_tema": 319,
+
+    "name": "El Ministerio del Interior",
+    "descripcion_tema": "El Ministerio del Interior",
+    "category": ""
+  },
+  {
+    "id_tema": 314,
+       "name": "Materias sociales comunes",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 318,
+
+    "name": "Derecho procesal penal",
+    "descripcion_tema": "Derecho procesal penal",
+    "category": ""
+  },
+  {
+    "id_tema": 8,
+       "name": "CIENCIAS JURIDICAS",
+    "descripcion_tema": "CIENCIAS JURIDICAS",
+    "category": ""
+  },
+  {
+    "id_tema": 7,
+       "name": "POLICIA NACIONAL",
+    "descripcion_tema": "POLICIA NACIONAL",
+    "category": ""
+  },
+  {
+    "id_tema": 386,
+       "name": "Bombero ",
+    "descripcion_tema": "bombero 2019",
+    "category": ""
+  },
+  {
+    "id_tema": 5,
+       "name": "Tests",
+    "descripcion_tema": "Tests",
+    "category": ""
+  },
+  {
+    "id_tema": 3,
+       "name": "Imágenes",
+    "descripcion_tema": "Imágenes",
+    "category": ""
+  },
+  {
+    "id_tema": 4,
+       "name": "Textos",
+    "descripcion_tema": "Textos",
+    "category": ""
+  },
+  {
+    "id_tema": 2,
+       "name": "PREGUNTAS",
+    "descripcion_tema": "PREGUNTAS",
+    "category": ""
+  },
+  {
+    "id_tema": 116,
+
+    "name": "mmpp bueno",
+    "descripcion_tema": "mmpp bueno",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 117,
+
+    "name": "agentes extintores b",
+    "descripcion_tema": "agentes extintores bueno",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 118,
+
+    "name": "materiales bueno",
+    "descripcion_tema": "materiales bueno",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 119,
+
+    "name": "instalaciones fijas ",
+    "descripcion_tema": "instalaciones fijas buena",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 120,
+
+    "name": "extintores prt buena",
+    "descripcion_tema": "extintores prt buena",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 124,
+
+    "name": "bombero dificil",
+    "descripcion_tema": "bombero dificil",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 125,
+
+    "name": "policia nacional mix",
+    "descripcion_tema": "policia nacional mixtos",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 127,
+    "name": "MMPP",
+    "descripcion_tema": "MMPP",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 128,
+    "name": "agentes extintores",
+    "descripcion_tema": "agentes extintores",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 129,
+    "name": "Protección Civil",
+    "descripcion_tema": "Protección Civil",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 131,
+    "name": "Examen 1",
+    "descripcion_tema": "Examen 1",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 132,
+    "name": "Examen 2",
+    "descripcion_tema": "Examen 2",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 133,
+    "name": "Examen 3",
+    "descripcion_tema": "Examen 3",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 134,
+    "name": "Examen 4",
+    "descripcion_tema": "Examen 4",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 135,
+    "name": "Examen 5",
+    "descripcion_tema": "Examen 5",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 136,
+    "name": "Examen 6",
+    "descripcion_tema": "Examen 6",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 137,
+    "name": "Examen 7",
+    "descripcion_tema": "Examen 7",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 138,
+    "name": "MANUAL VASCO",
+    "descripcion_tema": "MANUAL VASCO",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 139,
+    "name": "Examen 8",
+    "descripcion_tema": "Examen 8",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 141,
+    "name": "Examen 9",
+    "descripcion_tema": "Examen 9",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 142,
+    "name": "Examen 10",
+    "descripcion_tema": "Examen 10",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 143,
+    "name": "Examen 11",
+    "descripcion_tema": "Examen 11",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 144,
+    "name": "Examen 12",
+    "descripcion_tema": "Examen 12",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 145,
+    "name": "Examen 13",
+    "descripcion_tema": "Examen 13",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 146,
+    "name": "Examen 14",
+    "descripcion_tema": "Examen 14",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 147,
+    "name": "Examen 15",
+    "descripcion_tema": "Examen 15",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 148,
+    "name": "Examen 16",
+    "descripcion_tema": "Examen 16",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 149,
+    "name": "Examen 17",
+    "descripcion_tema": "Examen 17",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 150,
+    "name": "Examen 18",
+    "descripcion_tema": "Examen 18",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 151,
+    "name": "Examen 19",
+    "descripcion_tema": "Examen 19",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 152,
+    "name": "Examen 20",
+    "descripcion_tema": "Examen 20",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 153,
+    "name": "Examen 21",
+    "descripcion_tema": "Examen 21",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 154,
+    "name": "Examen 22",
+    "descripcion_tema": "Examen 22",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 155,
+    "name": "Examen 23",
+    "descripcion_tema": "Examen 23",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 156,
+    "name": "Examen 24",
+    "descripcion_tema": "Examen 24",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 157,
+
+    "name": "test consorcio 2004",
+    "descripcion_tema": "test consorcio 2004",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 158,
+    "name": "Examen 25",
+    "descripcion_tema": "Examen 25",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 159,
+    "name": "Examen 26",
+    "descripcion_tema": "Examen 26",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 160,
+       "name": "GUARDIA CIVIL",
+    "descripcion_tema": "GUARDIA CIVIL",
+    "category": ""
+  },
+  {
+    "id_tema": 161,
+    "name": "01 CIENCIAS JURIDICA",
+    "descripcion_tema": "01 CIENCIAS JURIDICAS",
+    "category": ""
+  },
+  {
+    "id_tema": 316,
+    "name": "Informática",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 163,
+    "name": "02- TITULO I.DERECHO",
+    "descripcion_tema": "02- TITULO I.DERECHOS Y DEBERES FUNDAMENTALES",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 164,
+    "name": "03-TITULO II.LA CORO",
+    "descripcion_tema": "03-TITULO II.LA CORONA",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 165,
+    "name": "04-TITULO III.LAS CO",
+    "descripcion_tema": "04-TITULO III.LAS CORTES GENERALES",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 166,
+    "name": "05-TITULO IV,V,VI.EL",
+    "descripcion_tema": "05-TITULO IV,V,VI.EL GOBIERNO Y LA ADMINISTRACION",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 167,
+    "name": "06-TITULO VIII.ORGAN",
+    "descripcion_tema": "06-TITULO VIII.ORGANIZACION TERITORIAL DEL ESTADO",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 168,
+    "name": "07-TITULO IX,X.TRIBU",
+    "descripcion_tema": "07-TITULO IX,X.TRIBUNAL CONSTITUCIONAL",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 169,
+    "name": "08-DERECHO PENAL",
+    "descripcion_tema": "08-DERECHO PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 170,
+    "name": "09-DELITOS CONTRA LA",
+    "descripcion_tema": "09-DELITOS CONTRA LA ADMINISTRACION PUBLICA",
+    "category": ""
+  },
+  {
+    "id_tema": 171,
+    "name": "10-EL DERECHO PROCES",
+    "descripcion_tema": "10-EL DERECHO PROCESAL PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 172,
+    "name": "11-LA POLICIA JUDICI",
+    "descripcion_tema": "11-LA POLICIA JUDICIAL",
+    "category": ""
+  },
+  {
+    "id_tema": 173,
+    "name": "12-LA DETENCION",
+    "descripcion_tema": "12-LA DETENCION",
+    "category": ""
+  },
+  {
+    "id_tema": 174,
+    "name": "13-DE LOS CUERPOS Y ",
+    "descripcion_tema": "13-DE LOS CUERPOS Y FUERZAS DE SEGURIDAD",
+    "category": ""
+  },
+  {
+    "id_tema": 175,
+    "name": "14-EL CUERPO DE LA G",
+    "descripcion_tema": "14-EL CUERPO DE LA GUARDIA CIVIL",
+    "category": ""
+  },
+  {
+    "id_tema": 176,
+    "name": "15-REGIMEN JURIDICO ",
+    "descripcion_tema": "15-REGIMEN JURIDICO DE LAS ADMINISTRACIONES",
+    "category": ""
+  },
+  {
+    "id_tema": 177,
+    "name": "16-DISPOSICIONES Y A",
+    "descripcion_tema": "16-DISPOSICIONES Y ACTOS ADMINISTRATIVOS",
+    "category": ""
+  },
+  {
+    "id_tema": 178,
+    "name": "02 MATERIAS SOCIOCUL",
+    "descripcion_tema": "02 MATERIAS SOCIOCULTURALES",
+    "category": ""
+  },
+  {
+    "id_tema": 179,
+    "name": "17-PROTECCION CIVIL",
+    "descripcion_tema": "17-PROTECCION CIVIL",
+    "category": ""
+  },
+  {
+    "id_tema": 180,
+    "name": "18-ORGANIZACIONES IN",
+    "descripcion_tema": "18-ORGANIZACIONES INTERNACIONALES",
+    "category": ""
+  },
+  {
+    "id_tema": 181,
+    "name": "19-DERECHOS HUMANOS",
+    "descripcion_tema": "19-DERECHOS HUMANOS",
+    "category": ""
+  },
+  {
+    "id_tema": 182,
+    "name": "20-ECOLOGIA",
+    "descripcion_tema": "20-ECOLOGIA",
+    "category": ""
+  },
+  {
+    "id_tema": 190,
+    "name": "01 CIENCIAS JURIDICA",
+    "descripcion_tema": "01 CIENCIAS JURIDICAS",
+    "category": ""
+  },
+  {
+    "id_tema": 191,
+    "name": "01-CONSTITUCION ESPA",
+    "descripcion_tema": "01-CONSTITUCION ESPAÑOLA",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 192,
+    "name": "02-TITULO I. DERECHO",
+    "descripcion_tema": "02-TITULO I. DERECHOS Y DEBERES",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 193,
+    "name": "03-TITULO II.LA CORO",
+    "descripcion_tema": "03-TITULO II.LA CORONA",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 194,
+    "name": "04-TITULO III.LAS CO",
+    "descripcion_tema": "04-TITULO III.LAS CORTES GENERALES",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 195,
+    "name": "05-TITULO IV,V,VI.EL",
+    "descripcion_tema": "05-TITULO IV,V,VI.EL GOBIERNO Y LA ADMINISTRACION",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 196,
+    "name": "06-TITULO VIII.ORGAN",
+    "descripcion_tema": "06-TITULO VIII.ORGANIZACION TERRITORIAL DEL ESTADO",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 197,
+    "name": "07-TITULO IX,X.TRIBU",
+    "descripcion_tema": "07-TITULO IX,X.TRIBUNAL CONSTITUCIONAL",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 198,
+    "name": "08-DERECHO PENAL",
+    "descripcion_tema": "08-DERECHO PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 199,
+    "name": "09-DELITOS CONTRA LA",
+    "descripcion_tema": "09-DELITOS CONTRA LA ADMINISTRACION PUBLICA",
+    "category": ""
+  },
+  {
+    "id_tema": 200,
+    "name": "10-EL DERECHO PROCES",
+    "descripcion_tema": "10-EL DERECHO PROCESAL PENAL",
+    "category": ""
+  },
+  {
+    "id_tema": 201,
+    "name": "11-LA POLICIA JUDICI",
+    "descripcion_tema": "11-LA POLICIA JUDICIAL",
+    "category": ""
+  },
+  {
+    "id_tema": 202,
+    "name": "12-LA DETENCION",
+    "descripcion_tema": "12-LA DETENCION",
+    "category": ""
+  },
+  {
+    "id_tema": 203,
+    "name": "13-DE LOS CUERPOS Y ",
+    "descripcion_tema": "13-DE LOS CUERPOS Y FUERZAS DE SEGURIDAD",
+    "category": ""
+  },
+  {
+    "id_tema": 204,
+    "name": "14-EL CUERPO DE LA G",
+    "descripcion_tema": "14-EL CUERPO DE LA GUARDIA CIVIL",
+    "category": ""
+  },
+  {
+    "id_tema": 205,
+    "name": "15-REGIMEN JURIDICO ",
+    "descripcion_tema": "15-REGIMEN JURIDICO DE LAS ADMINISTRACIONES...",
+    "category": ""
+  },
+  {
+    "id_tema": 206,
+    "name": "16-DISPOSICIONES Y A",
+    "descripcion_tema": "16-DISPOSICIONES Y ACTOS ADMINISTRATIVOS",
+    "category": ""
+  },
+  {
+    "id_tema": 207,
+    "name": "02 MATERIAS SOCIO-CU",
+    "descripcion_tema": "02 MATERIAS SOCIO-CULTURALES",
+    "category": ""
+  },
+  {
+    "id_tema": 208,
+    "name": "17-PROTECCION CIVIL",
+    "descripcion_tema": "17-PROTECCION CIVIL",
+    "category": ""
+  },
+  {
+    "id_tema": 209,
+    "name": "18-ORGANIZACIONES IN",
+    "descripcion_tema": "18-ORGANIZACIONES INTERNACIONALES",
+    "category": ""
+  },
+  {
+    "id_tema": 210,
+    "name": "19-DERECHOS HUMANOS",
+    "descripcion_tema": "19-DERECHOS HUMANOS",
+    "category": ""
+  },
+  {
+    "id_tema": 211,
+    "name": "20-ECOLOGIA",
+    "descripcion_tema": "20-ECOLOGIA",
+    "category": ""
+  },
+  {
+    "id_tema": 212,
+    "name": "03 MATERIAS TECNICO-",
+    "descripcion_tema": "03 MATERIAS TECNICO-CIENTIFICAS",
+    "category": ""
+  },
+  {
+    "id_tema": 213,
+    "name": "21-ELECTRICIDAD Y EL",
+    "descripcion_tema": "21-ELECTRICIDAD Y ELECTROMAGNETISMO",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 214,
+    "name": "22-TRANSMISIONES",
+    "descripcion_tema": "22-TRANSMISIONES",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 215,
+    "name": "23-AUTOMOVILISMO",
+    "descripcion_tema": "23-AUTOMOVILISMO",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 216,
+    "name": "24-INFORMATICA",
+    "descripcion_tema": "24-INFORMATICA",
+    "category": ""
+  },
+  {
+    "id_tema": 217,
+    "name": "25- TOPOGRAFIA",
+    "descripcion_tema": "25- TOPOGRAFIA",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 218,
+    "name": "Examen 27",
+    "descripcion_tema": "Examen 27",
+    "category": ""
+  },
+  {
+    "id_tema": 219,
+    "name": "Examen 28",
+    "descripcion_tema": "Examen 28",
+    "category": ""
+  },
+  {
+    "id_tema": 220,
+    "name": "Examen 29",
+    "descripcion_tema": "Examen 29",
+    "category": ""
+  },
+  {
+    "id_tema": 221,
+    "name": "Examen 30",
+    "descripcion_tema": "Examen 30",
+    "category": ""
+  },
+  {
+    "id_tema": 223,
+    "name": "Examen Organización ",
+    "descripcion_tema": "Examen Organización Territorial del Estado",
+    "category": ""
+  },
+  {
+    "id_tema": 224,
+    "name": "Examen Las islas com",
+    "descripcion_tema": "Examen Las islas como entes públicos",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 237,
+    "name": "jurídico consorcio",
+    "descripcion_tema": "jurídico consorcio",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 238,
+    "name": "EPIs",
+    "descripcion_tema": "EPIs",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 240,
+    "name": "Personal de Administ",
+    "descripcion_tema": "Personal de Administraciones públicas",
+    "category": ""
+  },
+  {
+    "id_tema": 241,
+    "name": "Régimen local español",
+    "descripcion_tema": "Régimen local español",
+    "category": ""
+  },
+  {
+    "id_tema": 242,
+    "name": "Mercancías peligrosa",
+    "descripcion_tema": "Mercancías peligrosas",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 243,
+    "name": "Demografía y orograf",
+    "descripcion_tema": "Demografía y orografía Gran Canaria",
+    "category": ""
+  },
+  {
+    "id_tema": 244,
+    "name": "Asturias 2005",
+    "descripcion_tema": "Asturias 2005",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 245,
+    "name": "Construcción básica",
+    "descripcion_tema": "Construcción básica",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 246,
+    "name": "Examen Vitoria 2006",
+    "descripcion_tema": "Examen Vitoria 2006",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 247,
+    "name": "Examen Albacete 2006",
+    "descripcion_tema": "Examen Albacete 2006",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 248,
+    "name": "Examen Diputación Va",
+    "descripcion_tema": "Examen Diputación Valladolid 2006",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 249,
+    "name": "Examen Mijas 2004",
+    "descripcion_tema": "Examen Mijas 2004",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 250,
+    "name": "Test Oposición Bombe",
+    "descripcion_tema": "Test Oposición Bomberos",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 252,
+    "name": "Examen Ronda",
+    "descripcion_tema": "Examen Ronda",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 254,
+    "name": "variadas",
+    "descripcion_tema": "variadas",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 255,
+    "name": "GUARDIA CIVIL 2007 M",
+    "descripcion_tema": "GUARDIA CIVIL 2007 MIXTOS",
+    "category": ""
+  },
+  {
+    "id_tema": 260,
+    "name": "Tema 18",
+    "descripcion_tema": "Tema 18",
+    "category": ""
+  },
+  {
+    "id_tema": 261,
+    "name": "Tema 19",
+    "descripcion_tema": "Tema 19",
+    "category": ""
+  },
+  {
+    "id_tema": 263,
+    "name": "Redes de distribución",
+    "descripcion_tema": "Redes de distribución",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 264,
+
+    "name": "Extintores portátile",
+    "descripcion_tema": "Extintores portátiles",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 265,
+    "name": "Vehículos",
+    "descripcion_tema": "Vehículos",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 266,
+
+    "name": "Tráfico",
+    "descripcion_tema": "Tráfico",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 267,
+    "name": "salvamento y recuper",
+    "descripcion_tema": "salvamento y recuperación de víctimas.",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 268,
+    "name": "Salvamento y recuper",
+    "descripcion_tema": "Salvamento y recuperación de víctimas",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 269,
+
+    "name": "Vehículos",
+    "descripcion_tema": "Vehículos",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 277,
+       "name": "Policía Nacional Sur",
+    "descripcion_tema": "Policía Nacional Sureste",
+    "category": ""
+  },
+  {
+    "id_tema": 278,
+    "name": "MAD",
+    "descripcion_tema": "MAD",
+    "category": ""
+  },
+  {
+    "id_tema": 279,
+    "name": "Adam",
+    "descripcion_tema": "Adam",
+    "category": ""
+  },
+  {
+    "id_tema": 280,
+    "name": "CEP",
+    "descripcion_tema": "CEP",
+    "category": ""
+  },
+  {
+    "id_tema": 281,
+    "name": "Ciencias Jurídicas",
+    "descripcion_tema": "Ciencias Jurídicas",
+    "category": ""
+  },
+  {
+    "id_tema": 282,
+    "name": "Ciencias Sociales",
+    "descripcion_tema": "Ciencias Sociales",
+    "category": ""
+  },
+  {
+    "id_tema": 283,
+    "name": "MAterias Técnico-Cie",
+    "descripcion_tema": "MAterias Técnico-Científicas",
+    "category": ""
+  },
+  {
+    "id_tema": 284,
+    "name": "Test de examen convo",
+    "descripcion_tema": "Test de examen convocatoria 2006-2007",
+    "category": ""
+  },
+  {
+    "id_tema": 285,
+    "name": "Test 1",
+    "descripcion_tema": "Test 1",
+    "category": ""
+  },
+  {
+    "id_tema": 286,
+    "name": "Test 2",
+    "descripcion_tema": "Test 2",
+    "category": ""
+  },
+  {
+    "id_tema": 288,
+    "name": "Test 3",
+    "descripcion_tema": "Test 3",
+    "category": ""
+  },
+  {
+    "id_tema": 289,
+    "name": "Test 4",
+    "descripcion_tema": "Test 4",
+    "category": ""
+  },
+  {
+    "id_tema": 290,
+    "name": "Test 5",
+    "descripcion_tema": "Test 5",
+    "category": ""
+  },
+  {
+    "id_tema": 291,
+    "name": "Test 6",
+    "descripcion_tema": "Test 6",
+    "category": ""
+  },
+  {
+    "id_tema": 292,
+    "name": "Test 7",
+    "descripcion_tema": "Test 7",
+    "category": ""
+  },
+  {
+    "id_tema": 293,
+    "name": "Test 8",
+    "descripcion_tema": "Test 8",
+    "category": ""
+  },
+  {
+    "id_tema": 294,
+    "name": "Test 9",
+    "descripcion_tema": "Test 9",
+    "category": ""
+  },
+  {
+    "id_tema": 295,
+    "name": "Test 10",
+    "descripcion_tema": "Test 10",
+    "category": ""
+  },
+  {
+    "id_tema": 297,
+       "name": "PRUEBAS",
+    "descripcion_tema": "PRUEBAS",
+    "category": ""
+  },
+  {
+    "id_tema": 298,
+       "name": "Materias jurídicas comunes",
+    "descripcion_tema": "Materias jurídicas comunes",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 299,
+    "name": "C.E. Principios y características.",
+    "descripcion_tema": "Fechas,características, Título preliminar (art. 1- 9)",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 300,
+    "name": "C.E. Título I. Derechos y deberes fundamentales",
+    "descripcion_tema": "art. 10-55",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 301,
+    "name": "C.E. Título II. La Corona",
+    "descripcion_tema": "art. 56-65",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 302,
+    "name": "C.E. Título III. Las Cortes Generales",
+    "descripcion_tema": "art. 66- 96",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 303,
+    "name": "C.E. Título IV. El Gobierno y la Administración",
+    "descripcion_tema": "art. 97- 107",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 304,
+    "name": "C.E. Título V. Relaciones entre el Gobierno y las Cortes",
+    "descripcion_tema": "art. 108- 116",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 305,
+    "name": "C.E. Título VI. El Poder Judicial",
+    "descripcion_tema": "art. 117-127",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 306,
+    "name": "C.E. Título VIII. Organización Territorial del Estado",
+    "descripcion_tema": "Municipio, provincia y Comunidad Autónoma. (art. 137-158)",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 307,
+    "name": "C.E. Título IX. Tribunal Constitucional",
+    "descripcion_tema": "art. 159-165",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 308,
+    "name": "C.E. Título X. Reforma constitucional",
+    "descripcion_tema": "art. 166- 169",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 309,
+    "name": "Administración General del Estado",
+    "descripcion_tema": "Organización y Funcionamiento",
+    "category": ""
+  },
+  {
+    "id_tema": 324,
+    "name": "Las islas como entes públicos",
+    "descripcion_tema": "Las islas como entes públicos",
+    "category": ""
+  },
+  {
+    "id_tema": 325,
+    "name": "Estatuto de Autonomía de Canarias",
+    "descripcion_tema": "Estatuto de Autonomía de Canarias",
+    "category": "Estatutos de autonomía"
+  },
+  {
+    "id_tema": 329,
+    "name": "Procedimiento Administrativo",
+    "descripcion_tema": "Procedimiento Administrativo",
+    "category": ""
+  },
+  {
+    "id_tema": 328,
+    "name": "Acto Administrativo",
+    "descripcion_tema": "Acto Administrativo",
+    "category": ""
+  },
+  {
+    "id_tema": 330,
+    "name": "Procedimiento Administrativo",
+    "descripcion_tema": "Ley 30/92 de 26 Noviembre",
+    "category": ""
+  },
+  {
+    "id_tema": 331,
+    "name": "Acto Administrativo",
+    "descripcion_tema": " Ley 30/92 de 26 Noviembre",
+    "category": ""
+  },
+  {
+    "id_tema": 332,
+
+    "name": "CTE",
+    "descripcion_tema": "CTE",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 333,
+
+    "name": "Construción y Apuntalamientos",
+    "descripcion_tema": "Construción y Apuntalamientos",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 334,
+
+    "name": "Reacción y Resistencia al fuego",
+    "descripcion_tema": "Reacción y Resistencia al fuego",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 337,
+    "name": "Conocimiento Municipio",
+    "descripcion_tema": "",
+    "category": "Geografía específica"
+  },
+  {
+    "id_tema": 388,
+    "name": "Agentes extintores",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 341,
+    "name": "prevención y Protección",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 340,
+    "name": " Historia municipio",
+    "descripcion_tema": "",
+    "category": "Geografía específica"
+  },
+  {
+    "id_tema": 342,
+    "name": " Calor y Temperatura",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 343,
+    "name": "Estatuto de auto. Canarias",
+    "descripcion_tema": "Estatuto de auto. Canarias",
+    "category": "Estatutos de autonomía"
+  },
+  {
+    "id_tema": 344,
+       "name": "POLICIA LOCAL",
+    "descripcion_tema": "POLICIA LOCAL",
+    "category": ""
+  },
+  {
+    "id_tema": 345,
+    "name": "TRáFICO Y SEGURIDAD VIAL",
+    "descripcion_tema": "Temas del 15 al 19",
+    "category": ""
+  },
+  {
+    "id_tema": 346,
+       "name": "AUXILAR ADMINISTRATIVO",
+    "descripcion_tema": "AUXILAR ADMINISTRATIVO",
+    "category": ""
+  },
+  {
+    "id_tema": 347,
+    "name": "Informatica",
+    "descripcion_tema": "Informatica",
+    "category": ""
+  },
+  {
+    "id_tema": 348,
+    "name": "Ofimatica",
+    "descripcion_tema": "Ofimatica",
+    "category": ""
+  },
+  {
+    "id_tema": 349,
+    "name": "REGIMEN JURíDICO DE LA POLICíA",
+    "descripcion_tema": "cuerpos y fuerzas de seguridad",
+    "category": ""
+  },
+  {
+    "id_tema": 351,
+    "name": "DERECHO PROCESAL Y PENAL",
+    "descripcion_tema": "temas del 9 al14",
+    "category": ""
+  },
+  {
+    "id_tema": 352,
+    "name": "tema1 normativa sobre cuerpos y fuerzas de seguridad",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 353,
+    "name": "tema 2. Sistema canario de seguridad y emergencias",
+    "descripcion_tema": "",
+    "category": "Planes de emergencias"
+  },
+  {
+    "id_tema": 377,
+    "name": "Documentos administrativos",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 355,
+    "name": "Tema 4. Normativa sobre protección de la seguridad ciudadana.",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 356,
+    "name": "Tema 9. Delitos y sus penas",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 357,
+    "name": "Tema 3. Estructura y organización. Derechos y deberes.",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 358,
+    "name": "POLICíA ADMINISTRATIVO ESPECIAL",
+    "descripcion_tema": "temas del 20 al 23",
+    "category": ""
+  },
+  {
+    "id_tema": 359,
+    "name": "Tema 15. Tráfico, circulación y seguridad Vial",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 360,
+    "name": "Tema 16. Adelantamientos, parada y estacionamiento",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 361,
+    "name": "Tema 17. La señalización",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 362,
+    "name": "Tema 18. Las autorizaciones administrativas. Permisos y licencias",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 363,
+    "name": "Tema 19. Régimen sancionador: infracciones y sanciones.",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 364,
+    "name": "Tema 10. Los delitos contra el patrimonio y contra el orden",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 365,
+    "name": "Tema 11. Delitos relativos a la ordenación del territorio",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 366,
+    "name": "Tema 12. La violencia de género",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 367,
+    "name": "Tema 13. Ley Orgánica 5/2000, responsabilidad penal menores",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 368,
+    "name": "Tema 14. Las faltas y sus penas",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 369,
+    "name": "Tema 5. La policía judicial",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 370,
+    "name": "Tema 6. El sistema de protección civil",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 371,
+    "name": "Tema 7. Las relaciones entre policía y sociedad",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 372,
+    "name": "Tema 8. Deontología policial: ética y actividad policial",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 373,
+    "name": "Tema 20. Actividad en materia de sanidad, consumo y abastos",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 374,
+    "name": "Tema 21. Protección del medio ambiente",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 375,
+    "name": "Tema 22. Ordenación del Turismo en Canarias",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 376,
+    "name": "Tema 23. Población y Ecología humana",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 378,
+    "name": "Atención al público",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 379,
+       "name": "Policía portuaria",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 380,
+    "name": "tema 1",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 381,
+    "name": "tema 2",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 382,
+       "name": "",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 383,
+       "name": "horario de julio",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 387,
+    "name": "Teoría del fuego",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 385,
+       "name": "",
+    "descripcion_tema": "",
+    "category": ""
+  },
+  {
+    "id_tema": 390,
+    "name": "Métodos y mecanismos de extinción",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 391,
+    "name": "Ventilación",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 392,
+    "name": "Incendios interiores",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 393,
+    "name": "Vehículos",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 394,
+    "name": "Hidráulica y bombas",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 395,
+    "name": "Equipos de protección individual",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 396,
+    "name": "Primeros auxilios",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 397,
+    "name": "Incendios Forestales",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 399,
+    "name": "Rescate en altura",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 400,
+    "name": "Apuntalamientos",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 401,
+    "name": "Protección civil",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 402,
+    "name": "Instalaciones de protección contra incendios",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 403,
+    "name": "Explosiones, causas y tipos",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 404,
+    "name": "Código Técnico, Reacción y Resisntencia al fuego",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 405,
+    "name": "Extintores portátiles",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 406,
+    "name": "Materiales",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 407,
+    "name": "Ascensores",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 408,
+    "name": "Equipos de protección respiratoria",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 409,
+    "name": "Mercancías Peligrosas",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 414,
+    "name": "Construcción",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 413,
+    "name": "Túneles",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 415,
+    "name": "Unidades, medidas y fórmulas.",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 416,
+    "name": "Radiocomuicaciones",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 417,
+    "name": "Electricidad",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 418,
+       "name": "Geografia",
+    "descripcion_tema": "",
+    "category": "Geografía específica"
+  },
+  {
+    "id_tema": 419,
+    "name": "Las Palmas",
+    "descripcion_tema": "",
+    "category": "Geografía específica"
+  },
+  {
+    "id_tema": 420,
+    "name": "Normativa EPIS",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 421,
+    "name": "Accidentes de tráfico",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 422,
+    "name": "Herramientas Tráfico",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 423,
+    "name": "Centros de coordinación de emergencias",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 424,
+    "name": "Teléfono 112",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 425,
+    "name": "Psicología en emergencias",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 427,
+    "name": "Estatuto de autonomía de Canarias",
+    "descripcion_tema": "",
+    "category": "Estatutos de autonomía"
+  },
+  {
+    "id_tema": 428,
+    "name": "Régimen jurídico del sector público ley 40/2015",
+    "descripcion_tema": "",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 429,
+    "name": "ley 39/2015 del procedimiento administrativo común",
+    "descripcion_tema": "",
+    "category": "Materias Jurídicas comunes"
+  },
+  {
+    "id_tema": 430,
+    "name": "Geografía Tenerife, comunicaciones e infraestructuras",
+    "descripcion_tema": "",
+    "category": "Geografía específica"
+  },
+  {
+    "id_tema": 431,
+    "name": "Desarrollo del incendio y consecuencias",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 432,
+    "name": "Ley de prevención de riesgos laborales",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 433,
+    "name": "mecánica",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 434,
+    "name": "Incendios en buques",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 435,
+    "name": "Incendios industriales",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 437,
+       "name": "Planes Canarias",
+    "descripcion_tema": "",
+    "category": "Planes de emergencias"
+  },
+  {
+    "id_tema": 438,
+    "name": "Plateca",
+    "descripcion_tema": "",
+    "category": "Planes de emergencias"
+  },
+  {
+    "id_tema": 439,
+    "name": "PEIN Gran Canaria",
+    "descripcion_tema": "",
+    "category": "Planes de emergencias"
+  },
+  {
+    "id_tema": 440,
+    "name": "PEMULPA",
+    "descripcion_tema": "",
+    "category": "Planes de emergencias"
+  },
+  {
+    "id_tema": 441,
+    "name": "Rescate de animales ",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
+  },
+  {
+    "id_tema": 442,
+    "name": "Rescate acuático",
+    "descripcion_tema": "",
+    "category": "Especifico de bombero"
   }
-]
+ ]
