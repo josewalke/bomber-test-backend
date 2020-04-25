@@ -10,7 +10,9 @@ module.exports = {
   testAnswer,
   postExam,
   deleteDesafio,
-  testPremium
+  testPremium,
+  updateDeberes,
+  updateNota
 };
 
 function getAllTests(req, res) {
@@ -77,8 +79,6 @@ function testAnswer(req, res){
   }
 }
 
-
-
 async function createRandomTest(req, res) {
   const now =  new Date()
   const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
@@ -86,7 +86,7 @@ async function createRandomTest(req, res) {
   const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
   // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
   let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let num = 20;
+  let num = 45;
   var list = [];
   let blanco = [];
   list = await questionsModel.find();
@@ -133,7 +133,6 @@ async function createRandomTest(req, res) {
       res.status(403).json({ error: err });
     });
 }
-
 
 async function createConfigTest(req, res) {
   const testName = req.body.name
@@ -232,8 +231,12 @@ function deleteDesafio(req, res){
 
 async function testPremium(req, res){
   const now =  new Date()
-  let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + now.getMinutes(00)
-  let num = 20;
+  const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
+  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + now.getMonth()
+  const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
+  // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+  let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+  let num = 45;
   var list = [];
   let blanco = [];
   list = await questionsModel.find();
@@ -256,20 +259,37 @@ async function testPremium(req, res){
 
   const testBody = {
     user_id: '',
-    title: "Test creado el " + date,
+    title: "Examen del profesor - " + date,
     testCheck: testCheck,
     aciertos: [],
     aciertos_num: 0,
     fallos: [],
     fallos_num: 0,
     respuestas: respuestas,
-    nota: 0,
+    nota: false,
+    end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
-    desafio: false
+    desafio: false,
+    deberes: true
   };
    res.json(testBody)
 }
+
+async function updateDeberes(req,res){
+  console.log(req.body)
+  testModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
+async function updateNota(req,res){
+  testModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
+
 function handdleError(err, res) {
   return res.status(400).json(err);
 }

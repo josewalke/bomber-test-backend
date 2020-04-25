@@ -5,7 +5,7 @@ module.exports = {
   pro,
   premium
 }
-const stripe = require('stripe')('pk_test_ezWwY83XHKU9CtONibdNYGXA00plca98gw')
+const stripe = require('stripe')('sk_test_TjTSauL02STOqR0fzf0jZjII00rIkQjdiq')
 
 async function basic(req,res){
   suscriptionModel
@@ -47,6 +47,7 @@ async function premium(req,res){
       metadata: {integration_check: 'accept_a_payment'},
     });
     res.json(paymentIntent)
+
   })
   .catch((err) => handdleError(err, res))
 }

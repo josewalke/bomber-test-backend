@@ -59,6 +59,9 @@ const testSchema = new mongoose.Schema({
   time_end2: {
     type: Boolean,
     default: null
+  },
+  deberes:{
+    type: Boolean
   }
 })
 const testModel = mongoose.model('test', testSchema)
