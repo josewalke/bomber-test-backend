@@ -3,7 +3,7 @@ const heroku = process.env.heroku;
 console.log('hola mundooo')
 
 console.log('heroku = ' + heroku)
-if (heroku === true) {
+if (heroku) {
   config = {
     mongoURL: process.env.mongoURL,
     apiKeys: process.env.apiKeys,
