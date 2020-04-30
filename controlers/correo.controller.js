@@ -4,7 +4,15 @@ const UserModel = require('../models/users.model')
 module.exports = {
   enviar
 };
-let config = require('../.env')
+
+const env = process.env.NODE_ENV;
+let config;
+if (env === 'heroku') {
+  config = process.env
+}else {
+  config = require("../.env");
+
+}
 
   var intervalo = setInterval(email, 3600000)
   function email(req, res) {
