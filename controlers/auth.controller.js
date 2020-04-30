@@ -81,7 +81,7 @@ function login(req, res) {
           active: user.active,
           negativos: user.negativos,
           suscription_end_active: user.suscription_end_active,
-          active: false,
+          active: user.active,
           provincia: user.provincia
         };
 
