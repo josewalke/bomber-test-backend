@@ -1,7 +1,8 @@
 let config;
 const heroku = process.env.heroku;
+console.log('hola mundooo')
 
-console.log(heroku)
+console.log('heroku = ' + heroku)
 if (heroku === true) {
   config = {
     mongoURL: process.env.mongoURL,
