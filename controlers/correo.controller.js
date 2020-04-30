@@ -7,7 +7,7 @@ module.exports = {
 
 const env = process.env.NODE_ENV;
 let config;
-if (env === 'heroku') {
+if (env === 'cheroku') {
   config = process.env
 }else {
   config = require("../.env");
