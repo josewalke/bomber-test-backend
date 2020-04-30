@@ -1,7 +1,8 @@
 let config;
-const env = process.env.NODE_ENV;
-console.log(env)
-if (env === 'cheroku') {
+const heroku = process.env.heroku;
+
+console.log(heroku)
+if (heroku === true) {
   config = {
     mongoURL: process.env.mongoURL,
     apiKeys: process.env.apiKeys,
