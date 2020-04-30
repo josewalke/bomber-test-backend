@@ -1,5 +1,6 @@
 let config;
 const env = process.env.NODE_ENV;
+console.log(env)
 if (env === 'heroku') {
   config = {
     mongoURL: process.env.mongoURL,
