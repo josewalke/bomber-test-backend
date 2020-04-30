@@ -1,6 +1,6 @@
 let config;
-const heroku = process.env.heroku;
-if (heroku) {
+const env = process.env.NODE_ENV;
+if (env === 'heroku') {
   config = {
     mongoURL: process.env.mongoURL,
     apiKeys: process.env.apiKeys,
