@@ -12,9 +12,7 @@ const app = express();
 let config = require("./config");
 
 // MIDDLEWARES
-app.use(cors({
-  origin: true
-}));
+app.use(cors({origin: true}));
 app.use(morgan("combined"));
 app.use(express.json());
 
