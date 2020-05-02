@@ -120,7 +120,8 @@ async function createRandomTest(req, res) {
     end: false,
     no_contestadas: blanco,
     mostrar_solucion: false,
-    desafio: false
+    desafio: false,
+    deberes: false
   };
 
   testModel
@@ -202,7 +203,8 @@ async function createConfigTest(req, res) {
     selectedTemas: selected,
     mostrar_solucion: correctorSwitch,
     deberes: true,
-    desafio:false
+    desafio:false,
+    deberes: false
   };
 
   testModel
