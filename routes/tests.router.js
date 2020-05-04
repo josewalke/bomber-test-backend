@@ -18,7 +18,7 @@ const {
 } = require("../controlers/tests.controller");
 
 router.get("/premium", testPremium)
-router.get("/user/:id", getMyTests);
+router.get("/user/me/:id", getMyTests);
 router.put("/deberes/:id",updateDeberes);
 router.put("/nota/:id",updateNota);
 // router.get("/:id", getTestById);
