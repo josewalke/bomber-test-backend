@@ -206,7 +206,6 @@ async function createConfigTest(req, res) {
     desafio:false,
     deberes: false
   };
-
   testModel
     .create(testBody)
 
@@ -218,6 +217,70 @@ async function createConfigTest(req, res) {
       res.status(403).json({ error: err });
     });
 }
+
+// async function createConfigTest(req, res) {
+//   const testName = req.body.name
+//   const numSelected = req.body.number
+//   const selected = req.body.temas
+//   const correctorSwitch  = req.body.correction
+//   let list = []
+//   let blanco = []
+//   let no_contestadas = []
+//   var respuestas = []
+//   for (i=0;i<numSelected;i++){
+//     // console.log(selected[i])
+//     var numero = Math.floor(Math.random() * (selected.length ) )
+
+//     list = await questionsModel.find({tema_id: selected[numero]})
+
+//     var lolo = Math.floor(Math.random() * (list.length - 1) )
+//     if(!blanco.includes(lolo)){
+//       blanco.push(lolo)
+//       no_contestadas.push(list[lolo]._id)
+//       respuestas.push({id: list[lolo]._id, answered: false})
+//     }else{
+//       i--
+//     }
+//     // console.log('pregunta '+lolo+' tema '+numero)
+//     // console.log(numero)
+//   }
+//   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+
+//   const testBody = {
+//     user_id: res.locals.reboot_user._id,
+//     title: testName,
+//     testCheck: testCheck,
+//     aciertos: [],
+//     aciertos_num: 0,
+//     fallos: [],
+//     fallos_num: 0,
+//     respuestas: respuestas,
+//     nota: false,
+//     end: false,
+//     no_contestadas: blanco,
+//     mostrar_solucion: false,
+//     selectedTemas: selected,
+//     mostrar_solucion: correctorSwitch,
+//     deberes: true,
+//     desafio:false,
+//     deberes: false
+//   };
+
+//   // console.log(no_contestadas)
+//   // console.log(respuestas)
+//   console.log(testBody)
+
+//   testModel
+//     .create(testBody)
+//     .then(async response => {
+//       const populado = await response.populate("no_contestadas").execPopulate();
+//       res.json(populado);
+//     })
+//     .catch(err => {
+//       res.status(403).json({ error: err });
+//     });
+
+// }
 
 function getMyTests(req, res) {
   testModel
