@@ -142,7 +142,7 @@ async function createConfigTest(req, res) {
   const correctorSwitch  = req.body.correction
   let list = []
   let blanco = []
-  list = await questionsModel.find();
+  list = await questionsModel.find()
 
   if(selected.length === 0){
     var testQuestions = list
@@ -156,13 +156,17 @@ async function createConfigTest(req, res) {
   }
 
   if(selected.length > 0){
+    var testQuestions = list
+    .sort(function() {
+      return 0.5 - Math.random();
+    })
    let counter = blanco.length
-    while(counter < numSelected && list.length > 0 && selected.length > 0){
+    while(counter < numSelected && testQuestions.length > 0 && selected.length > 0){
       let random = selected.sort(function() {
         return 0.5 - Math.random();
       })
       for( i = 0; i < selected.length; i++ ){
-        const found = list.find(q => q.tema_id == random[i])
+        const found = testQuestions.find(q => q.tema_id == random[i])
 
         if(!found){
           const temaIdx = selected.findIndex(elem => elem === random[i])
@@ -170,15 +174,15 @@ async function createConfigTest(req, res) {
         }else{
           if(blanco.length < numSelected){
             blanco.push(found)
-            const idx = list.findIndex(q => q._id == found._id)
-            list.splice(idx,1)
+            const idx = testQuestions.findIndex(q => q._id == found._id)
+            testQuestions.splice(idx,1)
             counter++
           }
         }
       }
     }
   }
-
+  console.log(blanco.length)
   let respuestas = []
   blanco.forEach( q => {
     respuestas.push({ id: q, answered:false})
