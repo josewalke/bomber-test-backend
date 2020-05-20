@@ -1,5 +1,6 @@
 const testModel = require("../models/test.model");
 const questionsModel = require("../models/questions.model");
+const temaModel = require('../models/tema.model')
 
 module.exports = {
   getAllTests,
@@ -89,7 +90,15 @@ async function createRandomTest(req, res) {
   let num = 45;
   var list = [];
   let blanco = [];
-  list = await questionsModel.find();
+  let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
+  list = await questionsModel.find(
+    { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+          ]
+    }
+  );
   var testQuestions = list
     .sort(function() {
       return 0.5 - Math.random();
@@ -142,7 +151,15 @@ async function createConfigTest(req, res) {
   const correctorSwitch  = req.body.correction
   let list = []
   let blanco = []
-  list = await questionsModel.find()
+  let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
+  list = await questionsModel.find(
+    { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[0]}}},
+          ]
+    }
+  );
 
   if(selected.length === 0){
     var testQuestions = list

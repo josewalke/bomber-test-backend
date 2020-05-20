@@ -96,7 +96,6 @@ function desactivar(req, res){
 }
 intervalo3
 
-
 // var intervalo4 = setInterval(prueba, 2000)
 //  function prueba(req,res){
 //     let body = {
@@ -224,15 +223,6 @@ intervalo3
 //  }
 
 // intervalo4
-// var intervalo5 = setTimeout(borrado, 1000)
-
-// function borrado (req,res){
-//   questionsModel.remove({correcta: 0})
-//   .then(questions => {
-//     console.log(questions)
-//   })
-// }
-// intervalo5
 
 // intervalo6 = setTimeout(grupos,1000)
 
