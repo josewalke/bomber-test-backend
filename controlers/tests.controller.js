@@ -342,7 +342,18 @@ async function testPremium(req, res){
   let num = 45;
   var list = [];
   let blanco = [];
-  list = await questionsModel.find();
+
+  let TV = await temaModel.find({visible: {$eq:true}})
+  TV = TV.map(x =>{
+    return x._id
+  })
+  for(let i=0;i<TV.length;i++){
+    var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
+    for(let x=0; x<buscador.length;x++){
+      list.push(buscador[x]._id)
+    }
+  }
+
   var testQuestions = list
     .sort(function() {
       return 0.5 - Math.random();
