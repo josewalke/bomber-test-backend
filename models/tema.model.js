@@ -10,6 +10,9 @@ const temaSchema = new mongoose.Schema({
   // borrar lo de abajo
   id_tema:{
     type: Number
+  },
+  visible:{
+    type: Boolean
   }
 })
 const temaModel = mongoose.model('tema', temaSchema)

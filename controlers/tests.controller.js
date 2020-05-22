@@ -91,14 +91,28 @@ async function createRandomTest(req, res) {
   var list = [];
   let blanco = [];
   let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
-  list = await questionsModel.find(
-    { $or: [{tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
-          ]
+  //codigo antiguo de para sacar preguntas
+  // list = await questionsModel.find(
+  //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+  //           {tema_id: {$not: {$eq: ST[1]}}},
+  //           {tema_id: {$not: {$eq: ST[2]}}},
+  //           {tema_id: {$not: {$eq: ST[3]}}},
+  //         ]
+  //   }
+  // )
+
+  //Sacar preguntas para que esten permitidas
+  let TV = await temaModel.find({visible: {$eq:true}})
+  TV = TV.map(x =>{
+    return x._id
+  })
+  for(let i=0;i<TV.length;i++){
+    var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
+    for(let x=0; x<buscador.length;x++){
+      list.push(buscador[x]._id)
     }
-  );
+  }
+
   var testQuestions = list
     .sort(function() {
       return 0.5 - Math.random();
@@ -154,9 +168,9 @@ async function createConfigTest(req, res) {
   let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
   list = await questionsModel.find(
     { $or: [{tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
-            {tema_id: {$not: {$eq: ST[0]}}},
+            {tema_id: {$not: {$eq: ST[1]}}},
+            {tema_id: {$not: {$eq: ST[2]}}},
+            {tema_id: {$not: {$eq: ST[3]}}},
           ]
     }
   );
@@ -202,6 +216,7 @@ async function createConfigTest(req, res) {
   console.log(blanco.length)
   let respuestas = []
   blanco.forEach( q => {
+
     respuestas.push({ id: q, answered:false})
   })
 
