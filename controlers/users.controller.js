@@ -78,24 +78,19 @@ var intervalo3 = setInterval(desactivar, 86400000)
 
 
 function desactivar(req, res){
-  UserModel
-    .find({role: 'cliente', active: true})
-    .then(usuarios => {
-      for(let i=0;i<usuarios.length; i++){
-
-        let suscription_end_active = parseInt(usuarios[i].suscription_end_active)
-
-        if(suscription_end_active > new Date().getTime()){
-          UserModel
-          .findByIdAndUpdate({_id: usuarios[0]._id},{active: false})
-          .then(response => console.log(response))
-        }
+  UserModel.find({role:'cliente', active:true}).then(usuarios => {
+    // console.log(usuarios.length)
+    for(let i=0;i<usuarios.length; i++){
+      let suscription_end_active = parseInt(usuarios[i].suscription_end_active)
+      if(suscription_end_active < new Date().getTime()){
+        UserModel
+        .findByIdAndUpdate({_id: usuarios[i]._id},{active: false})
+        .then(response => console.log(response))
       }
-    })
-    .catch((err) => handdleError(err, res))
+    }
+  })
 }
 intervalo3
-
 
 // var intervalo5 = setTimeout(borrar, 1000)
 

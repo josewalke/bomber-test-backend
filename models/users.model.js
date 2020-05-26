@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["admin", "cliente","prueba"],
     required: false,
-    default: "cliente"
+    default: "prueba"
   },
   phone: {
     type: Number,
