@@ -6,6 +6,7 @@ module.exports = {
   premium
 }
 const stripe = require('stripe')('sk_live_jOTokUxIvMF19QurvX4KkJko0099KY4GJH')
+// const stripe = require('stripe')('sk_test_TjTSauL02STOqR0fzf0jZjII00rIkQjdiq')
 
 async function basic(req,res){
   suscriptionModel
