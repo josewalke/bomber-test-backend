@@ -13,7 +13,9 @@ module.exports = {
   deleteDesafio,
   testPremium,
   updateDeberes,
-  updateNota
+  updateNota,
+  reload
+
 };
 
 function getAllTests(req, res) {
@@ -60,6 +62,7 @@ function testAnswer(req, res){
       .catch(err => handdleError(err, res));
 
   }else{
+
 
     let num = req.body.numero
     let resp = req.body.respuesta
@@ -398,6 +401,13 @@ async function updateDeberes(req,res){
     .catch((err) => handdleError(err, res))
 }
 async function updateNota(req,res){
+  testModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
+async function reload(req,res){
+  console.log(req.body)
   testModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))

@@ -13,7 +13,8 @@ const {
   updateTest,
   testPremium,
   updateDeberes,
-  updateNota
+  updateNota,
+  reload
 
 } = require("../controlers/tests.controller");
 
@@ -21,6 +22,7 @@ router.get("/premium", testPremium)
 router.get("/user/me/:id", getMyTests);
 router.put("/deberes/:id",updateDeberes);
 router.put("/nota/:id",updateNota);
+router.put("/reload/:id",reload);
 // router.get("/:id", getTestById);
 router.get("/:id", getTestById);
 router.get("/", getAllTests);
