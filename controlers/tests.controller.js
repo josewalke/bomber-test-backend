@@ -407,7 +407,6 @@ async function updateNota(req,res){
     .catch((err) => handdleError(err, res))
 }
 async function reload(req,res){
-  console.log(req.body)
   testModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))
