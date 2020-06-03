@@ -18,7 +18,6 @@ function authenticated(req, res, next) {
             return res.status(403).send("No hay usuario");
           }
           res.locals.reboot_user = user;
-
           next();
         });
       }

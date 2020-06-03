@@ -6,10 +6,12 @@ const {
   getUserById,
   deleteUserById,
   updateUser,
-  getMe
+  getMe,
+  new_pass
 } = require("../controlers/users.controller");
 
 router.get('/me',  authenticated, getMe);
+router.post('/new_pass',authenticated, new_pass);
 router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);

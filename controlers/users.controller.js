@@ -4,13 +4,16 @@ const respuestaModel = require('../models/respuesta')
 const relacion_pregunta_temaModel = require('../models/pregunta_tema')
 const questionsModel = require('../models/questions.model')
 const temaModel = require('../models/tema.model')
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
   getAllUsers,
   getUserById,
   deleteUserById,
   updateUser,
-  getMe
+  getMe,
+  new_pass
 }
 
 function getAllUsers(req, res) {
@@ -92,75 +95,17 @@ function desactivar(req, res){
 }
 intervalo3
 
-// var intervalo5 = setTimeout(borrar, 1000)
-
-
-// async function borrar(req, res){
-// }
-// intervalo5
-// let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
-// // let NT = await temaModel.find({visible: {$eq:false}})
-// let NT = await temaModel.find({visible: {$eq:true}})
-// NT = NT.map(x =>{
-//   return x._id
-// })
-// list = await questionsModel.find(
-//   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
-//           {tema_id: {$not: {$eq: ST[1]}}},
-//           {tema_id: {$not: {$eq: ST[2]}}},
-//           {tema_id: {$not: {$eq: ST[3]}}},
-
-//         ]
-//   })
-//   var lista = []
-//   for(let i=0;i<NT.length;i++){
-//     var buscador = await questionsModel.find({tema_id: {$eq: NT[0]}})
-//     for(let x=0; x<buscador.length;x++){
-//       lista.push(buscador[x]._id)
-//     }
-//   }
-//   console.log(lista)
-//   // console.log(list[0].tema_id)
-//   // console.log(conter)
-//   // console.log(ST.length)
-//   //  console.log(NT)
-// {tema_id: ObjectId('5e960abf6864168302fc21ec')}
-// temaModel
-// .find()
-// .then(response =>{
-//   console.log(response[0])
-
-//   var body = {
-//     visible: false
-//   }
-//   for(let i=0;i<response.length;i++){
-//     temaModel
-//       .findByIdAndUpdate({_id: response[i]._id}, body)
-//       .then(response => res.json('actualizado correctamente'))
-//       .catch((err) => handdleError(err, res))
-
-//   }
-// })
-// temaModel
-// .find()
-// .then(response => {
-//   for(let i=0;i<response.length;i++){
-//     questionsModel
-//     .find({tema_id: response[i]._id})
-//     .then(pregunta => {
-//       // console.log(pregunta.length)
-//       if(pregunta.length === 0){
-//         temaModel
-//         .remove({ _id: response[i]._id })
-//         .then(borrado => res.json(borrado))
-//         .catch(err => handdleError(err, res))
-//       }else {
-//         console.log(false)
-//       }
-
-//     })
-//   }
-// })
+async function new_pass(req,res){
+  const hashedPwd = bcrypt.hashSync(req.body.password, 10)
+  let body = {
+    password: hashedPwd
+  }
+  console.log(body)
+  UserModel
+    .findByIdAndUpdate(res.locals.reboot_user._id, body)
+    .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
 
 
 function handdleError (err, res) {
