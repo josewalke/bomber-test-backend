@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
   },
   suscription_type: {
     type: String,
-    default: 'basic'
+    default: 'pro'
   },
   suscription_start: {
     type: Date
