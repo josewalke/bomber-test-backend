@@ -4,7 +4,8 @@ module.exports = {
   createQuestion,
   getAllQuestions,
   getQuestionById,
-  updateQuestion
+  updateQuestion,
+  getQuestion
 }
 
 function createQuestion(req, res) {
@@ -45,5 +46,12 @@ function updateQuestion(req, res) {
   questionsModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
+
+async function getQuestion(req,res){
+  questionsModel
+    .find(req.body)
+    .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }

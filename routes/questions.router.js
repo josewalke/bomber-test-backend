@@ -5,13 +5,16 @@ const {
   createQuestion,
   getAllQuestions,
   getQuestionById,
-  updateQuestion
+  updateQuestion,
+  getQuestion
 } = require("../controlers/questions.controller");
 
 
 router.post('/', createQuestion)
 
 router.get('/', getAllQuestions)
+
+router.post('/especifico',getQuestion)
 
 router.get('/:id', getQuestionById)
 
