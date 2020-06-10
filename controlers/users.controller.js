@@ -18,7 +18,7 @@ module.exports = {
 
 function getAllUsers(req, res) {
   UserModel
-    .find({role: 'cliente'})
+    .find({ $or: [{role:'cliente'},{role:'prueba'}]})
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
