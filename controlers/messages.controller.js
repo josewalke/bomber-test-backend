@@ -17,6 +17,7 @@ function createMessage(req, res) {
     explicacion: req.body.explicacion,
     verificada: req.body.verificada,
     type: req.body.type,
+    test_id: req.body.test_id
   }
   // console.log(body)
   messageModel.create(body)

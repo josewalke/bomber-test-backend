@@ -23,6 +23,9 @@ const messageSchema = new mongoose.Schema({
   },
   type: {
     type: String
+  },
+  test_id:{
+    type: mongoose.Schema.Types.ObjectId
   }
 })
 const messageModel = mongoose.model('message', messageSchema)
