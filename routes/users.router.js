@@ -15,7 +15,7 @@ router.post('/new_pass',authenticated, new_pass);
 router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
-router.delete('/:id', getAllUsers);
+router.delete('/:id', deleteUserById);
 
 
 module.exports = router;
