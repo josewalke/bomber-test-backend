@@ -116,12 +116,24 @@ async function createRandomTest(req, res) {
     }
   }
 
-  var testQuestions = list
-    .sort(function() {
-      return 0.5 - Math.random();
-    })
-    .splice(0, num);
+  var testQuestions=[]
+  var posicion=[]
+  var seleccionado = ''
+  for(let i=0;i<num;i++){
+    seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
+    if(!posicion.includes(seleccionado)){
+      posicion.push(seleccionado)
+      testQuestions.push(list[seleccionado])
+    } else {
+      i--
+    }
+  }
 
+  // var testQuestions = list
+  //   .sort(function() {
+  //     return 0.5 - Math.random();
+  //   })
+  //   .splice(0, num);
   blanco = testQuestions.map(i => {
     return i._id;
   });
@@ -216,7 +228,6 @@ async function createConfigTest(req, res) {
       }
     }
   }
-  console.log(blanco.length)
   let respuestas = []
   blanco.forEach( q => {
 
@@ -357,12 +368,24 @@ async function testPremium(req, res){
     }
   }
 
-  var testQuestions = list
-    .sort(function() {
-      return 0.5 - Math.random();
-    })
-    .splice(0, num);
+  var testQuestions=[]
+  var posicion=[]
+  var seleccionado = ''
+  for(let i=0;i<num;i++){
+    seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
+    if(!posicion.includes(seleccionado)){
+      posicion.push(seleccionado)
+      testQuestions.push(list[seleccionado])
+    } else {
+      i--
+    }
+  }
 
+  // var testQuestions = list
+  //   .sort(function() {
+  //     return 0.5 - Math.random();
+  //   })
+  //   .splice(0, num);
   blanco = testQuestions.map(i => {
     return i._id;
   });
@@ -412,6 +435,100 @@ async function reload(req,res){
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
+
+// var intervalo = setTimeout(prueba, 1000)
+// async function prueba(req, res) {
+//   const now =  new Date()
+//   const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
+//   const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
+//   const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
+//   // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+//   let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+//   let num = 45;
+//   var list = [];
+//   let blanco = [];
+//   let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
+//   //codigo antiguo de para sacar preguntas
+//   // list = await questionsModel.find(
+//   //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+//   //           {tema_id: {$not: {$eq: ST[1]}}},
+//   //           {tema_id: {$not: {$eq: ST[2]}}},
+//   //           {tema_id: {$not: {$eq: ST[3]}}},
+//   //         ]
+//   //   }
+//   // )
+
+//   //Sacar preguntas para que esten permitidas
+//   let TV = await temaModel.find({visible: {$eq:true}})
+//   TV = TV.map(x =>{
+//     return x._id
+//   })
+//   for(let i=0;i<TV.length;i++){
+//     var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
+//     for(let x=0; x<buscador.length;x++){
+//       list.push(buscador[x]._id)
+//     }
+//   }
+//   var testQuestions=[]
+//   var posicion=[]
+//   var seleccionado = ''
+//   for(let i=0;i<num;i++){
+//     seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
+//     if(!posicion.includes(seleccionado)){
+//       posicion.push(seleccionado)
+//       testQuestions.push(list[seleccionado])
+//     } else {
+//       i--
+//     }
+//   }
+
+//   // var testQuestions = list
+//   //   .sort(function() {
+//   //     return 0.5 - Math.random();
+//   //   })
+//   //   .splice(0, num);
+//   blanco = testQuestions.map(i => {
+//     return i._id;
+//   });
+
+
+//   let respuestas = []
+//   blanco.forEach( q => {
+//     respuestas.push({ id: q, answered:false})
+//   })
+
+//   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+
+//   const testBody = {
+//     // user_id: res.locals.reboot_user._id,
+//     user_id: 'test de prueba',
+//     title: "A - " + date,
+//     testCheck: testCheck,
+//     aciertos: [],
+//     aciertos_num: 0,
+//     fallos: [],
+//     fallos_num: 0,
+//     respuestas: respuestas,
+//     nota: false,
+//     end: false,
+//     no_contestadas: blanco,
+//     mostrar_solucion: false,
+//     desafio: false,
+//     deberes: false
+//   };
+
+// console.log(testBody)
+//   // testModel
+//   //   .create(testBody)
+//   //   .then(async response => {
+//   //     const populado = await response.populate("no_contestadas").execPopulate();
+//   //     res.json(populado);
+//   //   })
+//   //   .catch(err => {
+//   //     res.status(403).json({ error: err });
+//   //   });
+// }
+// intervalo
 
 function handdleError(err, res) {
   return res.status(400).json(err);
