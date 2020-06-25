@@ -86,7 +86,7 @@ function testAnswer(req, res){
 async function createRandomTest(req, res) {
   const now =  new Date()
   const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
-  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + now.getMonth()
+  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
   const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
   // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
   let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
