@@ -77,23 +77,28 @@ function negativos(req, res){
 intervalo2
 
 // desactivar usuarios 1 vez al dia
-var intervalo3 = setInterval(desactivar, 86400000)
+// var intervalo3 = setInterval(desactivar, 86400000)
+var intervalo3 = setInterval(desactivar, 1000)
 
 
 function desactivar(req, res){
   UserModel.find({role:'cliente', active:true}).then(usuarios => {
-    // console.log(usuarios.length)
+    console.log()
     for(let i=0;i<usuarios.length; i++){
       let suscription_end_active = parseInt(usuarios[i].suscription_end_active)
       if(suscription_end_active < new Date().getTime()){
         UserModel
         .findByIdAndUpdate({_id: usuarios[i]._id},{active: false})
         .then(response => console.log(response))
+      }else{
+        console.log('sigue siendo valido ')
       }
     }
   })
 }
 intervalo3
+// 1593296237082
+// 1593548236699
 
 async function new_pass(req,res){
   const hashedPwd = bcrypt.hashSync(req.body.password, 10)
