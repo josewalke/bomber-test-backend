@@ -83,7 +83,7 @@ var intervalo3 = setInterval(desactivar, 1000)
 
 function desactivar(req, res){
   UserModel.find({role:'cliente', active:true}).then(usuarios => {
-    console.log()
+    console.log(usuarios.length)
     for(let i=0;i<usuarios.length; i++){
       let suscription_end_active = parseInt(usuarios[i].suscription_end_active)
       if(suscription_end_active < new Date().getTime()){
