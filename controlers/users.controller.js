@@ -51,8 +51,8 @@ function updateUser (req, res) {
 
 }
 
-//Poner negativos 1 vez al dia
-var intervalo2 = setInterval(negativos, 86400000)
+//Poner negativos cada 5h
+var intervalo2 = setInterval(negativos, 18000000)
 // var intervalo2 = setInterval(negativos, 1000)
 
 function negativos(req, res){
@@ -76,9 +76,9 @@ function negativos(req, res){
 }
 intervalo2
 
-// desactivar usuarios 1 vez al dia
-// var intervalo3 = setInterval(desactivar, 86400000)
-var intervalo3 = setInterval(desactivar, 1000)
+// desactivar usuarios cada 5h
+var intervalo3 = setInterval(desactivar, 18000000)
+// var intervalo3 = setInterval(desactivar, 1000)
 
 
 function desactivar(req, res){
@@ -97,8 +97,7 @@ function desactivar(req, res){
   })
 }
 intervalo3
-// 1593296237082
-// 1593548236699
+
 
 async function new_pass(req,res){
   const hashedPwd = bcrypt.hashSync(req.body.password, 10)
