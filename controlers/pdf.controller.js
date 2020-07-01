@@ -4,5 +4,10 @@ module.exports = {
 save_pdf
 }
 async function save_pdf(req,res){
-  console.log('hola mundo')
+
+  pdfModel.create(req.body)
+    .then(response => res.json(response))
+    .catch(err => {
+      res.status(403).json({ error: err });
+    });
 }
