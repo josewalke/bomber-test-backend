@@ -51,8 +51,8 @@ function updateUser (req, res) {
 
 }
 
-//Poner negativos cada 5h
-var intervalo2 = setInterval(negativos, 18000000)
+//Poner negativos cada 1min
+var intervalo2 = setInterval(negativos, 60000)
 // var intervalo2 = setInterval(negativos, 1000)
 
 function negativos(req, res){
