@@ -77,8 +77,8 @@ function negativos(req, res){
 intervalo2
 
 // desactivar usuarios cada 5h
-var intervalo3 = setInterval(desactivar, 18000000)
-// var intervalo3 = setInterval(desactivar, 1000)
+// var intervalo3 = setInterval(desactivar, 18000000)
+var intervalo3 = setInterval(desactivar, 1000)
 
 
 function desactivar(req, res){
