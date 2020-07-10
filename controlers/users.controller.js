@@ -52,7 +52,7 @@ function updateUser (req, res) {
 }
 
 //Poner negativos cada 1min
-var intervalo2 = setInterval(negativos, 60000)
+var intervalo2 = setInterval(negativos, 3600000)
 // var intervalo2 = setInterval(negativos, 1000)
 
 function negativos(req, res){
@@ -77,7 +77,7 @@ function negativos(req, res){
 intervalo2
 
 // desactivar usuarios cada 1min
-var intervalo3 = setInterval(desactivar, 60000)
+var intervalo3 = setInterval(desactivar, 3600000)
 // var intervalo3 = setInterval(desactivar, 1000)
 
 

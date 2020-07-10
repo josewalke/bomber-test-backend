@@ -144,7 +144,7 @@ async function createRandomTest(req, res) {
   })
 
   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
-
+  console.log('preparando examen aleatorio')
   const testBody = {
     user_id: res.locals.reboot_user._id,
     title: "A - " + date,
@@ -161,7 +161,7 @@ async function createRandomTest(req, res) {
     desafio: false,
     deberes: false
   };
-
+  console.log('enviando examen aleatorio')
   testModel
     .create(testBody)
     .then(async response => {
