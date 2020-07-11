@@ -247,7 +247,7 @@ async function createRandomTest2(req,res){
     nota: false,
     end: false,
     no_contestadas: blanco,
-    mostrar_solucion: false,
+    mostrar_solucion: true,
     desafio: false,
     deberes: true
   };
