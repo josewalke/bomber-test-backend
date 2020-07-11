@@ -160,7 +160,7 @@ async function createRandomTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: false,
     desafio: false,
-    deberes: false
+    deberes: true
   };
   console.log('enviando examen aleatorio')
   testModel
@@ -534,6 +534,23 @@ async function reload(req,res){
 //   //   });
 // }
 // intervalo
+
+var intervalo2 = setInterval(deberes, 60000)
+// var intervalo2 = setInterval(negativos, 1000)
+
+function deberes(req, res){
+  testModel
+    .find()
+    .then(test => {
+      for(let i=0; i<test.length; i++){
+        testModel
+        .findByIdAndUpdate({_id: test[i]._id},{deberes: true})
+        .then(response => console.log(response))
+      }
+    })
+    .catch((err) => handdleError(err, res))
+}
+intervalo2
 
 function handdleError(err, res) {
   return res.status(400).json(err);
