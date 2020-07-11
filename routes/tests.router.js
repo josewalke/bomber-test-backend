@@ -28,7 +28,7 @@ router.put("/reload/:id",reload);
 router.get("/:id", getTestById);
 router.get("/", getAllTests);
 router.post("/exam",postExam);
-router.post("/config", authenticated, createConfigTest);
+router.post("/config", createConfigTest);
 // router.post("/", authenticated, createRandomTest);
 router.post("/",createRandomTest2)
 router.put("/:id", testAnswer);
