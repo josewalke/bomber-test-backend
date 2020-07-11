@@ -632,8 +632,12 @@ function deberes(req, res){
     .find()
     .then(test => {
       for(let i=0; i<test.length; i++){
+        let body ={
+          deberes: true,
+          mostrar_solucion: true
+        }
         testModel
-        .findByIdAndUpdate({_id: test[i]._id},{deberes: true})
+        .findByIdAndUpdate({_id: test[i]._id},{body})
         .then(response => response)
       }
     })
