@@ -174,8 +174,96 @@ async function createRandomTest(req, res) {
     });
 }
 async function createRandomTest2(req,res){
-  console.log(req.body)
-  res.json('hola mundo')
+  const now =  new Date()
+  const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
+  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
+  const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
+  // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+  let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+  let num = 45;
+  var list = [];
+  let blanco = [];
+  let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
+  //codigo antiguo de para sacar preguntas
+  // list = await questionsModel.find(
+  //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+  //           {tema_id: {$not: {$eq: ST[1]}}},
+  //           {tema_id: {$not: {$eq: ST[2]}}},
+  //           {tema_id: {$not: {$eq: ST[3]}}},
+  //         ]
+  //   }
+  // )
+
+  //Sacar preguntas para que esten permitidas
+  let TV = await temaModel.find({visible: {$eq:true}})
+  TV = TV.map(x =>{
+    return x._id
+  })
+  for(let i=0;i<TV.length;i++){
+    var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
+    for(let x=0; x<buscador.length;x++){
+      list.push(buscador[x]._id)
+    }
+  }
+
+  var testQuestions=[]
+  var posicion=[]
+  var seleccionado = ''
+  for(let i=0;i<num;i++){
+    seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
+    if(!posicion.includes(seleccionado)){
+      posicion.push(seleccionado)
+      testQuestions.push(list[seleccionado])
+    } else {
+      i--
+    }
+  }
+
+  // var testQuestions = list
+  //   .sort(function() {
+  //     return 0.5 - Math.random();
+  //   })
+  //   .splice(0, num);
+  blanco = testQuestions.map(i => {
+    return i._id;
+  });
+
+  let respuestas = []
+  blanco.forEach( q => {
+    respuestas.push({ id: q, answered:false})
+  })
+
+  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+  console.log('preparando examen aleatorio')
+  const testBody = {
+    user_id: req.body._id,
+    title: "A - " + date,
+    testCheck: testCheck,
+    aciertos: [],
+    aciertos_num: 0,
+    fallos: [],
+    fallos_num: 0,
+    respuestas: respuestas,
+    nota: false,
+    end: false,
+    no_contestadas: blanco,
+    mostrar_solucion: false,
+    desafio: false,
+    deberes: true
+  };
+  console.log('enviando examen aleatorio')
+  // testModel
+  //   .create(testBody)
+  //   .then(async response => {
+  //     const populado = await response.populate("no_contestadas").execPopulate();
+  //     res.json(populado);
+  //   })
+  //   .catch(err => {
+  //     res.status(403).json({ error: err });
+  //   });
+  console.log(testBody)
+  res.json(testBody)
+
 }
 
 async function createConfigTest(req, res) {
