@@ -6,6 +6,7 @@ module.exports = {
   getAllTests,
   getTestById,
   createRandomTest,
+  createRandomTest2,
   getMyTests,
   createConfigTest,
   testAnswer,
@@ -171,6 +172,10 @@ async function createRandomTest(req, res) {
     .catch(err => {
       res.status(403).json({ error: err });
     });
+}
+async function createRandomTest2(req,res){
+  console.log('hola mundo')
+  res.json('hola mundo')
 }
 
 async function createConfigTest(req, res) {
