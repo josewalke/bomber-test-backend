@@ -5,6 +5,7 @@ const {
   getAllTests,
   getTestById,
   createRandomTest,
+  createRandomTest2,
   createConfigTest,
   getMyTests,
   postExam,

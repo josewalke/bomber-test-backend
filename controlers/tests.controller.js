@@ -174,7 +174,7 @@ async function createRandomTest(req, res) {
     });
 }
 async function createRandomTest2(req,res){
-  console.log('hola mundo')
+  console.log(req.body)
   res.json('hola mundo')
 }
 
