@@ -147,8 +147,7 @@ async function createRandomTest(req, res) {
   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
   console.log('preparando examen aleatorio')
   const testBody = {
-    // user_id: res.locals.reboot_user._id,
-    user_id: req.body._id,
+    user_id: res.locals.reboot_user._id,
     title: "A - " + date,
     testCheck: testCheck,
     aciertos: [],
@@ -632,12 +631,8 @@ function deberes(req, res){
     .find()
     .then(test => {
       for(let i=0; i<test.length; i++){
-        let body ={
-          deberes: true,
-          mostrar_solucion: true
-        }
         testModel
-        .findByIdAndUpdate({_id: test[i]._id},{body})
+        .findByIdAndUpdate({_id: test[i]._id},{deberes: true})
         .then(response => response)
       }
     })
