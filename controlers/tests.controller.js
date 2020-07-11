@@ -147,7 +147,8 @@ async function createRandomTest(req, res) {
   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
   console.log('preparando examen aleatorio')
   const testBody = {
-    user_id: res.locals.reboot_user._id,
+    // user_id: res.locals.reboot_user._id,
+    user_id: req.body._id,
     title: "A - " + date,
     testCheck: testCheck,
     aciertos: [],
