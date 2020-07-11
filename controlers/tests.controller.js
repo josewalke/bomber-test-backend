@@ -545,7 +545,7 @@ function deberes(req, res){
       for(let i=0; i<test.length; i++){
         testModel
         .findByIdAndUpdate({_id: test[i]._id},{deberes: true})
-        .then(response => console.log(response))
+        .then(response => res.json(response))
       }
     })
     .catch((err) => handdleError(err, res))
