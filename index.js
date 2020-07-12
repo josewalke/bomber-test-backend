@@ -10,7 +10,13 @@ const app = express();
 
 // CONFIG AND ENVIRONMENT LOADING FROM .env FILE
 let config = require("./config");
-
+app.all('*', function(req, res, next) {
+  var origin = req.get('origin');
+  res.header('Access-Control-Allow-Origin', origin);
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 // MIDDLEWARES
 app.use(cors({origin: true}));
 app.use(morgan("combined"));
