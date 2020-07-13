@@ -567,7 +567,7 @@ function temasUpdate(req, res){
     .find()
     .then(tema => {
       for(let i=0; i<tema.length; i++){
-        if(tema[i].name.includes(select)){
+        if(select.includes(tema[i].name)){
           console.log(true)
         }else{
           temaModel
