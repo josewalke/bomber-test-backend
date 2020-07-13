@@ -569,6 +569,11 @@ function temasUpdate(req, res){
       for(let i=0; i<tema.length; i++){
         if(select.includes(tema[i].name)){
           console.log(true)
+          temaModel
+          .findByIdAndUpdate(tema[i]._id, {visible: true})
+          .then(response =>{
+            console.log(response)
+          })
         }else{
           temaModel
           .findByIdAndUpdate(tema[i]._id, {visible: false})
