@@ -586,7 +586,7 @@ intervalo2
 // }
 // intervalo3
 
-var intervalo4 = setInterval(examen, 60000)
+// var intervalo4 = setInterval(examen, 60000)
 
 async function examen(req, res){
   let body = {
@@ -694,7 +694,7 @@ async function examen(req, res){
     })
 
 }
-intervalo4
+// intervalo4
 
 function handdleError(err, res) {
   return res.status(400).json(err);
