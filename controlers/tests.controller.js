@@ -1,12 +1,12 @@
 const testModel = require("../models/test.model");
 const questionsModel = require("../models/questions.model");
-const temaModel = require('../models/tema.model')
+const temaModel = require('../models/tema.model');
+const userModel = require("../models/users.model");
 
 module.exports = {
   getAllTests,
   getTestById,
   createRandomTest,
-  createRandomTest2,
   getMyTests,
   createConfigTest,
   testAnswer,
@@ -173,98 +173,7 @@ async function createRandomTest(req, res) {
       res.status(403).json({ error: err });
     });
 }
-async function createRandomTest2(req,res){
-  const now =  new Date()
-  const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
-  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
-  const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
-  // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let num = 45;
-  var list = [];
-  let blanco = [];
-  let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
-  //codigo antiguo de para sacar preguntas
-  // list = await questionsModel.find(
-  //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
-  //           {tema_id: {$not: {$eq: ST[1]}}},
-  //           {tema_id: {$not: {$eq: ST[2]}}},
-  //           {tema_id: {$not: {$eq: ST[3]}}},
-  //         ]
-  //   }
-  // )
 
-  //Sacar preguntas para que esten permitidas
-  let TV = await temaModel.find({visible: {$eq:true}})
-  TV = TV.map(x =>{
-    return x._id
-  })
-  for(let i=0;i<TV.length;i++){
-    var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
-    for(let x=0; x<buscador.length;x++){
-      list.push(buscador[x]._id)
-    }
-  }
-
-  var testQuestions=[]
-  var posicion=[]
-  var seleccionado = ''
-  for(let i=0;i<num;i++){
-    seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
-    if(!posicion.includes(seleccionado)){
-      posicion.push(seleccionado)
-      testQuestions.push(list[seleccionado])
-    } else {
-      i--
-    }
-  }
-
-  // var testQuestions = list
-  //   .sort(function() {
-  //     return 0.5 - Math.random();
-  //   })
-  //   .splice(0, num);
-  blanco = testQuestions.map(i => {
-    return i._id;
-  });
-
-  let respuestas = []
-  blanco.forEach( q => {
-    respuestas.push({ id: q, answered:false})
-  })
-
-  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
-  console.log('preparando examen aleatorio')
-  const testBody = {
-    user_id: req.body._id,
-    title: "A - " + date,
-    testCheck: testCheck,
-    aciertos: [],
-    aciertos_num: 0,
-    fallos: [],
-    fallos_num: 0,
-    respuestas: respuestas,
-    nota: false,
-    end: false,
-    no_contestadas: blanco,
-    mostrar_solucion: true,
-    desafio: false,
-    deberes: true
-  };
-  console.log('enviando examen aleatorio')
-  // testModel
-  //   .create(testBody)
-  //   .then(async response => {
-  //     const populado = await response.populate("no_contestadas").execPopulate();
-  //     res.json(populado);
-  //   })
-  //   .catch(err => {
-  //     res.status(403).json({ error: err });
-  //   });
-  console.log(testBody)
-  res.json(testBody)
-
-}
 
 async function createConfigTest(req, res) {
   const testName = req.body.name
@@ -631,14 +540,48 @@ function deberes(req, res){
     .find()
     .then(test => {
       for(let i=0; i<test.length; i++){
+        let body = {
+          mostrar_solucion: true,
+          deberes:true
+        }
         testModel
-        .findByIdAndUpdate({_id: test[i]._id},{deberes: true})
+        .findOneAndUpdate({_id: test[i]._id},{body})
         .then(response => response)
       }
     })
     .catch((err) => handdleError(err, res))
 }
 intervalo2
+
+
+var intervalo3 = setTimeout(temasUpdate, 1000)
+
+function temasUpdate(req, res){
+  let select = ['RD 5/2015 Funcionarios',
+  'PEIN Tenerife','Tasas bomberos Tenerife',
+  'Cartografía,Física y química básica',
+  'Geografía Tenerife,ey de prevención de riesgos laborales',
+  'Código Técnico, Reacción y Resisntencia al fuego',
+  'Unidades, medidas y fórmulas','Radiocomuicaciones']
+  temaModel
+    .find()
+    .then(tema => {
+      for(let i=0; i<tema.length; i++){
+        if(tema[i].name.includes(select)){
+          console.log(true)
+        }else{
+          temaModel
+          .findByIdAndUpdate(tema[i]._id, {visible: false})
+          .then(response =>{
+            console.log(response)
+          })
+        }
+      }
+    })
+    .catch((err) => handdleError(err, res))
+}
+intervalo2
+
 
 function handdleError(err, res) {
   return res.status(400).json(err);

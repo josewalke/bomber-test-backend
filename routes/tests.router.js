@@ -5,7 +5,6 @@ const {
   getAllTests,
   getTestById,
   createRandomTest,
-  createRandomTest2,
   createConfigTest,
   getMyTests,
   postExam,
@@ -28,9 +27,8 @@ router.put("/reload/:id",reload);
 router.get("/:id", getTestById);
 router.get("/", getAllTests);
 router.post("/exam",postExam);
-router.post("/config", createConfigTest);
+router.post("/config",authenticated, createConfigTest);
 router.post("/", authenticated, createRandomTest);
-// router.post("/",createRandomTest2)
 router.put("/:id", testAnswer);
 router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
