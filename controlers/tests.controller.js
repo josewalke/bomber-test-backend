@@ -158,9 +158,9 @@ async function createRandomTest(req, res) {
     nota: false,
     end: false,
     no_contestadas: blanco,
-    mostrar_solucion: true,
+    mostrar_solucion: false,
     desafio: false,
-    deberes: true
+    deberes: false
   };
   console.log('enviando examen aleatorio')
   testModel
@@ -254,7 +254,6 @@ async function createConfigTest(req, res) {
     mostrar_solucion: false,
     selectedTemas: selected,
     mostrar_solucion: correctorSwitch,
-    deberes: true,
     desafio:false,
     deberes: false
   };
@@ -532,26 +531,26 @@ async function reload(req,res){
 // }
 // intervalo
 
-var intervalo2 = setInterval(deberes, 60000)
+// var intervalo2 = setInterval(deberes, 60000)
 // var intervalo2 = setInterval(negativos, 1000)
 
-function deberes(req, res){
-  testModel
-    .find()
-    .then(test => {
-      for(let i=0; i<test.length; i++){
-        let body = {
-          mostrar_solucion: true,
-          deberes:true
-        }
-        testModel
-        .findOneAndUpdate({_id: test[i]._id},{body})
-        .then(response => response)
-      }
-    })
-    .catch((err) => handdleError(err, res))
-}
-intervalo2
+// function deberes(req, res){
+//   testModel
+//     .find()
+//     .then(test => {
+//       for(let i=0; i<test.length; i++){
+//         let body = {
+//           mostrar_solucion: true,
+//           deberes:true
+//         }
+//         testModel
+//         .findOneAndUpdate({_id: test[i]._id},{body})
+//         .then(response => response)
+//       }
+//     })
+//     .catch((err) => handdleError(err, res))
+// }
+// intervalo2
 
 
 // var intervalo3 = setTimeout(temasUpdate, 1000)
@@ -588,112 +587,112 @@ intervalo2
 
 // var intervalo4 = setInterval(examen, 60000)
 
-async function examen(req, res){
-  let body = {
-    role: 'cliente',
-    active: true
-  }
-  userModel
-    .find(body)
-    .then(user => {
-    console.log(user.length)
-    })
-    .catch((err) => handdleError(err, res))
-    const now =  new Date()
-  const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
-  const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
-  const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
-  // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let num = 45;
-  var list = [];
-  let blanco = [];
-  let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
-  //codigo antiguo de para sacar preguntas
-  // list = await questionsModel.find(
-  //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
-  //           {tema_id: {$not: {$eq: ST[1]}}},
-  //           {tema_id: {$not: {$eq: ST[2]}}},
-  //           {tema_id: {$not: {$eq: ST[3]}}},
-  //         ]
-  //   }
-  // )
+// async function examen(req, res){
+//   let body = {
+//     role: 'cliente',
+//     active: true
+//   }
+//   userModel
+//     .find(body)
+//     .then(user => {
+//     console.log(user.length)
+//     })
+//     .catch((err) => handdleError(err, res))
+//     const now =  new Date()
+//   const day = now.getDate() > 9 ? now.getDate() : "0" + now.getDate()
+//   const  month = now.getMonth() > 9 ? now.getMonth() : "0" + (now.getMonth()+1)
+//   const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
+//   // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+//   let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
+//   let num = 45;
+//   var list = [];
+//   let blanco = [];
+//   let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
+//   //codigo antiguo de para sacar preguntas
+//   // list = await questionsModel.find(
+//   //   { $or: [{tema_id: {$not: {$eq: ST[0]}}},
+//   //           {tema_id: {$not: {$eq: ST[1]}}},
+//   //           {tema_id: {$not: {$eq: ST[2]}}},
+//   //           {tema_id: {$not: {$eq: ST[3]}}},
+//   //         ]
+//   //   }
+//   // )
 
-  //Sacar preguntas para que esten permitidas
-  let TV = await temaModel.find({visible: {$eq:true}})
-  TV = TV.map(x =>{
-    return x._id
-  })
-  for(let i=0;i<TV.length;i++){
-    var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
-    for(let x=0; x<buscador.length;x++){
-      list.push(buscador[x]._id)
-    }
-  }
+//   //Sacar preguntas para que esten permitidas
+//   let TV = await temaModel.find({visible: {$eq:true}})
+//   TV = TV.map(x =>{
+//     return x._id
+//   })
+//   for(let i=0;i<TV.length;i++){
+//     var buscador = await questionsModel.find({tema_id: {$eq: TV[i]}})
+//     for(let x=0; x<buscador.length;x++){
+//       list.push(buscador[x]._id)
+//     }
+//   }
 
-  var testQuestions=[]
-  var posicion=[]
-  var seleccionado = ''
-  for(let i=0;i<num;i++){
-    seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
-    if(!posicion.includes(seleccionado)){
-      posicion.push(seleccionado)
-      testQuestions.push(list[seleccionado])
-    } else {
-      i--
-    }
-  }
+//   var testQuestions=[]
+//   var posicion=[]
+//   var seleccionado = ''
+//   for(let i=0;i<num;i++){
+//     seleccionado = parseInt( Math.random() * (list.length - 0) + 0)
+//     if(!posicion.includes(seleccionado)){
+//       posicion.push(seleccionado)
+//       testQuestions.push(list[seleccionado])
+//     } else {
+//       i--
+//     }
+//   }
 
-  // var testQuestions = list
-  //   .sort(function() {
-  //     return 0.5 - Math.random();
-  //   })
-  //   .splice(0, num);
-  blanco = testQuestions.map(i => {
-    return i._id;
-  });
+//   // var testQuestions = list
+//   //   .sort(function() {
+//   //     return 0.5 - Math.random();
+//   //   })
+//   //   .splice(0, num);
+//   blanco = testQuestions.map(i => {
+//     return i._id;
+//   });
 
-  let respuestas = []
-  blanco.forEach( q => {
-    respuestas.push({ id: q, answered:false})
-  })
+//   let respuestas = []
+//   blanco.forEach( q => {
+//     respuestas.push({ id: q, answered:false})
+//   })
 
-  let testCheck = { right: 0, wrong: 0, blank: blanco.length}
-  userModel
-  .find(body)
-  .then(user => {
-    for(let i=0;i< user.length;i++){
-      console.log('preparando examen aleatorio')
-      const testBody = {
-        user_id: user[i]._id,
-        title: "A - " + date,
-        testCheck: testCheck,
-        aciertos: [],
-        aciertos_num: 0,
-        fallos: [],
-        fallos_num: 0,
-        respuestas: respuestas,
-        nota: false,
-        end: false,
-        no_contestadas: blanco,
-        mostrar_solucion: true,
-        desafio: false,
-        deberes: true
-      };
-      console.log('enviando examen aleatorio')
-      testModel
-      .create(testBody)
-      .then(async response => {
-        const populado = await response.populate("no_contestadas").execPopulate();
-        res.json(populado);
-      })
-      .catch(err => {
-        res.status(403).json({ error: err });
-      });
-    }
-    })
+//   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
+//   userModel
+//   .find(body)
+//   .then(user => {
+//     for(let i=0;i< user.length;i++){
+//       console.log('preparando examen aleatorio')
+//       const testBody = {
+//         user_id: user[i]._id,
+//         title: "A - " + date,
+//         testCheck: testCheck,
+//         aciertos: [],
+//         aciertos_num: 0,
+//         fallos: [],
+//         fallos_num: 0,
+//         respuestas: respuestas,
+//         nota: false,
+//         end: false,
+//         no_contestadas: blanco,
+//         mostrar_solucion: true,
+//         desafio: false,
+//         deberes: true
+//       };
+//       console.log('enviando examen aleatorio')
+//       testModel
+//       .create(testBody)
+//       .then(async response => {
+//         const populado = await response.populate("no_contestadas").execPopulate();
+//         res.json(populado);
+//       })
+//       .catch(err => {
+//         res.status(403).json({ error: err });
+//       });
+//     }
+//     })
 
-}
+// }
 // intervalo4
 
 function handdleError(err, res) {
