@@ -334,6 +334,7 @@ async function createConfigTest(req, res) {
 // }
 
 function getMyTests(req, res) {
+  console.log('buscar test')
   testModel
     .find({ user_id: req.params.id })
     .then(response => res.json(response))
