@@ -342,6 +342,7 @@ function getMyTests(req, res) {
 }
 
 function deleteDesafio(req, res){
+  console.log('borrar desafio')
   testModel
   .remove({ desafio: true })
   .then(response => res.json(response))
