@@ -91,7 +91,7 @@ async function createRandomTest(req, res) {
   const minutes = now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes()
   // let date = now.getDate() +"/"+ now.getMonth()+1 +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
   let date = day +"/"+ month +"/"+ now.getFullYear() + " - " + now.getHours()+ ":" + minutes
-  let num = 15;
+  let num = 45;
   var list = [];
   let blanco = [];
   let ST = await temaModel.find({name: {$eq:'Sin Tema'}})
