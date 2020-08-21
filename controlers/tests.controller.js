@@ -2,6 +2,7 @@ const testModel = require("../models/test.model");
 const questionsModel = require("../models/questions.model");
 const temaModel = require('../models/tema.model');
 const userModel = require("../models/users.model");
+const { response } = require("express");
 
 module.exports = {
   getAllTests,
@@ -174,7 +175,6 @@ async function createRandomTest(req, res) {
     });
 }
 
-
 async function createConfigTest(req, res) {
   const testName = req.body.name
   const numSelected = req.body.number
@@ -268,9 +268,20 @@ async function createConfigTest(req, res) {
       res.status(403).json({ error: err });
     });
 }
+
 var falseD = setInterval(falseDesafio, 1000)
 async function falseDesafio(req,res){
-  console.log('holaa')
+  var hoy = new Date
+  if(hoy.getDay() === 6){
+      testModel.find({visible: true})
+      .then(response =>{
+        for(let i = 0; i < response.length;i++){
+          testModel.findByIdAndUpdate(response[i]._id,{visible:false})
+          .then(response => {response.data})
+        }
+      })
+    }
+
 }
 falseD
 
