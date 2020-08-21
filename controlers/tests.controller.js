@@ -268,6 +268,11 @@ async function createConfigTest(req, res) {
       res.status(403).json({ error: err });
     });
 }
+var falseD = setTimeout(falseDesafio, 1000)
+async function falseDesafio(req,res){
+  console.log('holaa')
+}
+falseD
 
 // async function createConfigTest(req, res) {
 //   const testName = req.body.name

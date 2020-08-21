@@ -62,6 +62,10 @@ const testSchema = new mongoose.Schema({
   },
   deberes:{
     type: Boolean
+  },
+  visible:{
+    type: Boolean,
+    default: false
   }
 })
 const testModel = mongoose.model('test', testSchema)
