@@ -6,7 +6,9 @@ const {
   getAllQuestions,
   getQuestionById,
   updateQuestion,
-  getQuestion
+  getQuestion,
+  filtrarQuestion
+
 } = require("../controlers/questions.controller");
 
 
@@ -15,6 +17,8 @@ router.post('/', createQuestion)
 router.get('/', getAllQuestions)
 
 router.post('/especifico',getQuestion)
+
+router.post("/filtrar",filtrarQuestion);
 
 router.get('/:id', getQuestionById)
 

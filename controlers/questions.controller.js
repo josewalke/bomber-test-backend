@@ -5,7 +5,8 @@ module.exports = {
   getAllQuestions,
   getQuestionById,
   updateQuestion,
-  getQuestion
+  getQuestion,
+  filtrarQuestion
 }
 
 function createQuestion(req, res) {
@@ -54,4 +55,36 @@ async function getQuestion(req,res){
     .find(req.body)
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
+}
+async function filtrarQuestion(req,res){
+
+ if(req.body.category.length === 0 && req.body.tema_id.length > 0){
+   let body = {
+     tema_id: req.body.tema_id
+   }
+   questionsModel.find(body)
+   .then(response => {
+     console.log(response.length)
+     res.json(response)
+   })
+ }
+
+ if(req.body.category.length > 0 && req.body.tema_id.length === 0){
+  let body = {
+    category: req.body.category
+  }
+  questionsModel.find(body)
+  .then(response => {
+    console.log(response.length)
+    res.json(response)
+  })
+ }
+
+ if(req.body.category.length > 0 && req.body.tema_id.length > 0){
+  questionsModel.find(req.body)
+  .then(response => {
+    console.log(response.length)
+    res.json(response)
+  })
+ }
 }
