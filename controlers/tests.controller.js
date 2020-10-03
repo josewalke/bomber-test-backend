@@ -161,7 +161,7 @@ async function createRandomTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: true,
     desafio: false,
-    deberes: true
+    deberes: false
   };
   console.log('enviando examen aleatorio')
   testModel
