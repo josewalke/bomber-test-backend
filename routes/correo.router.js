@@ -8,7 +8,7 @@ const {
 } = require('../controlers/correo.controller')
 
 router.get("/", enviar);
-router.post("/find",reset_pass)
 router.get("/lolo", lolo)
+router.post("/find",reset_pass)
 
 module.exports = router
