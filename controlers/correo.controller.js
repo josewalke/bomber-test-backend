@@ -127,7 +127,7 @@ async function reset_pass(req,res){
 
 async function lolo(req,res){
   console.log('holaaaaaa')
-  res.json(req.body)
+  res.json('holaa')
 }
 
 

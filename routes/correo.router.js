@@ -9,6 +9,6 @@ const {
 
 router.get("/", enviar);
 router.post("/find",reset_pass)
-router.post("/lolo", lolo)
+router.get("/lolo", lolo)
 
 module.exports = router
