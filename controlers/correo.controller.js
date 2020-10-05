@@ -5,7 +5,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 module.exports = {
   enviar,
-  reset_pass
+  reset_pass,
+  lolo
 };
 
 const heroku = process.env.heroku;
@@ -122,6 +123,11 @@ async function reset_pass(req,res){
       }
     )
     .catch((err) => handdleError(err, res))
+}
+
+async function lolo(req,res){
+  console.log('holaaaaaa')
+  res.json(req.body)
 }
 
 
