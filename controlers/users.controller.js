@@ -33,7 +33,6 @@ function getUserById (req, res) {
     .catch((err) => handdleError(err, res))
 }
 function getUserByEmail (req, res){
-
   UserModel
   .find({email: req.params.email})
   .then(response => res.json(response))
