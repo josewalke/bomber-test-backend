@@ -127,7 +127,10 @@ async function reset_pass(req,res){
 
 async function lolo(req,res){
   console.log('holaaaaaa')
-  res.json('holaa')
+  UserModel
+    .find({ $or: [{role:'cliente'},{role:'prueba'}]})
+    .then(response => res.json(response))
+    .catch((err) => handdleError(err, res))
 }
 
 
