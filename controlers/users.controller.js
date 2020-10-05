@@ -13,7 +13,8 @@ module.exports = {
   deleteUserById,
   updateUser,
   getMe,
-  new_pass
+  new_pass,
+  lolo
 }
 
 function getAllUsers(req, res) {
@@ -108,6 +109,14 @@ async function new_pass(req,res){
   UserModel
     .findByIdAndUpdate(res.locals.reboot_user._id, body)
     .then(response => res.json('actualizado correctamente'))
+    .catch((err) => handdleError(err, res))
+}
+
+async function lolo(req,res){
+  console.log('holaaaaaa')
+  UserModel
+    .find({ $or: [{role:'cliente'},{role:'prueba'}]})
+    .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
 
