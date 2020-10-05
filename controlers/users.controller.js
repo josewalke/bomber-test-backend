@@ -6,6 +6,7 @@ const questionsModel = require('../models/questions.model')
 const temaModel = require('../models/tema.model')
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { find } = require('../models/users.model')
 
 module.exports = {
   getAllUsers,
@@ -14,7 +15,8 @@ module.exports = {
   updateUser,
   getMe,
   new_pass,
-  lolo
+  lolo,
+  getUserByEmail
 }
 
 function getAllUsers(req, res) {
@@ -25,11 +27,17 @@ function getAllUsers(req, res) {
 }
 
 function getUserById (req, res) {
-
   UserModel
     .findById(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
+}
+function getUserByEmail (req, res){
+
+  UserModel
+  .find({email: req.params.email})
+  .then(response => res.json(response))
+  .catch((err) => handdleError(err, res))
 }
 
 function getMe (req, res) {

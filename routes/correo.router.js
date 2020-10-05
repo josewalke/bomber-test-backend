@@ -7,7 +7,7 @@ const {
   lolo
 } = require('../controlers/correo.controller')
 
-router.get("/lolo", lolo);
+
 router.get("/", enviar);
 router.post("/find",reset_pass)
 
