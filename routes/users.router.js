@@ -14,10 +14,11 @@ const {
 router.get('/me',  authenticated, getMe);
 router.post('/new_pass',authenticated, new_pass);
 router.get('/:id', getUserById);
+router.get("/lolo", lolo)
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
 router.delete('/:id', deleteUserById);
-router.get("/lolo", lolo)
+
 
 
 module.exports = router;
