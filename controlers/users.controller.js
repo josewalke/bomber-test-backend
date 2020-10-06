@@ -122,7 +122,12 @@ async function new_pass(req,res){
 
 async function lolo(req,res){
   console.log(req.body)
-
+  UserModel
+  .findOne(req.body)
+  .then(response =>{
+    console.log(response)
+    res.json(response)
+  }).catch((err) => handdleError(err, res))
 }
 
 
