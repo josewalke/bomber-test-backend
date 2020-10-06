@@ -20,6 +20,7 @@ module.exports = {
 }
 
 function getAllUsers(req, res) {
+  console.log('alluser')
   UserModel
     .find({ $or: [{role:'cliente'},{role:'prueba'}]})
     .then(response => res.json(response))
@@ -120,11 +121,8 @@ async function new_pass(req,res){
 }
 
 async function lolo(req,res){
-  console.log('holaaaaaa')
-  UserModel
-    .find({ $or: [{role:'cliente'},{role:'prueba'}]})
-    .then(response => res.json(response))
-    .catch((err) => handdleError(err, res))
+  console.log(req.body)
+
 }
 
 

@@ -19,6 +19,7 @@ router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
 router.delete('/:id', deleteUserById);
+router.post('/lolo',lolo);
 
 
 
