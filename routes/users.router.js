@@ -12,6 +12,7 @@ const {
   getUserByEmail
 } = require("../controlers/users.controller");
 
+router.post('/lolo',lolo);
 router.get('/me',  authenticated, getMe);
 router.get('/:email',getUserByEmail);
 router.post('/new_pass',authenticated, new_pass);
@@ -19,7 +20,7 @@ router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
 router.delete('/:id', deleteUserById);
-router.post('/lolo',lolo);
+
 
 
 
