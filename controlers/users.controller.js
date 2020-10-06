@@ -125,7 +125,7 @@ async function lolo(req,res){
   UserModel
   .findOne(req.body)
   .then(response =>{
-    console.log(response)
+    console.log('hola')
     res.json(response)
   }).catch((err) => handdleError(err, res))
 }
