@@ -15,7 +15,7 @@ const {
 router.post('/lolo',lolo);
 router.get('/me',  authenticated, getMe);
 router.get('/:email',getUserByEmail);
-router.post('/new_pass',authenticated, new_pass);
+router.post('/new_pass', new_pass);
 router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
