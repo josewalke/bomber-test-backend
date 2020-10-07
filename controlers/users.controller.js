@@ -123,9 +123,9 @@ async function new_pass(req,res){
 async function lolo(req,res){
   console.log(req.body)
   UserModel
-  .findOne(req.body)
+  .findOne({email: req.body.email})
   .then(response =>{
-    console.log('hola')
+    console.log(response)
     res.json(response)
   }).catch((err) => handdleError(err, res))
 }
