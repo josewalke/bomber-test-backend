@@ -148,7 +148,7 @@ async function lolo(req,res){
     }
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
-    res.json(token)
+    res.json(response)
   }).catch((err) => handdleError(err, res))
 }
 
