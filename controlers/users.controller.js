@@ -138,7 +138,7 @@ async function lolo(req,res){
       to: req.body.email, // list of receivers
       subject: 'bomberos', // Subject line
       html: `<p>Para cambiar la contraseña pinche en el link</p>
-      <a href="http://localhost:3000/new_pass/${response.password}">Cambiar la contraseña</a>
+      <a href="http://localhost:3000/new_pass/">Cambiar la contraseña</a>
                           ` // plain text body
     }
     transporter.sendMail(mailOptions)
