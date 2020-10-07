@@ -123,10 +123,32 @@ async function new_pass(req,res){
 async function lolo(req,res){
   console.log(req.body)
   UserModel
-  .findOne({email: req.body.email})
+  .findOne(req.body)
   .then(response =>{
-    console.log(response)
-    res.json(response)
+    const userData = {
+      nickName: response[0].nickName,
+      firstName: response[0].name,
+      lastName: response[0].lastName,
+      email: response[0].email,
+      role: response[0].role,
+      userId: response[0]._id,
+      phone: response[0].phone,
+      img_url: response[0].img_url,
+      mensajes: response[0].mensajes,
+      MensajesTotales: response[0].MensajesTotales,
+      aprobados: response[0].aprobados,
+      suspendidos: response[0].suspendidos,
+      total: response[0].total,
+      suscription_type: response[0].suscription_type,
+      active: response[0].active,
+      negativos: response[0].negativos,
+      suscription_end_active: response[0].suscription_end_active,
+      active: response[0].active,
+      provincia: response[0].provincia
+    }
+    const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
+
+    res.json(token)
   }).catch((err) => handdleError(err, res))
 }
 
