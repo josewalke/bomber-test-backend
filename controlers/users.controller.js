@@ -147,7 +147,7 @@ async function lolo(req,res){
       provincia: response[0].provincia
     }
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
-    console.log(token)
+    // console.log(token)
     // console.log(response)
     res.json(response)
   }).catch((err) => handdleError(err, res))
