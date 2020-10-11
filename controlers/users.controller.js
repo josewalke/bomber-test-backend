@@ -133,7 +133,6 @@ async function lolo(req,res){
   .findOne(req.body)
   .then(response =>{
 
-    console.log(response)
     const userData = {
       nickName: response.nickName,
       firstName: response.name,
@@ -155,10 +154,8 @@ async function lolo(req,res){
       active: response.active,
       provincia: response.provincia
     }
-    console.log('funciona')
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
     console.log(token)
-
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
