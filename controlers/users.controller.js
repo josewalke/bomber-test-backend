@@ -156,7 +156,8 @@ async function lolo(req,res){
       provincia: response[0].provincia
     }
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
-
+    console.log(token)
+    res.redirect(`http://localhost:3000/new_pass/${token}`)
     // var transporter = nodemailer.createTransport({
     //   service: 'gmail',
     //   auth: {
