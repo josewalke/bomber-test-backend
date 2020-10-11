@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { find } = require('../models/users.model')
 
+const heroku = process.env.heroku;
 let config;
 if (heroku) {
   config = process.env
