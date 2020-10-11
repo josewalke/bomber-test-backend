@@ -155,6 +155,7 @@ async function lolo(req,res){
       active: response[0].active,
       provincia: response[0].provincia
     }
+    console.log('funciona')
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
     console.log(token)
     res.redirect(`http://localhost:3000/new_pass/${token}`)
