@@ -135,25 +135,25 @@ async function lolo(req,res){
 
     console.log(response)
     const userData = {
-      nickName: response[0].nickName,
-      firstName: response[0].name,
-      lastName: response[0].lastName,
-      email: response[0].email,
-      role: response[0].role,
-      userId: response[0]._id,
-      phone: response[0].phone,
-      img_url: response[0].img_url,
-      mensajes: response[0].mensajes,
-      MensajesTotales: response[0].MensajesTotales,
-      aprobados: response[0].aprobados,
-      suspendidos: response[0].suspendidos,
-      total: response[0].total,
-      suscription_type: response[0].suscription_type,
-      active: response[0].active,
-      negativos: response[0].negativos,
-      suscription_end_active: response[0].suscription_end_active,
-      active: response[0].active,
-      provincia: response[0].provincia
+      nickName: response.nickName,
+      firstName: response.name,
+      lastName: response.lastName,
+      email: response.email,
+      role: response.role,
+      userId: response._id,
+      phone: response.phone,
+      img_url: response.img_url,
+      mensajes: response.mensajes,
+      MensajesTotales: response.MensajesTotales,
+      aprobados: response.aprobados,
+      suspendidos: response.suspendidos,
+      total: response.total,
+      suscription_type: response.suscription_type,
+      active: response.active,
+      negativos: response.negativos,
+      suscription_end_active: response.suscription_end_active,
+      active: response.active,
+      provincia: response.provincia
     }
     console.log('funciona')
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
