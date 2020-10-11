@@ -8,6 +8,13 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { find } = require('../models/users.model')
 
+let config;
+if (heroku) {
+  config = process.env
+}else {
+  config = require("../.env");
+}
+
 module.exports = {
   getAllUsers,
   getUserById,
@@ -126,22 +133,7 @@ async function lolo(req,res){
   .then(response =>{
 
     console.log(response)
-    // var transporter = nodemailer.createTransport({
-    //   service: 'gmail',
-    //   auth: {
-    //     user: config.email,
-    //     pass: config.password
-    //   }
-    // })
-    // const mailOptions = {
-    //   from: config.email, // sender address
-    //   to: req.body.email, // list of receivers
-    //   subject: 'bomberos', // Subject line
-    //   html: `<p>Para cambiar la contraseña pinche en el link</p>
-    //   <a href="http://localhost:3000/new_pass/">Cambiar la contraseña</a>
-    //                       ` // plain text body
-    // }
-    // transporter.sendMail(mailOptions)
+
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
