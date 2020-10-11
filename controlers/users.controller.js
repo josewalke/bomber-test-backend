@@ -159,23 +159,23 @@ async function lolo(req,res){
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
     console.log(token)
 
-    // var transporter = nodemailer.createTransport({
-    //   service: 'gmail',
-    //   auth: {
-    //     user: config.email,
-    //     pass: config.password
-    //   }
-    // })
-    // const mailOptions = {
-    //   from: config.email, // sender address
-    //   to: 'worktrabajo47@gmail.com', // list of receivers
-    //   subject: 'bomberos', // Subject line
-    //   html: `<p>Para cambiar la contraseña pinche en el link</p>
-    //   <a href="http://localhost:3000/new_pass/">Cambiar la contraseña</a>
-    //                       ` // plain text body
-    // }
-    // transporter.sendMail(mailOptions)
-    // res.json(response)
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: config.email,
+        pass: config.password
+      }
+    })
+    const mailOptions = {
+      from: config.email, // sender address
+      to: 'worktrabajo47@gmail.com', // list of receivers
+      subject: 'bomberos', // Subject line
+      html: `<p>Para cambiar la contraseña pinche en el link</p>
+      <a href="http://localhost:3000/new_pass/">Cambiar la contraseña</a>
+                          ` // plain text body
+    }
+    transporter.sendMail(mailOptions)
+    res.json(response)
 
   }).catch((err) => handdleError(err, res))
 }
