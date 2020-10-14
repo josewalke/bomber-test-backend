@@ -173,7 +173,7 @@ async function reset_pass(req,res){
       to: response.email, // list of receivers
       subject: 'bomberos', // Subject line
       html: `<p>Para cambiar la contraseña pinche en el link</p>
-      <a href="http://localhost:3000/new_pass/${token}">Cambiar la contraseña</a>
+      <a href="https://bombertest.netlify.app//new_pass/${token}">Cambiar la contraseña</a>
                           ` // plain text body
     }
     transporter.sendMail(mailOptions)
