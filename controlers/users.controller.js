@@ -155,7 +155,7 @@ async function lolo(req,res){
       provincia: response.provincia
     }
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
-    console.log(token)
+
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -163,6 +163,8 @@ async function lolo(req,res){
         pass: config.password
       }
     })
+    console.log(config.email)
+    console.log(config.password)
     const mailOptions = {
       from: config.email, // sender address
       to: 'worktrabajo47@gmail.com', // list of receivers

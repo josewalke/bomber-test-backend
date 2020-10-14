@@ -17,7 +17,6 @@ if (heroku) {
   config = require("../.env");
 
 }
-console.log(config)
 
   var intervalo = setInterval(email, 3600000)
   function email(req, res) {
