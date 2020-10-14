@@ -23,7 +23,7 @@ module.exports = {
   updateUser,
   getMe,
   new_pass,
-  lolo,
+  reset_pass,
   getUserByEmail
 }
 
@@ -130,7 +130,7 @@ async function new_pass(req,res){
     .catch((err) => handdleError(err, res))
 }
 
-async function lolo(req,res){
+async function reset_pass(req,res){
 
   UserModel
   .findOne(req.body)
