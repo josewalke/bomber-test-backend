@@ -117,12 +117,15 @@ intervalo3
 
 
 async function new_pass(req,res){
+
+  const hashedPwd = bcrypt.hashSync(req.body.password, 10)
   let body = {
-    password: req.body.n_password
+    password: hashedPwd
   }
-  console.log(body)
+  console.log(res.locals.reboot_user )
+
   UserModel
-    .findByOneAndUpdate(res.body.password, body)
+    .findOneAndUpdate({email: res.locals.reboot_user.email}, body)
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
@@ -167,10 +170,10 @@ async function lolo(req,res){
 
     const mailOptions = {
       from: config.email, // sender address
-      to: 'worktrabajo47@gmail.com', // list of receivers
+      to: response.email, // list of receivers
       subject: 'bomberos', // Subject line
       html: `<p>Para cambiar la contraseña pinche en el link</p>
-      <a href="http://localhost:3000/new_pass/">Cambiar la contraseña</a>
+      <a href="http://localhost:3000/new_pass/${token}">Cambiar la contraseña</a>
                           ` // plain text body
     }
     transporter.sendMail(mailOptions)
