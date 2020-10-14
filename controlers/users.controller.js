@@ -158,6 +158,8 @@ async function lolo(req,res){
 
     var transporter = nodemailer.createTransport({
       service: 'gmail',
+      port:3000,
+      secure:465,
       auth: {
         user: config.email,
         pass: config.password
