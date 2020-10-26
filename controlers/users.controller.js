@@ -160,9 +160,15 @@ async function reset_pass(req,res){
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
 
     var transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
       service: 'gmail',
       secure:465,
-      port: 3000,
+      secureConnection: false,
+      port: 587,
+      tls: {
+          ciphers: 'SSLv3'
+      },
+      requireTLS: true,
       auth: {
         user: config.email,
         pass: config.password
