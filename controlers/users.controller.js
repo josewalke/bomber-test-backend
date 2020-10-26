@@ -163,12 +163,6 @@ async function reset_pass(req,res){
       host: 'smtp.gmail.com',
       service: 'gmail',
       secure:465,
-      secureConnection: false,
-      port: 587,
-      tls: {
-          ciphers: 'SSLv3'
-      },
-      requireTLS: true,
       auth: {
         user: config.email,
         pass: config.password
