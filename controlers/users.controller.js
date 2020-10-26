@@ -162,6 +162,7 @@ async function reset_pass(req,res){
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       secure:465,
+      port: 3000,
       auth: {
         user: config.email,
         pass: config.password
