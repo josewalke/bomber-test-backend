@@ -27,7 +27,7 @@ async function buscar(req,res){
     });
   }
   // solo categoria
-  if(req.body.category.length > 0 && req.body.tema_id.length === 0){
+  if(req.body.categoria.length > 0 && req.body.tema.length === 0){
     let body = {
       categoria: req.body.categoria
     }
@@ -39,7 +39,7 @@ async function buscar(req,res){
     });
   }
   // tema y categoria
-  if(req.body.category.length > 0 && req.body.tema_id.length > 0){
+  if(req.body.categoria.length > 0 && req.body.tema.length > 0){
     let body = {
       categoria: req.body.categoria,
       tema: req.body.tema
