@@ -57,7 +57,7 @@ async function getQuestion(req,res){
     .catch((err) => handdleError(err, res))
 }
 async function filtrarQuestion(req,res){
-
+ // SOLO TEMA
  if(req.body.category.length === 0 && req.body.tema_id.length > 0){
    let body = {
      tema_id: req.body.tema_id
@@ -68,7 +68,7 @@ async function filtrarQuestion(req,res){
      res.json(response)
    })
  }
-
+ //SOLO CATEGORIA
  if(req.body.category.length > 0 && req.body.tema_id.length === 0){
   let body = {
     category: req.body.category
@@ -79,7 +79,7 @@ async function filtrarQuestion(req,res){
     res.json(response)
   })
  }
-
+// tema y categoria
  if(req.body.category.length > 0 && req.body.tema_id.length > 0){
   questionsModel.find(req.body)
   .then(response => {
