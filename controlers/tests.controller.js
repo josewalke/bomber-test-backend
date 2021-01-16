@@ -64,24 +64,40 @@ function testAnswer(req, res){
       .catch(err => handdleError(err, res));
 
   }else{
-
-
+    console.log(req.body)
     let num = req.body.numero
     let resp = req.body.respuesta
     let guess = resp.guess
+    console.log('guess =========')
+    console.log(guess)
 
     testModel
     .findById(req.params.id).then(test =>{
       let check = test.testCheck
       let newCheck = {right: check.right, wrong: check.wrong, blank: check.blank}
-      guess === true ? newCheck.right++ : newCheck.wrong++
-      newCheck.blank--
+      // guess === true ? newCheck.right++ : newCheck.wrong++
+      // newCheck.blank--
+      if(guess === true){
+        newCheck.right++
+        newCheck.blank--
+      }else{
+        newCheck.wrong++
+        newCheck.blank--
+      }
+      console.log('NEWCHECK====')
+      console.log(newCheck)
       test.testCheck = newCheck
       test.respuestas.set(num, resp)
+      lolo(test)
 
       test.save().then(response => res.json())
     })
     .catch(err => console.log(err))
+  }
+}
+async function lolo(test){
+  for(let i = 0; i < test.respuestas.length ;i++){
+    console.log(test.respuestas[i].respuestas)
   }
 }
 
