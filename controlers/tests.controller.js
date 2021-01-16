@@ -79,27 +79,30 @@ function testAnswer(req, res){
       // newCheck.blank--
       if(guess === true){
         newCheck.right++
-        newCheck.blank--
       }else{
         newCheck.wrong++
-        newCheck.blank--
       }
+      newCheck.blank = test.no_contestadas.length - (num + 1)
       console.log('NEWCHECK====')
       console.log(newCheck)
       test.testCheck = newCheck
       test.respuestas.set(num, resp)
-      lolo(test)
-
+      // test.no_contestadas.length - (num + 1)
       test.save().then(response => res.json())
     })
     .catch(err => console.log(err))
   }
 }
-async function lolo(test){
-  for(let i = 0; i < test.respuestas.length ;i++){
-    console.log(test.respuestas[i].respuestas)
-  }
-}
+// async function lolo(test){
+//   console.log('CONTADOR======')
+//   // console.log(test.respuestas.length)
+//   for(let i = 0; i < test.respuestas.length ;i++){
+//     // console.log(test.respuestas[i].respuestas.length)
+//     if(test.respuestas[i].respuestas[0] === undefined){
+//       console.log(true)
+//     }
+//   }
+// }
 
 async function createRandomTest(req, res) {
   const now =  new Date()
