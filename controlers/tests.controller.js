@@ -274,7 +274,7 @@ async function createConfigTest(req, res) {
     selectedTemas: selected,
     mostrar_solucion: correctorSwitch,
     desafio:false,
-    deberes: true
+    deberes: false
   };
   testModel
     .create(testBody)
