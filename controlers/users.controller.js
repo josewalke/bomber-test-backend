@@ -38,7 +38,10 @@ function getAllUsers(req, res) {
 function getUserById (req, res) {
   UserModel
     .findById(req.params.id)
-    .then(response => res.json(response))
+    .then(response => {
+      console.log(response)
+      res.json(response)
+    })
     .catch((err) => handdleError(err, res))
 }
 function getUserByEmail (req, res){
@@ -61,9 +64,10 @@ function deleteUserById (req, res) {
 }
 
 function updateUser (req, res) {
+
   UserModel
-    .findByIdAndUpdate(req.params.id, req.body)
-    .then(response => res.json('actualizado correctamente'))
+    .findOneAndUpdate(req.params.id, req.body)
+    .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 
 }

@@ -12,11 +12,11 @@ const {
   getUserByEmail
 } = require("../controlers/users.controller");
 
+router.get('/:id', getUserById);
 router.post('/reset_pass',reset_pass);
 router.get('/me',  authenticated, getMe);
 router.get('/:email',getUserByEmail);
 router.post('/new_pass',authenticated, new_pass);
-router.get('/:id', getUserById);
 router.put('/:id', updateUser);
 router.get('/', getAllUsers);
 router.delete('/:id', deleteUserById);
