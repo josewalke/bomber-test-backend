@@ -79,10 +79,11 @@ function testAnswer(req, res){
       // newCheck.blank--
       if(guess === true){
         newCheck.right++
+        newCheck.blank = test.no_contestadas.length - (num + 1)
       }else{
         newCheck.wrong++
+        newCheck.blank = test.no_contestadas.length - (num + 1)
       }
-      newCheck.blank = test.no_contestadas.length - (num + 1)
       console.log('NEWCHECK====')
       console.log(newCheck)
       test.testCheck = newCheck
