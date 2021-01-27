@@ -17,7 +17,7 @@ module.exports = {
   updateDeberes,
   updateNota,
   reload,
-  prueba
+  myCurrentTest
 
 };
 
@@ -478,7 +478,7 @@ async function reload(req,res){
     .catch((err) => handdleError(err, res))
 }
 
-async function MyCurrentTest(req,res){
+async function myCurrentTest(req,res){
   console.log('HOLAAAAAAAAAAAAA')
   testModel
     .findById(req.params.id)
