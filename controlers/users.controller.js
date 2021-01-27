@@ -36,15 +36,14 @@ function getAllUsers(req, res) {
 }
 
 function getUserById (req, res) {
+  console.log('getUserById')
   UserModel
     .findById(req.params.id)
-    .then(response => {
-      console.log(response)
-      res.json(response)
-    })
+    .then(response => res.json(response))
     .catch((err) => handdleError(err, res))
 }
 function getUserByEmail (req, res){
+  console.log('getUserByEmail')
   UserModel
   .find({email: req.params.email})
   .then(response => res.json(response))
