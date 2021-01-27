@@ -14,17 +14,16 @@ const {
   testPremium,
   updateDeberes,
   updateNota,
-  reload
+  reload,
+  prueba
 
 } = require("../controlers/tests.controller");
 
-router.get("/:id", getTestById);
 router.get("/premium", testPremium)
 router.get("/user/me/:id", getMyTests);
 router.put("/deberes/:id",updateDeberes);
 router.put("/nota/:id",updateNota);
 router.put("/reload/:id",reload);
-// router.get("/:id", getTestById);
 router.get("/", getAllTests);
 router.post("/exam",postExam);
 router.post("/config",authenticated, createConfigTest);
@@ -32,5 +31,7 @@ router.post("/", authenticated, createRandomTest);
 router.put("/:id", testAnswer);
 router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
+router.get("/:id", getTestById);
+router.get("/prueba/:id",prueba);
 
 module.exports = router;

@@ -16,7 +16,8 @@ module.exports = {
   testPremium,
   updateDeberes,
   updateNota,
-  reload
+  reload,
+  prueba
 
 };
 
@@ -475,6 +476,11 @@ async function reload(req,res){
     .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
+}
+
+async function prueba(req,res){
+  console.log('HOLA')
+  res.json('HOLA')
 }
 
 function handdleError(err, res) {
