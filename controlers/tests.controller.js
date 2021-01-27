@@ -484,7 +484,7 @@ async function prueba(req,res){
     .findById(req.params.id)
     .then(async response => {
       const populado = await response.populate("no_contestadas").execPopulate();
-      console.log(populado)
+      console.log(response.testCheck)
       res.json(populado);
     })
     .catch(err => handdleError(err, res));
