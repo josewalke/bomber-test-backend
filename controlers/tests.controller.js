@@ -479,13 +479,13 @@ async function reload(req,res){
 }
 
 async function prueba(req,res){
-  console.log('HOLA')
+  console.log('HOLAAAAAAAAAAAAA')
   testModel
     .findById(req.params.id)
     .then(async response => {
-      const populado = await response.populate("no_contestadas").execPopulate();
+      // const populado = await response.populate("no_contestadas").execPopulate();
       console.log(response.testCheck)
-      res.json(populado);
+      res.json(response);
     })
     .catch(err => handdleError(err, res));
 }
