@@ -15,7 +15,7 @@ const {
   updateDeberes,
   updateNota,
   reload,
-  prueba
+  MyCurrentTest
 
 } = require("../controlers/tests.controller");
 
@@ -32,6 +32,6 @@ router.put("/:id", testAnswer);
 router.delete("/desafio", deleteDesafio);
 router.delete("/:id");
 router.get("/:id", getTestById);
-router.get("/prueba/:id",prueba);
+router.get("/prueba/:id",MyCurrentTest);
 
 module.exports = router;

@@ -478,7 +478,7 @@ async function reload(req,res){
     .catch((err) => handdleError(err, res))
 }
 
-async function prueba(req,res){
+async function MyCurrentTest(req,res){
   console.log('HOLAAAAAAAAAAAAA')
   testModel
     .findById(req.params.id)
