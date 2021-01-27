@@ -61,10 +61,13 @@ function deleteUserById (req, res) {
 }
 
 function updateUser (req, res) {
-
+  console.log(req.body)
+  console.log(req.params.id)
   UserModel
     .findOneAndUpdate(req.params.id, req.body)
-    .then(response => res.json(response))
+    .then(response => {
+      console.log(response)
+      res.json(response)})
     .catch((err) => handdleError(err, res))
 
 }
