@@ -480,7 +480,14 @@ async function reload(req,res){
 
 async function prueba(req,res){
   console.log('HOLA')
-  res.json('HOLA')
+  testModel
+    .findById(req.params.id)
+    .then(async response => {
+      const populado = await response.populate("no_contestadas").execPopulate();
+      console.log(populado)
+      res.json(populado);
+    })
+    .catch(err => handdleError(err, res));
 }
 
 function handdleError(err, res) {
