@@ -37,12 +37,12 @@ function postExam(req,res){
     });
 }
 async function getTestById(req, res) {
-  console.log(req.params)
+  // console.log(req.params)
   testModel
     .findById(req.params.id)
     .then(async response => {
       const populado = await response.populate("no_contestadas").execPopulate();
-      console.log(populado)
+      // console.log(populado)
       res.json(populado);
     })
     .catch(err => handdleError(err, res));
