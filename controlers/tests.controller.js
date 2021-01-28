@@ -184,8 +184,7 @@ async function createRandomTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: true,
     desafio: false,
-    deberes: false,
-    tipo: "random"
+    deberes: false
   };
   console.log('enviando examen aleatorio')
   testModel
@@ -279,8 +278,7 @@ async function createConfigTest(req, res) {
     selectedTemas: selected,
     mostrar_solucion: correctorSwitch,
     desafio:false,
-    deberes: false,
-    tipo:"config"
+    deberes: false
   };
   testModel
     .create(testBody)
