@@ -20,7 +20,7 @@ module.exports = {
   getAllUsers,
   getUserById,
   deleteUserById,
-  updateUser,
+  updateUser2,
   getMe,
   new_pass,
   reset_pass,
@@ -70,6 +70,16 @@ function updateUser (req, res) {
       res.json(response)})
     .catch((err) => handdleError(err, res))
 
+}
+function updateUser2(req,res){
+  console.log(req.body)
+  console.log(req.params.id)
+  UserModel
+    .updateOne(req.params.id, req.body)
+    .then(response => {
+      console.log(response)
+      res.json(response)})
+    .catch((err) => handdleError(err, res))
 }
 
 //Poner negativos cada 1min

@@ -184,7 +184,8 @@ async function createRandomTest(req, res) {
     no_contestadas: blanco,
     mostrar_solucion: true,
     desafio: false,
-    deberes: false
+    deberes: false,
+    tipo: "random"
   };
   console.log('enviando examen aleatorio')
   testModel
@@ -256,7 +257,7 @@ async function createConfigTest(req, res) {
   let respuestas = []
   blanco.forEach( q => {
 
-    respuestas.push({ id: q, answered:false})
+    respuestas.push({ id: q._id, answered:false})
   })
 
   let testCheck = { right: 0, wrong: 0, blank: blanco.length}
@@ -278,7 +279,8 @@ async function createConfigTest(req, res) {
     selectedTemas: selected,
     mostrar_solucion: correctorSwitch,
     desafio:false,
-    deberes: false
+    deberes: false,
+    tipo:"config"
   };
   testModel
     .create(testBody)

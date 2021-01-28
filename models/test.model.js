@@ -66,7 +66,7 @@ const testSchema = new mongoose.Schema({
   visible:{
     type: Boolean,
     default: false
-  }
+  },
 })
 const testModel = mongoose.model('test', testSchema)
 
