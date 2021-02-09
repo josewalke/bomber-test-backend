@@ -2,11 +2,11 @@ const router = require("express").Router();
 const { authenticated, me } = require("../services/auth.service");
 
 const {
+  allTemas,
   createTema,
   getAllTemas,
   updateTema,
-  deleteTemaById,
-  allTemas
+  deleteTemaById
 } = require("../controlers/temas.controller");
 
 
