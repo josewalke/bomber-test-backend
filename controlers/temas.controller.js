@@ -20,7 +20,7 @@ function getAllTemas(req, res) {
   temaModel
     .find()
     .then(response => {
-      console.log(response)
+      console.log(response.length)
       res.json(response)})
     .catch((err) => handdleError(err, res))
 }
