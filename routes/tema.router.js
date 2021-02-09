@@ -10,7 +10,7 @@ const {
 } = require("../controlers/temas.controller");
 
 
-router.get('/', getAllTemas)
+router.get('/todos', getAllTemas)
 
 router.get('/all',allTemas)
 
