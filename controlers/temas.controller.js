@@ -4,7 +4,8 @@ module.exports = {
   createTema,
   getAllTemas,
   updateTema,
-  deleteTemaById
+  deleteTemaById,
+  allTemas
 }
 
 function createTema(req, res) {
@@ -24,6 +25,10 @@ function getAllTemas(req, res) {
       console.log(response.length)
       res.json(response)})
     .catch((err) => handdleError(err, res))
+}
+
+function allTemas(req,res){
+  console.log('TODOS LOS TEMAS')
 }
 
 function updateTema(req, res) {

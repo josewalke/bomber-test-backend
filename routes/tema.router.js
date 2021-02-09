@@ -5,11 +5,14 @@ const {
   createTema,
   getAllTemas,
   updateTema,
-  deleteTemaById
+  deleteTemaById,
+  allTemas
 } = require("../controlers/temas.controller");
 
 
 router.get('/', getAllTemas)
+
+router.get('/all',allTemas)
 
 router.post('/crear', createTema)
 
