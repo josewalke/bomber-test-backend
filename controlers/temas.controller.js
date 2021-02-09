@@ -29,12 +29,6 @@ function getAllTemas(req, res) {
 
 function allTemas(req,res){
   console.log('TODOS LOS TEMAS')
-  temaModel
-    .find()
-    .then(response => {
-      console.log(response.length)
-      res.json(response)})
-    .catch((err) => handdleError(err, res))
 }
 
 function updateTema(req, res) {

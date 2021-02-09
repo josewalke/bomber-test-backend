@@ -10,9 +10,9 @@ const {
 } = require("../controlers/temas.controller");
 
 
+router.get('/all',allTemas)
 router.get('/todos', getAllTemas)
 
-router.get('/all',allTemas)
 
 router.post('/crear', createTema)
 
