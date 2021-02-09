@@ -19,7 +19,9 @@ function createTema(req, res) {
 function getAllTemas(req, res) {
   temaModel
     .find()
-    .then(response => res.json(response))
+    .then(response => {
+      console.log(response)
+      res.json(response)})
     .catch((err) => handdleError(err, res))
 }
 
