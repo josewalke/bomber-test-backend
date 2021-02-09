@@ -9,8 +9,6 @@ module.exports = {
 
 function createTema(req, res) {
   console.log('crear Tema')
-  // console.log(req.body)
-
   temaModel.create(req.body)
     .then(response => res.json(response))
     .catch(err => {
@@ -27,7 +25,7 @@ function getAllTemas(req, res) {
 
 function updateTema(req, res) {
   temaModel
-    .findByIdAndUpdate(req.params.id, req.body)
+    .findByIdAndUpdate({_id: req.params.id}, req.body)
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
