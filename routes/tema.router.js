@@ -9,11 +9,12 @@ const {
 } = require("../controlers/temas.controller");
 
 
-router.post('/', createTema)
+router.get('/', getAllTemas)
+
+router.post('/crear', createTema)
 
 router.put('/:id',updateTema)
 
-router.get('/', getAllTemas)
 
 router.delete('/:id', deleteTemaById)
 
