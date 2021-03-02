@@ -39,7 +39,7 @@ function postExam(req,res){
 async function getTestById(req, res) {
   // console.log(req.params)
   testModel
-    .findById({_id: req.params.id})
+    .findById({ _id: req.params.id })
     .then(async response => {
       const populado = await response.populate("no_contestadas").execPopulate();
       // console.log(populado)
