@@ -50,6 +50,7 @@ function signup(req, res) {
 
 
 function login(req, res) {
+  console.log("BACKEND LOGIN")
   UserModel.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {

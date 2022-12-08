@@ -189,5 +189,6 @@ async function reset_pass(req,res){
 
 
 function handdleError (err, res) {
-  return res.status(400).json(err)
+  console.log(err)
+  //return res.status(400).json(err)
 }
