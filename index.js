@@ -39,7 +39,7 @@ const authenticate = (req, res, next) => {
 
 mongoose.connect(
   config.mongoURL,
-  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false },
   err => {
     if (err) {
       throw new Error(err);
