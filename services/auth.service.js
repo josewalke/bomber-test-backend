@@ -38,7 +38,15 @@ function me(req, res, next) {
   }
 }
 
+function authAdmin(req, res, next) {
+  if (res.locals.reboot_user.role === "admin") {
+    return next();
+  }
+  return res.send("Unauthorized access");
+}
+
 module.exports = {
   authenticated: authenticated,
-  me: me
+  me: me,
+  authAdmin
 };
