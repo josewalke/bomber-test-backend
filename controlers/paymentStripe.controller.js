@@ -52,3 +52,8 @@ async function premium(req,res){
   })
   .catch((err) => handdleError(err, res))
 }
+
+function handdleError(err, res) {
+  console.log(err)
+  //return res.status(400).json(err)
+}

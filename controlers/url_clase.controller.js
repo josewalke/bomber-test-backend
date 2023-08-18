@@ -35,3 +35,8 @@ async function putURL(req,res){
     .then(response => res.json('actualizado correctamente'))
     .catch((err) => handdleError(err, res))
 }
+
+function handdleError(err, res) {
+  console.log(err)
+  //return res.status(400).json(err)
+}

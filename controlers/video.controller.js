@@ -2,7 +2,7 @@ const VideoModel = require('../models/video.model')
 
 async function getAllVideos(req, res) {
   try {
-    const videos = await VideoModel.find()
+    const videos = await VideoModel.find().populate('topic')
     if (!videos) return res.status(404).send('No videos found')
 
     return res.status(200).json(videos)

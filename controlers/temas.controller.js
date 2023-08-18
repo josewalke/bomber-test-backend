@@ -44,3 +44,8 @@ function deleteTemaById(req, res) {
     .then(response => res.json(response))
     .catch(err => handdleError(err, res))
 }
+
+function handdleError(err, res) {
+  console.log(err)
+  //return res.status(400).json(err)
+}
