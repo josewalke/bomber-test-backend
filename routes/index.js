@@ -13,6 +13,7 @@ const paymentStripe = require("./paymentStripe.router");
 const url_clase = require("./url_clase.router");
 const pdfRouter = require("./pdf.router")
 const videoRouter = require("./video.router")
+const fileRouter = require('./file.router')
 
 router.use("/auth", authRouter);
 router.use("/users", usersRouter);
@@ -27,5 +28,6 @@ router.use("/paymentStripe", paymentStripe);
 router.use("/url_clase",url_clase);
 router.use("/pdf",pdfRouter);
 router.use("/video", videoRouter)
+router.use('/file', fileRouter)
 
 module.exports = router;

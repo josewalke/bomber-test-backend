@@ -7,12 +7,12 @@ const temaSchema = new mongoose.Schema({
   category:{
     type: String
   },
-  // borrar lo de abajo
   id_tema:{
     type: Number
   },
   visible:{
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 })
 const temaModel = mongoose.model('tema', temaSchema)
