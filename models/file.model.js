@@ -11,6 +11,9 @@ const fileSchema = new mongoose.Schema({
   topic: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'tema',
+  },
+  format: {
+    type: String
   }
 })
 
