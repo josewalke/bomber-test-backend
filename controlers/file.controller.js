@@ -41,14 +41,13 @@ async function getOneFile(req, res) {
 
     return res.status(200).json(file)
   } catch (error) {
-    console.log(error)
     return res.status(500).json({ message: 'Error getting file', error: error })
   }
 }
 
 async function postFile(req, res) {
   try {
-    const uploaded = await uploadFile(req.body.path)
+    const uploaded = await uploadFile(req.file)
 
     if (uploaded.error) return (
       res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
@@ -83,8 +82,13 @@ async function uploadFile(file) {
   }
 
   try {
-    const result = await cloudinary.uploader.upload(file, options)
-    return result
+    // Se debe usar una promesa porque 'await cloudinary.uploader.upload_stream devuelve un stream antes de terminar de subir el archivo.
+    return new Promise((resolve, reject) => { 
+      cloudinary.uploader.upload_stream(options, (err, success) => {
+        if (err) return reject({ error: true, message: err });
+        return resolve(success);
+      }).end(file.buffer);
+    })
   } catch (error) {
     return { error: true, message: error }
   }
