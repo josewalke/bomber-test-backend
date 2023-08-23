@@ -47,14 +47,16 @@ async function getOneFile(req, res) {
 
 async function postFile(req, res) {
   try {
-    const uploaded = await uploadFile(req.file)
+    const format = req.file.originalname.split('.').pop().toLowerCase()
+    const uploaded = await uploadFile(req.file, format)
 
     if (uploaded.error) return (
       res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
     )
 
     req.body.cloudId = uploaded.public_id
-    req.body.format = uploaded.format
+    req.body.format = format
+
     const file = await FileModel.create(req.body)
     return res.status(200).json({ message: 'File uploaded', file: file })
   } catch (error) {
@@ -73,12 +75,13 @@ async function updateFile(req, res) {
   }
 }
 
-async function uploadFile(file) {
+async function uploadFile(file, format) {
 
   const options = {
     use_filename: true,
     unique_filename: true,
-    overwrite: true
+    overwrite: true,
+    resource_type: getFormat(format)
   }
 
   try {
@@ -91,6 +94,14 @@ async function uploadFile(file) {
     })
   } catch (error) {
     return { error: true, message: error }
+  }
+}
+
+function getFormat(format) {
+  if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
+    return 'image';
+  } else {
+    return 'raw'
   }
 }
 
@@ -115,7 +126,11 @@ async function seeMedia(req, res) {
     const file = await FileModel.findById(req.params.id)
     if (!file) return res.status(404).send('File not found')
 
-    const data = await cloudinary.api.resource(file.cloudId)
+    const options = {
+      resource_type: getFormat(file.format)
+    }
+
+    const data = await cloudinary.api.resource(file.cloudId, options)
     return res.status(200).json(data)
   } catch (error) {
     return res.status(500).send({ message: 'Error fetching file', error: error })

@@ -13,6 +13,7 @@ const {
   seeMedia
 } = require('../controlers/file.controller')
 
+//Middleware que se buscará en el req.body un campo llamado 'file' y almacena su contenido (un archivo) en la memoria, para poder acceder a él en el controlador.
 const storage = multer.memoryStorage()
 const upload = multer({ storage })
 
