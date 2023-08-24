@@ -1,5 +1,9 @@
 const FileModel = require('../models/file.model')
 const cloudinary = require('../services/cloudinary')
+const pdfjs = require('pdfjs-dist')
+const { createCanvas } = require('canvas')
+
+pdfjs.GlobalWorkerOptions.workerSrc = false;
 
 async function getAllFiles(req, res) {
   try {
@@ -54,7 +58,12 @@ async function postFile(req, res) {
       res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
     )
 
-    req.body.cloudId = uploaded.public_id
+    if (format === 'pdf') {
+      req.body.pdfPages = []
+      uploaded.forEach(page => req.body.pdfPages.push(page.public_id))
+    } else {
+      req.body.cloudId = uploaded.public_id
+    }
     req.body.format = format
 
     const file = await FileModel.create(req.body)
@@ -85,16 +94,56 @@ async function uploadFile(file, format) {
   }
 
   try {
+    if (format === 'pdf') {
+      const images = await convertPDFToImages(file.buffer);
+      const uploadedImages = [];
+      for (const image of images) {
+        const result = await cloudinary.uploader.upload(image, {
+          resource_type: 'image',
+          format: 'png'
+        });
+        uploadedImages.push(result);
+      }
+
+      return uploadedImages;
+    } else {
+      return new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream(options, (err, success) => {
+          if (err) return reject({ error: true, message: err });
+          return resolve(success);
+        }).end(file.buffer);
+      });
+    }
     // Se debe usar una promesa porque 'await cloudinary.uploader.upload_stream devuelve un stream antes de terminar de subir el archivo.
-    return new Promise((resolve, reject) => { 
-      cloudinary.uploader.upload_stream(options, (err, success) => {
-        if (err) return reject({ error: true, message: err });
-        return resolve(success);
-      }).end(file.buffer);
-    })
   } catch (error) {
     return { error: true, message: error }
   }
+}
+
+async function convertPDFToImages(pdfBuffer) {
+  const data = new Uint8Array(pdfBuffer)
+  var pdf = await pdfjs.getDocument({data}).promise
+
+  const totalPages = pdf.numPages
+  const images = []
+
+  for (let i = 1; i <= totalPages; i++) {
+    const page = await pdf.getPage(i)
+    const viewport = page.getViewport({ scale: 1 })
+
+    const canvas = createCanvas(viewport.width, viewport.height)
+    const context = canvas.getContext('2d')
+
+    await page.render({
+      canvasContext: context,
+      viewport: viewport
+    }).promise
+
+    const image = canvas.toDataURL()
+    images.push(image)
+  }
+
+    return images
 }
 
 function getFormat(format) {
@@ -109,12 +158,21 @@ async function deleteFile(req, res) {
   try {
     const file = await FileModel.findByIdAndDelete(req.params.id)
     if (!file) return res.status(404).send('File not found')
+    let result
+    if (file.format === 'pdf') {
+      result = await Promise.all(file.pdfPages.map(async (page) => {
+        const data = await cloudinary.uploader.destroy(page)
+        return data.result
+      }))
+    } else {
+      data = await cloudinary.uploader.destroy(file.cloudId)
+      result = data.result
+    }
 
-    const {result} = await cloudinary.uploader.destroy(file.cloudId)
-    if( result === 'ok' ) {
+    if( result === 'ok' || result.every(i => i === 'ok') ) {
       return res.status(200).send('File deleted')
     } else {
-      throw new Error ('Error deleiting from cloudinary')
+      throw new Error ('Error deleting from cloudinary')
     }
   } catch (error) {
     return res.status(500).send({ message: 'Error deleiting file', error: error })
@@ -129,9 +187,16 @@ async function seeMedia(req, res) {
     const options = {
       resource_type: getFormat(file.format)
     }
-
-    const data = await cloudinary.api.resource(file.cloudId, options)
-    return res.status(200).json(data)
+    if (file.format === 'pdf') {
+      const pages = await Promise.all(file.pdfPages.map(async (page) => {
+        const data = await cloudinary.api.resource(page, options)
+        return data
+      }))
+      return res.status(200).json(pages)
+    } else {
+      const data = await cloudinary.api.resource(file.cloudId, options)
+      return res.status(200).json(data)
+    }
   } catch (error) {
     return res.status(500).send({ message: 'Error fetching file', error: error })
   }

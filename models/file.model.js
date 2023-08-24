@@ -8,6 +8,9 @@ const fileSchema = new mongoose.Schema({
   cloudId: {
     type: String
   },
+  pdfPages: [{
+    type: String
+  }],
   topic: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'tema',
