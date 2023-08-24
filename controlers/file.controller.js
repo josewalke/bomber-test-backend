@@ -170,10 +170,8 @@ async function deleteFile(req, res) {
         throw new Error('Error deleting from cloudinary')
       }
     } else {
-      console.log(file)
-      const data = await cloudinary.uploader.destroy(file.cloudId)
-      console.log(data)
-      console.log(data.result)
+      const data = await cloudinary.uploader.destroy(file.cloudId, { resource_type: getFormat(file.format) })
+
       if (data.result === 'ok') {
         return res.status(200).send('File deleted')
       } else {
