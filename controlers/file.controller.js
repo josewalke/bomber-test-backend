@@ -175,7 +175,8 @@ async function deleteFile(req, res) {
       throw new Error ('Error deleting from cloudinary')
     }
   } catch (error) {
-    return res.status(500).send({ message: 'Error deleiting file', error: error })
+    console.log(error)
+    return res.status(500).send({ message: 'Error deleting file', error: error })
   }
 }
 
