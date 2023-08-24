@@ -179,6 +179,7 @@ async function deleteFile(req, res) {
       }
     }
   } catch (error) {
+    console.log(error)
     return res.status(500).send({ message: 'Error deleting file', error: error })
   }
 }
