@@ -96,6 +96,8 @@ async function uploadFile(file, format) {
 
   try {
     if (format === 'pdf') {
+      console.log('es pdf')
+      console.log(file)
       const images = await convertPDFToImages(file.buffer);
       console.log(images)
       const uploadedImages = []
