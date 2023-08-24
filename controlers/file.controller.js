@@ -98,7 +98,7 @@ async function uploadFile(file, format) {
 }
 
 function getFormat(format) {
-  if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
+  if (['jpg', 'jpeg', 'png', 'gif', 'pdf'].includes(format)) {
     return 'image';
   } else {
     return 'raw'
