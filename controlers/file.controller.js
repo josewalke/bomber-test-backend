@@ -164,18 +164,22 @@ async function deleteFile(req, res) {
         const data = await cloudinary.uploader.destroy(page)
         return data.result
       }))
+
+      if (result.every(i => i === 'ok')) {
+        return res.status(200).send('File deleted')
+      } else {
+        throw new Error('Error deleting from cloudinary')
+      }
     } else {
       data = await cloudinary.uploader.destroy(file.cloudId)
-      result = data.result
-    }
 
-    if( result === 'ok' || result.every(i => i === 'ok') ) {
-      return res.status(200).send('File deleted')
-    } else {
-      throw new Error ('Error deleting from cloudinary')
+      if (data.result === 'ok') {
+        return res.status(200).send('File deleted')
+      } else {
+        throw new Error('Error deleting from cloudinary')
+      }
     }
   } catch (error) {
-    console.log(error)
     return res.status(500).send({ message: 'Error deleting file', error: error })
   }
 }
