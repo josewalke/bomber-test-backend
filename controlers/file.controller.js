@@ -53,10 +53,11 @@ async function postFile(req, res) {
   try {
     const format = req.file.originalname.split('.').pop().toLowerCase()
     const uploaded = await uploadFile(req.file, format)
-
-    if (uploaded.error) return (
-      res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
-    )
+    console.log(uploaded)
+    if (uploaded.error) {
+      console.log(error)
+      return res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
+    }  
 
     if (format === 'pdf') {
       req.body.pdfPages = []
@@ -96,15 +97,20 @@ async function uploadFile(file, format) {
   try {
     if (format === 'pdf') {
       const images = await convertPDFToImages(file.buffer);
-      const uploadedImages = [];
+      console.log(images)
+      const uploadedImages = []
       for (const image of images) {
+        console.log(image)
         const result = await cloudinary.uploader.upload(image, {
           resource_type: 'image',
           format: 'png'
         });
-        uploadedImages.push(result);
+        console.log('result')
+        console.log(result)
+        uploadedImages.push(result)
       }
-
+      console.log('DONE')
+      console.log(uploadedImages)
       return uploadedImages;
     } else {
       return new Promise((resolve, reject) => {
