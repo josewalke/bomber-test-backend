@@ -158,9 +158,8 @@ async function deleteFile(req, res) {
   try {
     const file = await FileModel.findByIdAndDelete(req.params.id)
     if (!file) return res.status(404).send('File not found')
-    let result
     if (file.format === 'pdf') {
-      result = await Promise.all(file.pdfPages.map(async (page) => {
+      const result = await Promise.all(file.pdfPages.map(async (page) => {
         const data = await cloudinary.uploader.destroy(page)
         return data.result
       }))
@@ -171,7 +170,7 @@ async function deleteFile(req, res) {
         throw new Error('Error deleting from cloudinary')
       }
     } else {
-      data = await cloudinary.uploader.destroy(file.cloudId)
+      const data = await cloudinary.uploader.destroy(file.cloudId)
 
       if (data.result === 'ok') {
         return res.status(200).send('File deleted')
