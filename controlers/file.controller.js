@@ -1,9 +1,5 @@
 const FileModel = require('../models/file.model')
 const cloudinary = require('../services/cloudinary')
-const pdfjs = require('pdfjs-dist')
-const { createCanvas } = require('canvas')
-
-pdfjs.GlobalWorkerOptions.workerSrc = false;
 
 async function getAllFiles(req, res) {
   try {
@@ -53,20 +49,14 @@ async function postFile(req, res) {
   try {
     const format = req.file.originalname.split('.').pop().toLowerCase()
     const uploaded = await uploadFile(req.file, format)
-    console.log(uploaded)
+
     if (uploaded.error) {
-      console.log(error)
       return res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
     }  
 
-    if (format === 'pdf') {
-      req.body.pdfPages = []
-      uploaded.forEach(page => req.body.pdfPages.push(page.public_id))
-    } else {
-      req.body.cloudId = uploaded.public_id
-    }
+    req.body.cloudId = uploaded.public_id
+    req.body.pages = uploaded.pages
     req.body.format = format
-
     const file = await FileModel.create(req.body)
     return res.status(200).json({ message: 'File uploaded', file: file })
   } catch (error) {
@@ -91,67 +81,21 @@ async function uploadFile(file, format) {
     use_filename: true,
     unique_filename: true,
     overwrite: true,
-    resource_type: getFormat(format)
+    resource_type: getFormat(format),
+    pages: getFormat(format) === 'pdf' ? true : false
   }
 
   try {
-    if (format === 'pdf') {
-      console.log('es pdf')
-      console.log(file)
-      const images = await convertPDFToImages(file.buffer);
-      console.log(images)
-      const uploadedImages = []
-      for (const image of images) {
-        console.log(image)
-        const result = await cloudinary.uploader.upload(image, {
-          resource_type: 'image',
-          format: 'png'
-        });
-        console.log('result')
-        console.log(result)
-        uploadedImages.push(result)
-      }
-      console.log('DONE')
-      console.log(uploadedImages)
-      return uploadedImages;
-    } else {
-      return new Promise((resolve, reject) => {
-        cloudinary.uploader.upload_stream(options, (err, success) => {
-          if (err) return reject({ error: true, message: err });
-          return resolve(success);
-        }).end(file.buffer);
-      });
-    }
     // Se debe usar una promesa porque 'await cloudinary.uploader.upload_stream devuelve un stream antes de terminar de subir el archivo.
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(options, (err, success) => {
+        if (err) return reject({ error: true, message: err });
+        return resolve(success);
+      }).end(file.buffer);
+    });
   } catch (error) {
     return { error: true, message: error }
   }
-}
-
-async function convertPDFToImages(pdfBuffer) {
-  const data = new Uint8Array(pdfBuffer)
-  var pdf = await pdfjs.getDocument({data}).promise
-
-  const totalPages = pdf.numPages
-  const images = []
-
-  for (let i = 1; i <= totalPages; i++) {
-    const page = await pdf.getPage(i)
-    const viewport = page.getViewport({ scale: 1 })
-
-    const canvas = createCanvas(viewport.width, viewport.height)
-    const context = canvas.getContext('2d')
-
-    await page.render({
-      canvasContext: context,
-      viewport: viewport
-    }).promise
-
-    const image = canvas.toDataURL()
-    images.push(image)
-  }
-
-    return images
 }
 
 function getFormat(format) {
@@ -166,25 +110,13 @@ async function deleteFile(req, res) {
   try {
     const file = await FileModel.findByIdAndDelete(req.params.id)
     if (!file) return res.status(404).send('File not found')
-    if (file.format === 'pdf') {
-      const result = await Promise.all(file.pdfPages.map(async (page) => {
-        const data = await cloudinary.uploader.destroy(page)
-        return data.result
-      }))
 
-      if (result.every(i => i === 'ok')) {
-        return res.status(200).send('File deleted')
-      } else {
-        throw new Error('Error deleting from cloudinary')
-      }
+    const data = await cloudinary.uploader.destroy(file.cloudId, { resource_type: getFormat(file.format) })
+
+    if (data.result === 'ok') {
+      return res.status(200).send('File deleted')
     } else {
-      const data = await cloudinary.uploader.destroy(file.cloudId, { resource_type: getFormat(file.format) })
-
-      if (data.result === 'ok') {
-        return res.status(200).send('File deleted')
-      } else {
-        throw new Error('Error deleting from cloudinary')
-      }
+      throw new Error('Error deleting from cloudinary')
     }
   } catch (error) {
     console.log(error)
@@ -200,17 +132,11 @@ async function seeMedia(req, res) {
     const options = {
       resource_type: getFormat(file.format)
     }
-    if (file.format === 'pdf') {
-      const pages = await Promise.all(file.pdfPages.map(async (page) => {
-        const data = await cloudinary.api.resource(page, options)
-        return data
-      }))
-      return res.status(200).json(pages)
-    } else {
-      const data = await cloudinary.api.resource(file.cloudId, options)
-      return res.status(200).json(data)
-    }
+    
+    const data = await cloudinary.api.resource(file.cloudId, options)
+    return res.status(200).json(data)
   } catch (error) {
+    console.log(error)
     return res.status(500).send({ message: 'Error fetching file', error: error })
   }
 }

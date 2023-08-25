@@ -8,9 +8,9 @@ const fileSchema = new mongoose.Schema({
   cloudId: {
     type: String
   },
-  pdfPages: [{
-    type: String
-  }],
+  pages: {
+    type: Number
+  },
   topic: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'tema',
