@@ -172,7 +172,7 @@ async function reset_pass(req,res){
         pass: process.env.password
       }
     })
-
+    console.log(transporter)
     const mailOptions = {
       from: config.email, // sender address
       to: response.email, // list of receivers
