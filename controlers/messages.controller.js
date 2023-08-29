@@ -27,11 +27,13 @@ function createMessage(req, res) {
     });
 }
 
-function getAllMessages(req, res) {
-  messageModel
-    .find()
-    .then(response => res.json(response))
-    .catch((err) => handdleError(err, res))
+async function getAllMessages(req, res) {
+  try {
+    const messages = await messageModel.find().populate('user')
+    return res.status(200).json(messages)
+  } catch (error) {
+    handdleError(error, res)
+  }
 }
 
 function updateMessages(req, res) {
