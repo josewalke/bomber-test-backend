@@ -168,8 +168,8 @@ async function reset_pass(req,res){
       service: 'gmail',
       secure:465,
       auth: {
-        user: config.email,
-        pass: config.password
+        user: process.env.email,
+        pass: process.env.password
       }
     })
 
