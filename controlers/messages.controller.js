@@ -29,7 +29,7 @@ function createMessage(req, res) {
 
 async function getAllMessages(req, res) {
   try {
-    const messages = await messageModel.find().populate('user')
+    const messages = await messageModel.find().populate('user_id')
     return res.status(200).json(messages)
   } catch (error) {
     handdleError(error, res)
