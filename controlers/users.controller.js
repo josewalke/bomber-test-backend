@@ -161,8 +161,10 @@ async function reset_pass(req,res){
       active: response.active,
       provincia: response.provincia
     }
+    console.log(userData)
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
-
+    console.log(process.env.email)
+    console.log(process.env.password)
     var transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       service: 'gmail',
