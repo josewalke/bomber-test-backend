@@ -170,10 +170,10 @@ async function reset_pass(req,res){
       secure:465,
       auth: {
         user: process.env.email,
-        pass: process.env.password
+        pass: 'ffqccjuwzxsathgn'
       }
     })
-
+    
     const mailOptions = {
       from: process.env.email, // sender address
       to: response.email, // list of receivers
@@ -182,15 +182,8 @@ async function reset_pass(req,res){
       <a href="https://oposicionbomberos.com/new_pass/${token}">Cambiar la contraseña</a>
                           ` // plain text body
     }
-    console.log('antes de enviar')
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.log(err)
-        return
-      }
-      console.log('Working')
-      console.log(info)
-    })
+
+    transporter.sendMail(mailOptions)
     res.json(response)
 
   }).catch((err) => handdleError(err, res))
