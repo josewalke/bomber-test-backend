@@ -161,10 +161,9 @@ async function reset_pass(req,res){
       active: response.active,
       provincia: response.provincia
     }
-    console.log(userData)
+
     const token = jwt.sign(userData, "secret", { expiresIn: "1w" });
-    console.log(process.env.email)
-    console.log(process.env.password)
+
     var transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       service: 'gmail',
@@ -174,9 +173,9 @@ async function reset_pass(req,res){
         pass: process.env.password
       }
     })
-    console.log(transporter)
+    
     const mailOptions = {
-      from: config.email, // sender address
+      from: process.env.email, // sender address
       to: response.email, // list of receivers
       subject: 'bomberos', // Subject line
       html: `<p>Para cambiar la contraseña pinche en el link</p>
