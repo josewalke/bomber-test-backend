@@ -170,7 +170,7 @@ async function reset_pass(req,res){
       secure:465,
       auth: {
         user: process.env.email,
-        pass: 'ffqccjuwzxsathgn'
+        pass: process.env.password
       }
     })
     
@@ -179,7 +179,7 @@ async function reset_pass(req,res){
       to: response.email, // list of receivers
       subject: 'bomberos', // Subject line
       html: `<p>Para cambiar la contraseña pinche en el link</p>
-      <a href="https://oposicionbomberos.com/new_pass/${token}">Cambiar la contraseña</a>
+      <a href="https://vermillion-torrone-e0ef6e.netlify.app/new_pass/${token}">Cambiar la contraseña</a>
                           ` // plain text body
     }
 
