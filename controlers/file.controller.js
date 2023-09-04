@@ -107,7 +107,7 @@ async function uploadFile(file, format, body) {
     unique_filename: true,
     overwrite: true,
     resource_type: getFormat(format, body),
-    pages: getFormat(format, body) === 'pdf' ? true : false
+    pages: format === 'pdf' ? true : false
   }
   console.log('OPTIONS')
   console.log(options)
@@ -125,6 +125,9 @@ async function uploadFile(file, format, body) {
 }
 
 function getFormat(format, body) {
+  console.log('GET FORMAT FUNCTION')
+  console.log(format)
+  console.lob(body.auxiliary)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
   } else if (format === 'pdf' && !body.auxiliary) {
