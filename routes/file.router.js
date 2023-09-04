@@ -5,6 +5,8 @@ const multer = require('multer')
 const {
   getAllFiles,
   getAllPDF,
+  getAllTopicPDF,
+  getAllAuxFiles,
   getAllDownloads,
   getOneFile,
   postFile,
@@ -19,6 +21,8 @@ const upload = multer({ storage })
 
 router.get('/', authenticated, authAdmin, getAllFiles)
 router.get('/pdf', authenticated, getAllPDF)
+router.get('/topics', authenticated, getAllTopicPDF)
+router.get('/aux', authenticated, getAllAuxFiles)
 router.get('/downloads', authenticated, getAllDownloads)
 router.get('/media/:id', authenticated, seeMedia)
 router.get('/:id', authenticated, getOneFile)

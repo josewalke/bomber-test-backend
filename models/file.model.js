@@ -17,6 +17,10 @@ const fileSchema = new mongoose.Schema({
   },
   format: {
     type: String
+  },
+  auxiliary: {
+    type: Boolean,
+    default: false
   }
 })
 

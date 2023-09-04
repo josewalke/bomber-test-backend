@@ -23,6 +23,28 @@ async function getAllPDF(req, res) {
   }
 }
 
+async function getAllTopicPDF(req, res) {
+  try {
+    const files = await FileModel.find({ auxiliary: false }).populate('topic')
+    if (!files) return res.status(404).send('No files found')
+
+    return res.status(200).json(files)
+  } catch (error) {
+    return res.status(500).json({ message: 'Error getting all PDF topics', error: error })
+  }
+}
+
+async function getAllAuxFiles(req, res) {
+  try {
+    const files = await FileModel.find({ auxiliary: true }).populate('topic')
+    if (!files) return res.status(404).send('No files found')
+
+    return res.status(200).json(files)
+  } catch (error) {
+    return res.status(500).json({ message: 'Error getting all auxiliary files', error: error })
+  }
+}
+
 async function getAllDownloads(req, res) {
   try {
     const files = await FileModel.find({ format: { $ne: 'pdf'} }).populate('topic')
@@ -144,6 +166,8 @@ async function seeMedia(req, res) {
 module.exports = {
   getAllFiles,
   getAllPDF,
+  getAllTopicPDF,
+  getAllAuxFiles,
   getAllDownloads,
   getOneFile,
   postFile,
