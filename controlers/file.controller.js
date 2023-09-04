@@ -104,7 +104,7 @@ async function uploadFile(file, format) {
     unique_filename: true,
     overwrite: true,
     resource_type: getFormat(format),
-    pages: getFormat(format) === 'pdf' ? true : false
+    pages: getFormat(format, file) === 'pdf' ? true : false
   }
 
   try {
@@ -120,9 +120,11 @@ async function uploadFile(file, format) {
   }
 }
 
-function getFormat(format) {
-  if (['jpg', 'jpeg', 'png', 'gif', 'pdf'].includes(format)) {
-    return 'image';
+function getFormat(format, file) {
+  if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
+    return 'image'
+  } else if (format === 'pdf' && !file.auxiliary) {
+    return 'image'
   } else {
     return 'raw'
   }
