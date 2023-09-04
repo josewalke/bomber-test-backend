@@ -103,7 +103,7 @@ async function uploadFile(file, format) {
     use_filename: true,
     unique_filename: true,
     overwrite: true,
-    resource_type: getFormat(format),
+    resource_type: getFormat(format, file),
     pages: getFormat(format, file) === 'pdf' ? true : false
   }
 
