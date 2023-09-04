@@ -70,7 +70,7 @@ async function getOneFile(req, res) {
 async function postFile(req, res) {
   try {
     const format = req.file.originalname.split('.').pop().toLowerCase()
-    const uploaded = await uploadFile(req.file, format)
+    const uploaded = await uploadFile(req.file, format, req.body)
 
     if (uploaded.error) {
       return res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
@@ -97,15 +97,15 @@ async function updateFile(req, res) {
   }
 }
 
-async function uploadFile(file, format) {
+async function uploadFile(file, format, body) {
   console.log('Uploading')
-  console.log(file)
+  console.log(body)
   const options = {
     use_filename: true,
     unique_filename: true,
     overwrite: true,
-    resource_type: getFormat(format, file),
-    pages: getFormat(format, file) === 'pdf' ? true : false
+    resource_type: getFormat(format, body),
+    pages: getFormat(format, body) === 'pdf' ? true : false
   }
 
   try {
@@ -121,11 +121,11 @@ async function uploadFile(file, format) {
   }
 }
 
-function getFormat(format, file) {
-  console.log(file)
+function getFormat(format, body) {
+  console.log(body)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
-  } else if (format === 'pdf' && !file.auxiliary) {
+  } else if (format === 'pdf' && !body.auxiliary) {
     console.log('Is image')
     return 'image'
   } else {
