@@ -136,7 +136,7 @@ async function deleteFile(req, res) {
     const file = await FileModel.findByIdAndDelete(req.params.id)
     if (!file) return res.status(404).send('File not found')
 
-    const data = await cloudinary.uploader.destroy(file.cloudId, { resource_type: getFormat(file.format) })
+    const data = await cloudinary.uploader.destroy(file.cloudId, { resource_type: getFormat(file.format, file) })
 
     if (data.result === 'ok') {
       return res.status(200).send('File deleted')
@@ -155,7 +155,7 @@ async function seeMedia(req, res) {
     if (!file) return res.status(404).send('File not found')
 
     const options = {
-      resource_type: getFormat(file.format)
+      resource_type: getFormat(file.format, file)
     }
     
     const data = await cloudinary.api.resource(file.cloudId, options)
