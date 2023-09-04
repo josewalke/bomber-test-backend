@@ -98,7 +98,8 @@ async function updateFile(req, res) {
 }
 
 async function uploadFile(file, format) {
-
+  console.log('Uploading')
+  console.log(file)
   const options = {
     use_filename: true,
     unique_filename: true,
@@ -121,7 +122,7 @@ async function uploadFile(file, format) {
 }
 
 function getFormat(format, file) {
-  console.log(file.auxiliary)
+  console.log(file)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
   } else if (format === 'pdf' && !file.auxiliary) {
@@ -155,7 +156,8 @@ async function seeMedia(req, res) {
   try {
     const file = await FileModel.findById(req.params.id)
     if (!file) return res.status(404).send('File not found')
-
+    console.log('See Media')
+    console.log(file)
     const options = {
       resource_type: getFormat(file.format, file)
     }
