@@ -72,8 +72,7 @@ async function postFile(req, res) {
     console.log(req.body)
     const format = req.file.originalname.split('.').pop().toLowerCase()
     const uploaded = await uploadFile(req.file, format, req.body.auxiliary)
-    console.log('UPLOADED')
-    console.log(uploaded)
+
     if (uploaded.error) {
       return res.status(500).json({ message: 'Error uploading to cloudinary', error: uploaded.message })
     }  
@@ -100,8 +99,6 @@ async function updateFile(req, res) {
 }
 
 async function uploadFile(file, format, aux) {
-  console.log('UPLOADED FILE FUNCTION')
-  console.log(aux)
   const options = {
     use_filename: true,
     unique_filename: true,
@@ -109,8 +106,7 @@ async function uploadFile(file, format, aux) {
     resource_type: getFormat(format, aux),
     pages: format === 'pdf' ? true : false
   }
-  console.log('OPTIONS')
-  console.log(options)
+
   try {
     // Se debe usar una promesa porque 'await cloudinary.uploader.upload_stream devuelve un stream antes de terminar de subir el archivo.
     return new Promise((resolve, reject) => {
@@ -125,9 +121,6 @@ async function uploadFile(file, format, aux) {
 }
 
 function getFormat(format, aux) {
-  console.log('GET FORMAT FUNCTION')
-  console.log(format)
-  console.log(aux)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
   } else if (format === 'pdf' && (aux === 'false' || !aux)) {
@@ -161,7 +154,7 @@ async function seeMedia(req, res) {
     if (!file) return res.status(404).send('File not found')
 
     const options = {
-      resource_type: getFormat(file.format, file)
+      resource_type: getFormat(file.format, file.auxiliary)
     }
     
     const data = await cloudinary.api.resource(file.cloudId, options)
