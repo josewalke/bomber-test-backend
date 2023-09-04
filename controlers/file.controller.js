@@ -127,7 +127,7 @@ async function uploadFile(file, format, aux) {
 function getFormat(format, aux) {
   console.log('GET FORMAT FUNCTION')
   console.log(format)
-  console.lob(aux)
+  console.log(aux)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
   } else if (format === 'pdf' && !aux) {
