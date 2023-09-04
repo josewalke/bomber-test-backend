@@ -130,7 +130,7 @@ function getFormat(format, aux) {
   console.log(aux)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
-  } else if (format === 'pdf' && !aux) {
+  } else if (format === 'pdf' && (aux === 'false' || !aux)) {
     return 'image'
   } else {
     return 'raw'
