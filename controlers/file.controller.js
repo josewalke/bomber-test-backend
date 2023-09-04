@@ -71,7 +71,7 @@ async function postFile(req, res) {
   try {
     console.log(req.body)
     const format = req.file.originalname.split('.').pop().toLowerCase()
-    const uploaded = await uploadFile(req.file, format, req.body)
+    const uploaded = await uploadFile(req.file, format, req.body.auxiliary)
     console.log('UPLOADED')
     console.log(uploaded)
     if (uploaded.error) {
@@ -99,14 +99,14 @@ async function updateFile(req, res) {
   }
 }
 
-async function uploadFile(file, format, body) {
+async function uploadFile(file, format, aux) {
   console.log('UPLOADED FILE FUNCTION')
-  console.log(body)
+  console.log(aux)
   const options = {
     use_filename: true,
     unique_filename: true,
     overwrite: true,
-    resource_type: getFormat(format, body),
+    resource_type: getFormat(format, aux),
     pages: format === 'pdf' ? true : false
   }
   console.log('OPTIONS')
@@ -124,13 +124,13 @@ async function uploadFile(file, format, body) {
   }
 }
 
-function getFormat(format, body) {
+function getFormat(format, aux) {
   console.log('GET FORMAT FUNCTION')
   console.log(format)
-  console.lob(body.auxiliary)
+  console.lob(aux)
   if (['jpg', 'jpeg', 'png', 'gif'].includes(format)) {
     return 'image'
-  } else if (format === 'pdf' && !body.auxiliary) {
+  } else if (format === 'pdf' && !aux) {
     return 'image'
   } else {
     return 'raw'
