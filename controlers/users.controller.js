@@ -61,8 +61,6 @@ function deleteUserById (req, res) {
 }
 
 function updateUser (req, res) {
-  console.log(req.body)
-  console.log(req.params.id)
   UserModel
     .findOneAndUpdate({_id:req.params.id}, req.body)
     .then(response => {

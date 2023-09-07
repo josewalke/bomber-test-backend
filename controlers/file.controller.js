@@ -83,7 +83,7 @@ async function postFile(req, res) {
     const file = await FileModel.create(req.body)
     return res.status(200).json({ message: 'File uploaded', file: file })
   } catch (error) {
-    return res.status(500).json({ message: 'Error posting file', error: error })
+    return res.json({ message: 'Error posting file', error: error })
   }
 }
 
