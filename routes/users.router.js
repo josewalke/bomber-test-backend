@@ -14,11 +14,11 @@ const {
 
 router.put('/:id', updateUser);
 router.get('/email/:email',getUserByEmail);
+router.get('/', getAllUsers);
+router.get('/me',  authenticated, getMe);
 router.get('/:id', getUserById);
 router.post('/reset_pass',reset_pass);
-router.get('/me',  authenticated, getMe);
 router.post('/new_pass',authenticated, new_pass);
-router.get('/', getAllUsers);
 router.delete('/:id', deleteUserById);
 
 
